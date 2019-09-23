@@ -1,0 +1,17 @@
+:root {
+  --portfolio-blue: #4a6ff7;
+  --portfolio-gray: #222222;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--portfolio-gray);
+  font-size: 1.1rem;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 2rem;
+}
