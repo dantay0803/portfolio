@@ -8,11 +8,6 @@ const Styles = styled.div`
   padding: 0;
   margin: 0;
   margin-bottom: 5rem;
-  color: white;
-
-  a {
-    color: var(--portfolio-blue);
-  }
 
   img {
     width: 250px;

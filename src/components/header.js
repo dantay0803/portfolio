@@ -16,10 +16,17 @@ const StyledJumbotron = styled(Jumbotron)`
     color: #FFFFFF;
     text-shadow: black 10px 10px 10px;
 
+    .container{
+      background-color: rgba(0, 47, 167, 0.8);
+      min-width: 100%;
+      min-height: 100%;
+    }
+
     h1{
       padding-top: 30vh;
       font-size: 7rem;
       margin: 0;
+      color: var(--header-title);
     }
 
     p{
