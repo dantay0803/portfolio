@@ -2,12 +2,11 @@
 
 :root {
   --highlight: #002fa7;
-  /* --background: #101010;
-  --text: white;
-  --header-title: #101010; */
+  --hover: #0047fb;
   --background: white;
   --text: black;
   --header-title: white;
+  --muted: rgb(35, 35, 35);
 }
 
 html,
@@ -27,13 +26,70 @@ h4,
 h5,
 h6 {
   font-family: "Muli", sans-serif;
+  text-transform: uppercase;
   color: var(--highlight);
 }
 
 a {
+  position: relative;
   color: var(--highlight);
+  text-decoration: none;
 }
 
-hr {
+a:hover {
   color: var(--highlight);
+  text-decoration: none;
+  color: var(--hover);
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--hover);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+a:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+  color: var(--hover);
+}
+
+.hrPageBreak {
+  background-image: linear-gradient(
+    90deg,
+    transparent -25%,
+    var(--muted) 50%,
+    transparent 125%
+  );
+  border: 0;
+  height: 1px;
+  max-width: 90%;
+  text-align: center;
+}
+
+.hrTitle {
+  border-color: black;
+  border-width: 2px;
+  max-width: 150px;
+  text-align: center;
+}
+
+.sectionHeader {
+  text-align: center;
+}
+
+.resumeDate {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-bottom: 5px;
 }

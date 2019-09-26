@@ -22,8 +22,11 @@ const IndexPage = () => {
       <Header />
       <StyledContainer fluid>
         <Projects />
+        <hr className="hrPageBreak" />
         <About />
+        <hr className="hrPageBreak" />
         <Resume />
+        <hr className="hrPageBreak" />
         <Contact />
       </StyledContainer>
     </>

@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Row, Col } from "react-bootstrap"
-import Underline from "./underline"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons"
 import {
@@ -14,11 +13,10 @@ const Styles = styled.div`
   padding: 0;
   margin: 0;
   margin-bottom: 5rem;
-  color: #ffff;
   text-align: center;
 
   a {
-    color: var(--portfolio-blue);
+    color: var(--highlight);
   }
 
   .contactLinks {
@@ -29,7 +27,7 @@ const Styles = styled.div`
   }
 
   .fa-4x {
-    color: #ffff;
+    color: var(--highlight);
   }
 `
 
@@ -44,8 +42,7 @@ export default function contact() {
       >
         <Row className="justify-content-md-center" noGutters>
           <Col xs={12}>
-            <h1>Get in Touch!</h1>
-            <Underline />
+            <h1>Get in Touch</h1>
             <p>
               Looking to contact me about a position, opportunity or something
               else?

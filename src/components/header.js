@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Container, Jumbotron } from "react-bootstrap"
-import Underline from "./underline"
 import header from "../images/header.jpg"
 
 const StyledJumbotron = styled(Jumbotron)`
@@ -17,7 +16,7 @@ const StyledJumbotron = styled(Jumbotron)`
     text-shadow: black 10px 10px 10px;
 
     .container{
-      background-color: rgba(0, 47, 167, 0.8);
+      background-color: rgba(10, 25, 47, 0.8);
       min-width: 100%;
       min-height: 100%;
     }
@@ -39,7 +38,6 @@ export default function Header() {
     <StyledJumbotron fluid>
       <Container>
         <h1>DANIEL TAYLOR</h1>
-        <Underline />
         <p>Portfolio</p>
       </Container>
     </StyledJumbotron>

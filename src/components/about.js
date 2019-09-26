@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Row, Col, Image } from "react-bootstrap"
-import Underline from "./underline"
 import profileImage from "../images/profileImage.jpg"
 
 const Styles = styled.div`
@@ -34,7 +33,6 @@ export default function about() {
         <Row className="justify-content-md-center" noGutters>
           <Col xs={12}>
             <h1>About Me</h1>
-            <Underline />
             <Image src={profileImage} roundedCircle />
           </Col>
         </Row>

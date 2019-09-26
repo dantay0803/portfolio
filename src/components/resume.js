@@ -1,7 +1,6 @@
 import React from "react"
 import styled from "styled-components"
 import { Row, Col, Tab, ListGroup } from "react-bootstrap"
-import Underline from "./underline"
 import danieltaylorResume from "../files/DanielTaylor_Resume.pdf"
 
 const Styles = styled.div`
@@ -16,6 +15,20 @@ const Styles = styled.div`
     border-bottom: 1px solid var(--portfolio-blue);
     margin-bottom: 5rem;
   }
+
+  .list-group-item,
+  .list-group-item-action {
+    border: none;
+    margin: 5px 0;
+  }
+
+  .list-group-item.list-group-item-action.active {
+    background-color: var(--highlight);
+  }
+
+  .list-group-item.list-group-item-action.active:hover {
+    background-color: var(--hover);
+  }
 `
 
 export default function resume() {
@@ -28,8 +41,8 @@ export default function resume() {
         noGutters
       >
         <Col xs={12}>
-          <h1>Resume</h1>
-          <Underline />
+          <h1 className="sectionHeader">Resume</h1>
+          <hr className="hrTitle" />
           <h5 className="resumeDownload">
             <a
               href={danieltaylorResume}
@@ -41,50 +54,79 @@ export default function resume() {
           </h5>
         </Col>
         <Col xs={8}>
-          <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
+          <Tab.Container id="list-group-tabs" defaultActiveKey="#experience">
             <Row>
-              <Col sm={4}>
+              <Col xs={12} md={4}>
                 <ListGroup>
                   <ListGroup.Item
                     action
-                    href="#link1"
+                    href="#experience"
                     onClick={e => e.preventDefault()}
                   >
                     EXPERIENCE
                   </ListGroup.Item>
                   <ListGroup.Item
                     action
-                    href="#link2"
+                    href="#education"
                     onClick={e => e.preventDefault()}
                   >
                     EDUCATION
                   </ListGroup.Item>
-                  <ListGroup.Item action href="#link3">
+                  <ListGroup.Item
+                    action
+                    href="#skills"
+                    onClick={e => e.preventDefault()}
+                  >
                     SKILLS
                   </ListGroup.Item>
-                  <ListGroup.Item action href="#link4">
+                  <ListGroup.Item
+                    action
+                    href="#awards"
+                    onClick={e => e.preventDefault()}
+                  >
                     AWARDS
                   </ListGroup.Item>
                 </ListGroup>
               </Col>
-              <Col sm={8}>
+              <Col xs={12} md={8}>
                 <Tab.Content>
-                  <Tab.Pane eventKey="#link1">
-                    <p>
-                      Spartan Solutions Ltd (October 2018 - Present) Software
-                      Engineer
-                    </p>
-                    <p>
-                      Solus UK Ltd (August 2016 - October 2018) Unity Developer
-                    </p>
+                  <Tab.Pane eventKey="#experience">
+                    <div>
+                      <h3>
+                        <a
+                          href="https://www.spartansolutions.com/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Spartan Solutions Ltd
+                        </a>
+                      </h3>
+                      <p className="resumeDate">October 2018 - Present</p>
+                      <p>Software Engineer</p>
+                    </div>
+
+                    <div>
+                      <h3>
+                        <a
+                          href="http://www.solus.co.uk/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Solus UK Ltd
+                        </a>
+                      </h3>
+                      <p className="resumeDate">August 2016 - October 2018</p>
+                      <p>Unity Developer</p>
+                    </div>
                   </Tab.Pane>
-                  <Tab.Pane eventKey="#link2">
-                    <p>
-                      University of the West of Scotland (September 2012 - June
-                      2016) BSc. Hons Computer Games Development (First Class)
-                    </p>
+                  <Tab.Pane eventKey="#education">
+                    <div>
+                      <h3>University of the West of Scotland</h3>
+                      <p className="resumeDate">September 2012 - June 2016</p>
+                      <p>BSc. Hons Computer Games Development (First Class)</p>
+                    </div>
                   </Tab.Pane>
-                  <Tab.Pane eventKey="#link3">
+                  <Tab.Pane eventKey="#skills">
                     <ul>
                       <li>C#</li>
                       <li>JavaScript</li>
@@ -97,26 +139,33 @@ export default function resume() {
                       <li>Unity</li>
                     </ul>
                   </Tab.Pane>
-                  <Tab.Pane eventKey="#link4">
-                    <p>
-                      <strong>UWS Court Medal 2015 - 2016</strong> Achieved by
-                      getting the highest academic results in my course across
-                      all four university campuses.
-                    </p>
-                    <p>
-                      <strong>
-                        Best Computer Games Development Project 2016
-                      </strong>{" "}
-                      Awarded whilst attending the Digital Futures showcase at
-                      university and having been voted by students and attendees
-                      as having the best project in this category.
-                    </p>
-                    <p>
-                      <strong>Digital Futures Attendee Choice Award</strong>{" "}
-                      Awarded at the Digital Futures showcase at university for
-                      having one of two most voted projects from all of the
-                      different courses on show at the event.
-                    </p>
+                  <Tab.Pane eventKey="#awards">
+                    <div>
+                      <h3>UWS Court Medal</h3>
+                      <p>
+                        Achieved in my final year of university by getting the
+                        highest academic results in my course across all four
+                        university campuses.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3>Best Computer Games Development Project</h3>
+                      <p>
+                        Awarded whilst attending the Digital Futures showcase at
+                        university and having been voted by students and
+                        attendees as having the best project in this category.
+                      </p>
+                    </div>
+
+                    <div>
+                      <h3>Digital Futures Attendee Choice Award</h3>
+                      <p>
+                        Awarded at the Digital Futures showcase at university
+                        for having one of two most voted projects from all of
+                        the different courses on show at the event.
+                      </p>
+                    </div>
                   </Tab.Pane>
                 </Tab.Content>
               </Col>
