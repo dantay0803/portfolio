@@ -16,7 +16,7 @@ const StyledJumbotron = styled(Jumbotron)`
     text-shadow: black 10px 10px 10px;
 
     .container{
-      background-color: rgba(10, 25, 47, 0.8);
+      background-color: rgba(0, 47, 167, 0.8);
       min-width: 100%;
       min-height: 100%;
     }
@@ -28,9 +28,20 @@ const StyledJumbotron = styled(Jumbotron)`
       color: var(--header-title);
     }
 
-    p{
-      font-size: 2rem;
-    }    
+    h2{
+      font-size: 4rem;
+      margin: 0;
+      color: var(--header-title);
+    }
+    
+    hr{
+      border-color: white;
+      border-width: 5px;
+      max-width: 55%;
+      -moz-box-shadow:    0 5px 0 0 black;
+      -webkit-box-shadow: 0 5px 0 0 black;
+      box-shadow:         0 5px 0 0 black;
+    }
 `
 
 export default function Header() {
@@ -38,7 +49,8 @@ export default function Header() {
     <StyledJumbotron fluid>
       <Container>
         <h1>DANIEL TAYLOR</h1>
-        <p>Portfolio</p>
+        <hr />
+        <h2>Software Developer</h2>
       </Container>
     </StyledJumbotron>
   )

@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { Row, Col } from "react-bootstrap"
+import { Row, Col, CardDeck } from "react-bootstrap"
 import ProjectCard from "./projectCard"
 import thumbnail_phalanx from "../images/thumbnails/thumbnail_phalanx.png"
 import thumbnail_pl from "../images/thumbnails/thumbnail_pl.png"
@@ -11,90 +11,89 @@ import thumbnail_tec from "../images/thumbnails/thumbnail_tec.png"
 import thumbnail_tdn from "../images/thumbnails/thumbnail_tdn.png"
 import thumbnail_wcm from "../images/thumbnails/thumbnail_wcm.png"
 
-import { Link } from "gatsby"
-
 const Styles = styled.div`
   padding: 0;
   margin: 0;
+  margin-top: 3rem;
+  text-align: center;
 `
 export default function projects() {
   return (
     <Styles>
-      <Row key="Projects" id="Projects" noGutters>
-        <Col xs={12} md={3}>
-          <Link to="/project/phalanx" state={{ slug: "phalanx" }}>
-            <ProjectCard
-              thumbnail={thumbnail_phalanx}
-              projectTitle={"PHALANX"}
-              projectDescription={"C#, JavaScript, ASP.Net"}
-            />
-          </Link>
-        </Col>
-        <Col xs={12} md={3}>
-          <Link to="/project/planetlibrary" state={{ slug: "planet-library" }}>
-            <ProjectCard
-              thumbnail={thumbnail_pl}
-              projectTitle={"Planet Library"}
-              projectDescription={"UNITY & C#"}
-            />
-          </Link>
-        </Col>
-        <Col xs={12} md={3}>
-          <Link to="/project/ibdclasses">
-            <ProjectCard
-              thumbnail={thumbnail_ibd}
-              projectTitle={"IBD Classes"}
-              projectDescription={"UNITY & C#"}
-            />
-          </Link>
-        </Col>
-        <Col xs={12} md={3}>
-          <Link to="/project/comicmanager">
-            <ProjectCard
-              thumbnail={thumbnail_comicManager}
-              projectTitle={"Comic Manager"}
-              projectDescription={"JavaScript & Apache Cordova"}
-            />
-          </Link>
-        </Col>
+      <Row
+        key="projects"
+        id="projects"
+        className="justify-content-md-center"
+        noGutters
+      >
+        <Row className="justify-content-md-center" noGutters>
+          <Col xs={12}>
+            <h1>Projects</h1>
+            <hr className="hrTitle" />
+            <p>A collection of some projects I have worked on</p>
+          </Col>
+        </Row>
       </Row>
-      <Row key="Projects" id="Projects" noGutters>
-        <Col xs={12} md={3}>
-          <Link to="/project/clandestineops">
-            <ProjectCard
-              thumbnail={thumbnail_co}
-              projectTitle={"Clandestine Ops"}
-              projectDescription={"UNITY & C#"}
-            />
-          </Link>
-        </Col>
-        <Col xs={12} md={3}>
-          <Link to="/project/theedgeofcivilization">
-            <ProjectCard
-              thumbnail={thumbnail_tec}
-              projectTitle={"The Edge of Civilization"}
-              projectDescription={"Unreal Engine 4"}
-            />
-          </Link>
-        </Col>
-        <Col xs={12} md={3}>
-          <Link to="/project/thedeadofnight">
-            <ProjectCard
-              thumbnail={thumbnail_tdn}
-              projectTitle={"The Dead of Night"}
-              projectDescription={"JavaScript & Phaser.io"}
-            />
-          </Link>
-        </Col>
-        <Col xs={12} md={3}>
-          <Link to="/project/worldcupmanager">
-            <ProjectCard
-              thumbnail={thumbnail_wcm}
-              projectTitle={"World Cup Manager"}
-              projectDescription={"Java"}
-            />
-          </Link>
-        </Col>
+      <Row noGutters className="justify-content-md-center">
+        <CardDeck>
+          <ProjectCard
+            thumbnail={thumbnail_phalanx}
+            projectTitle={"PHALANX"}
+            projectDescription={"C#, JavaScript, ASP.Net"}
+            projectPath={"phalanx"}
+          />
+          <ProjectCard
+            thumbnail={thumbnail_pl}
+            projectTitle={"Planet Library"}
+            projectDescription={"UNITY & C#"}
+            projectPath={"planet-library"}
+          />
+          <ProjectCard
+            thumbnail={thumbnail_ibd}
+            projectTitle={"IBD Classes"}
+            projectDescription={"UNITY & C#"}
+            projectPath={"ibd-classes"}
+          />
+          <ProjectCard
+            thumbnail={thumbnail_comicManager}
+            projectTitle={"Comic Manager"}
+            projectDescription={"JavaScript & Cordova"}
+            projectPath={"comic-manager"}
+          />
+        </CardDeck>
+      </Row>
+      <Row
+        key="Projects"
+        id="Projects"
+        noGutters
+        className="justify-content-md-center"
+      >
+        <CardDeck>
+          <ProjectCard
+            thumbnail={thumbnail_co}
+            projectTitle={"Clandestine Ops"}
+            projectDescription={"UNITY & C#"}
+            projectPath={"clandestine-ops"}
+          />
+          <ProjectCard
+            thumbnail={thumbnail_tec}
+            projectTitle={"The Edge of Civilization"}
+            projectDescription={"Unreal Engine 4"}
+            projectPath={"the-edge-of-civilization"}
+          />
+          <ProjectCard
+            thumbnail={thumbnail_tdn}
+            projectTitle={"The Dead of Night"}
+            projectDescription={"JavaScript & Phaser.io"}
+            projectPath={"the-dead-of-night"}
+          />
+          <ProjectCard
+            thumbnail={thumbnail_wcm}
+            projectTitle={"World Cup Manager"}
+            projectDescription={"Java"}
+            projectPath={"world-cup-manager"}
+          />
+        </CardDeck>
       </Row>
     </Styles>
   )

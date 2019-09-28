@@ -43,11 +43,12 @@ export default function contact() {
         <Row className="justify-content-md-center" noGutters>
           <Col xs={12}>
             <h1>Get in Touch</h1>
+            <hr className="hrTitle" />
             <p>
-              Looking to contact me about a position, opportunity or something
-              else?
-            </p>{" "}
-            <p>Great, just use any of the links below to get in touch.</p>
+              Looking to speak with me about something or just want to stay up
+              to date with my work?
+            </p>
+            <p>Just follow the links below</p>
             <Row>
               <Col xs={12} md={3}>
                 <a

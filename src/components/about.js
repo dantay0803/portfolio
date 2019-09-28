@@ -6,13 +6,14 @@ import profileImage from "../images/profileImage.jpg"
 const Styles = styled.div`
   padding: 0;
   margin: 0;
-  margin-bottom: 5rem;
 
   img {
-    width: 250px;
-    height: 250px;
+    max-width: 55%;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-left: 5rem;
+    -moz-box-shadow: 5px 10px 10px black;
+    -webkit-box-shadow: 5px 10px 10px black;
+    box-shadow: 5px 10px 10px black;
   }
 
   ul {
@@ -33,10 +34,10 @@ export default function about() {
         <Row className="justify-content-md-center" noGutters>
           <Col xs={12}>
             <h1>About Me</h1>
-            <Image src={profileImage} roundedCircle />
+            <hr className="hrTitle" />
           </Col>
         </Row>
-        <Row noGutters>
+        <Row className="justify-content-md-center" noGutters>
           <Col xs={12} md={{ span: 4, offset: 2 }}>
             <p>
               Since graduating from the University of the West of Scotland two
@@ -56,56 +57,7 @@ export default function about() {
             </p>
           </Col>
           <Col xs={12} md={4}>
-            <p>
-              Check out some of my thoughts and opinions at the links below.
-            </p>
-            <ul>
-              <li>
-                <a
-                  href="http://calmdowntom.com/2013/09/game-sales-yay-or-nay/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Game Sales... Yay or Nay?
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://calmdowntom.com/2013/10/top-15-metal-gear-solid-moments/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Top 15 Metal Gear Solid Moments
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://calmdowntom.com/2013/12/daniel-taylors-top-5-games-of-2013/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Daniel Taylor's Top 5 Games of 2013
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://calmdowntom.com/2013/12/calmdowntoms-goty-awards-2013/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  CalmDownTom’s GOTY Awards 2013
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://calmdowntom.com/2014/02/the-best-games-of-last-gen-bioshock/#comments"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  The Best Games of Last Gen: Bioshock
-                </a>
-              </li>
-            </ul>
+            <Image src={profileImage} thumbnail />
           </Col>
         </Row>
       </Row>

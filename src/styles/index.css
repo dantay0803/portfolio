@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat|Muli:900&display=swap");
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 
 :root {
   --highlight: #002fa7;
@@ -64,6 +65,24 @@ a:hover:before {
   color: var(--hover);
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding-left: 1.3em;
+}
+
+li:before {
+  content: "\f0da";
+  /* content: "\f105"; */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+
 .hrPageBreak {
   background-image: linear-gradient(
     90deg,
@@ -75,6 +94,8 @@ a:hover:before {
   height: 1px;
   max-width: 90%;
   text-align: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
 }
 
 .hrTitle {
@@ -92,4 +113,8 @@ a:hover:before {
   color: var(--muted);
   font-size: 0.8rem;
   margin-bottom: 5px;
+}
+
+.underline {
+  text-decoration: underline;
 }

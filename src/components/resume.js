@@ -4,8 +4,6 @@ import { Row, Col, Tab, ListGroup } from "react-bootstrap"
 import danieltaylorResume from "../files/DanielTaylor_Resume.pdf"
 
 const Styles = styled.div`
-  padding-bottom: 5rem;
-
   .resumeDownload {
     text-align: center;
     margin-bottom: 4rem;
@@ -102,7 +100,18 @@ export default function resume() {
                         </a>
                       </h3>
                       <p className="resumeDate">October 2018 - Present</p>
-                      <p>Software Engineer</p>
+                      <p className="underline">Software Engineer</p>
+                      <p>
+                        In my role I am responsible for a number of tasks
+                        including development, testing and support. Some of my
+                        main duties include creating, implementing and improving
+                        features in PHALANX, Spartans flagship operations
+                        application. As well as creating requested custom
+                        features and updating existing features based on our
+                        customers needs. I have also had the opportunity to work
+                        on an unreleased project primarily using C#, ReactJS and
+                        Redux.
+                      </p>
                     </div>
 
                     <div>
@@ -116,7 +125,25 @@ export default function resume() {
                         </a>
                       </h3>
                       <p className="resumeDate">August 2016 - October 2018</p>
-                      <p>Unity Developer</p>
+                      <p className="underline">Unity Developer</p>
+                      <p>
+                        When I started my role at Solus I was placed in charge
+                        of a number of existing mobile applications to fix bugs,
+                        implement and improve features and games and work on
+                        optimising these applications. Later I was placed in a
+                        lead role in developing the company's new children's
+                        library application to deliver a more feature rich
+                        experience to libraries and their patrons.
+                      </p>
+
+                      <p>
+                        In my time there, I worked on improving the organization
+                        and development process between different departments. I
+                        was also involved in taking part in regular development
+                        meetings with our reseller based in the US, as well as
+                        interacting with customers during the pilot phase of the
+                        applications launch in the US.
+                      </p>
                     </div>
                   </Tab.Pane>
                   <Tab.Pane eventKey="#education">
@@ -127,17 +154,29 @@ export default function resume() {
                     </div>
                   </Tab.Pane>
                   <Tab.Pane eventKey="#skills">
-                    <ul>
-                      <li>C#</li>
-                      <li>JavaScript</li>
-                      <li>React</li>
-                      <li>Redux</li>
-                      <li>HTML/CSS</li>
-                      <li>Bootstrap</li>
-                      <li>jQuery</li>
-                      <li>Underscore.js</li>
-                      <li>Unity</li>
-                    </ul>
+                    <p>
+                      Here's a few technologies I've been working with recently:
+                    </p>
+
+                    <Row>
+                      <Col xs={4}>
+                        <ul>
+                          <li>C#</li>
+                          <li>JavaScript</li>
+                          <li>React/React Native</li>
+                          <li>Redux</li>
+                        </ul>
+                      </Col>
+
+                      <Col xs={{ span: 4, offset: 1 }}>
+                        <ul>
+                          <li>HTML/CSS</li>
+                          <li>Bootstrap</li>
+                          <li>jQuery</li>
+                          <li>Unity</li>
+                        </ul>
+                      </Col>
+                    </Row>
                   </Tab.Pane>
                   <Tab.Pane eventKey="#awards">
                     <div>
