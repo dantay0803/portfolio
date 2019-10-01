@@ -50,7 +50,7 @@ export default function Header() {
       <Container>
         <h1>DANIEL TAYLOR</h1>
         <hr />
-        <h2>Software Developer</h2>
+        <h2>Software Engineer</h2>
       </Container>
     </StyledJumbotron>
   )

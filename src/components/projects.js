@@ -5,10 +5,10 @@ import ProjectCard from "./projectCard"
 import thumbnail_phalanx from "../images/thumbnails/thumbnail_phalanx.png"
 import thumbnail_pl from "../images/thumbnails/thumbnail_pl.png"
 import thumbnail_ibd from "../images/thumbnails/thumbnail_ibd.png"
+import thumbnail_whatToWatch from "../images/thumbnails/thumbnail_wtw.png"
 import thumbnail_comicManager from "../images/thumbnails/thumbnail_comicManager.jpg"
 import thumbnail_co from "../images/thumbnails/thumbnail_co.png"
 import thumbnail_tec from "../images/thumbnails/thumbnail_tec.png"
-import thumbnail_tdn from "../images/thumbnails/thumbnail_tdn.png"
 import thumbnail_wcm from "../images/thumbnails/thumbnail_wcm.png"
 
 const Styles = styled.div`
@@ -55,20 +55,21 @@ export default function projects() {
             projectPath={"ibd-classes"}
           />
           <ProjectCard
+            thumbnail={thumbnail_whatToWatch}
+            projectTitle={"What to Watch"}
+            projectDescription={"JavaScript & React"}
+            projectPath={"what-to-watch"}
+          />
+        </CardDeck>
+      </Row>
+      <Row noGutters className="justify-content-md-center">
+        <CardDeck>
+          <ProjectCard
             thumbnail={thumbnail_comicManager}
             projectTitle={"Comic Manager"}
             projectDescription={"JavaScript & Cordova"}
             projectPath={"comic-manager"}
           />
-        </CardDeck>
-      </Row>
-      <Row
-        key="Projects"
-        id="Projects"
-        noGutters
-        className="justify-content-md-center"
-      >
-        <CardDeck>
           <ProjectCard
             thumbnail={thumbnail_co}
             projectTitle={"Clandestine Ops"}
@@ -80,12 +81,6 @@ export default function projects() {
             projectTitle={"The Edge of Civilization"}
             projectDescription={"Unreal Engine 4"}
             projectPath={"the-edge-of-civilization"}
-          />
-          <ProjectCard
-            thumbnail={thumbnail_tdn}
-            projectTitle={"The Dead of Night"}
-            projectDescription={"JavaScript & Phaser.io"}
-            projectPath={"the-dead-of-night"}
           />
           <ProjectCard
             thumbnail={thumbnail_wcm}

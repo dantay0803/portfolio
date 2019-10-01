@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Card, Button } from "react-bootstrap"
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 
 const Styles = styled.div`
   text-align: left;
@@ -15,6 +15,8 @@ const Styles = styled.div`
     transform: scale(1, 1);
     -webkit-transition: all 0.3s ease-in-out 0s;
     transition: all 0.3s ease-in-out 0s;
+    width: 15rem;
+    height: 20rem;
   }
 
   .card:hover {
@@ -24,6 +26,11 @@ const Styles = styled.div`
 
   .card-text {
     font-size: 0.8rem;
+  }
+
+  .card-footer {
+    background: none;
+    border: none;
   }
 
   .btn,
@@ -38,25 +45,45 @@ const Styles = styled.div`
 export default function projectCard(props) {
   const { thumbnail, projectTitle, projectDescription, projectPath } = props
 
-  const viewProject = path => {
-    navigate(`/projects/${path}`)
-  }
-
   return (
     <Styles>
-      <Card style={{ width: "20rem" }}>
-        <Card.Img variant="top" src={thumbnail} />
+      <Card>
+        <Card.Img
+          variant="top"
+          src={thumbnail}
+          alt={`Thumbnail for ${{ projectTitle }}`}
+        />
         <Card.Body>
           <Card.Title>
             <h6>
-              <Link to={`/projects/${projectPath}`}>{projectTitle}</Link>
+              <Link
+                to={`/projects/${projectPath}/`}
+                state={{
+                  modal: true,
+                  noScroll: true,
+                  replace: false,
+                }}
+                className="noUnderline"
+              >
+                {projectTitle}
+              </Link>
             </h6>
           </Card.Title>
           <Card.Text>
             Built with: <strong>{projectDescription}</strong>
           </Card.Text>
-          <Button onClick={() => viewProject(projectPath)}>More Details</Button>
         </Card.Body>
+        <Card.Footer>
+          <Link
+            to={`/projects/${projectPath}/`}
+            state={{
+              modal: true,
+            }}
+            className="noUnderline"
+          >
+            <Button>More Details</Button>
+          </Link>
+        </Card.Footer>
       </Card>
     </Styles>
   )

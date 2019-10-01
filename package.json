@@ -12,6 +12,7 @@
     "gatsby": "^2.15.20",
     "gatsby-image": "^2.2.20",
     "gatsby-plugin-manifest": "^2.2.18",
+    "gatsby-plugin-modal-routing": "^1.0.2",
     "gatsby-plugin-offline": "^3.0.8",
     "gatsby-plugin-react-helmet": "^3.1.8",
     "gatsby-plugin-sharp": "^2.2.25",
@@ -23,6 +24,7 @@
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
+    "react-scroll": "^1.7.14",
     "styled-components": "^4.3.2"
   },
   "devDependencies": {

@@ -38,26 +38,24 @@ export default function about() {
           </Col>
         </Row>
         <Row className="justify-content-md-center" noGutters>
-          <Col xs={12} md={{ span: 4, offset: 2 }}>
+          <Col xs={12} md={{ span: 3, offset: 2 }}>
             <p>
-              Since graduating from the University of the West of Scotland two
-              years ago where I obtained a BSc with First Class Honours in
-              Computer Games Development, I have been working as a Unity
-              developer. My current role has seen me work on a number of
-              existing and new mobile applications, where I have been
-              responsible for both the design and development of these
-              applications.
+              Hello, I’m Daniel Taylor a software engineer based in Scotland. I
+              enjoy creating things for desktop, mobile and the web using
+              technologies like C#, JavaScript and React. I Graduated from the
+              University of the West of Scotland a few years ago with a BSc.
+              Honours in Computer Games Development.
             </p>
+
             <p>
-              In my spare time I enjoy creating my own games and applications,
-              which has seen me release a small number of games on the Google
-              Play store and Amazon App Store. I also enjoy taking part in game
-              jams and following along with various online courses/tutorials to
-              help boost my skills and knowledge.
+              Shortly after graduating from university, I started my
+              professional career working as a Unity developer for two years.
+              Before switching things up and working as a fullstack developer
+              over the third year of my career.
             </p>
           </Col>
           <Col xs={12} md={4}>
-            <Image src={profileImage} thumbnail />
+            <Image src={profileImage} thumbnail alt="My profile picture" />
           </Col>
         </Row>
       </Row>
