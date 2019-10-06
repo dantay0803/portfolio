@@ -5,12 +5,11 @@ module.exports = {
     author: `Daniel Taylor @dantay0803`,
   },
   plugins: [
-    `gatsby-plugin-modal-routing`,
     {
       resolve: "gatsby-source-graphql",
       options: {
         typeName: "WordPress",
-        fieldName: "wordPress",
+        fieldName: "wpgraphql",
         url: "https://danielt.co.uk/blog/graphql",
         refetchInterval: 60,
       },
