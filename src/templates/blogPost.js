@@ -1,12 +1,12 @@
-import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
-import styled from "styled-components"
-import "../styles/bootstrap-4.3.1.min.css"
-import "../styles/index.css"
-import SEO from "../components/seo"
-import Navbar from "../components/navbar"
-import { graphql } from "gatsby"
-import dompurify from "dompurify"
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
+import '../styles/bootstrap-4.3.1.min.css';
+import '../styles/index.css';
+import SEO from '../components/seo';
+import Navbar from '../components/navbars/navbarBlog';
+import { graphql } from 'gatsby';
+import dompurify from 'dompurify';
 
 const StyledContainer = styled(Container)`
   margin-top: 4rem;
@@ -33,7 +33,7 @@ const StyledContainer = styled(Container)`
   figcaption: hover {
     opacity: 1;
   }
-`
+`;
 
 export const query = graphql`
   query($slug: String!) {
@@ -48,50 +48,65 @@ export const query = graphql`
           sourceUrl
         }
       }
+      posts {
+        edges {
+          node {
+            date
+            slug
+            featuredImage {
+              altText
+              sourceUrl
+            }
+            excerpt
+            title
+          }
+        }
+      }
     }
   }
-`
+`;
 
 const blogPost = props => {
-  console.log(props.data.wpgraphql.postBy)
   const {
     content,
     date,
     featuredImage,
     title,
-    uri,
-  } = props.data.wpgraphql.postBy
-  const sanitizer = dompurify.sanitize
-  const postDate = new Date(date)
+    uri
+  } = props.data.wpgraphql.postBy;
+  const sanitizer = dompurify.sanitize;
+  const postDate = new Date(date);
+  const posts = props.data.wpgraphql.posts;
+
+  console.log(props);
 
   return (
     <>
-      <SEO title="Home" />
-      <Navbar backgroundcolor={"var(--highlight)"} />
+      <SEO title='Home' />
+      <Navbar backgroundcolor={'var(--highlight)'} posts={posts} />
       <StyledContainer fluid>
         <Row>
-          <Col xs="12" md={{ span: 6, offset: 3 }}>
+          <Col xs='12' md={{ span: 8, offset: 2 }}>
             <h1>{sanitizer(title)}</h1>
-            <h6 className="mutedText">
+            <h6 className='mutedText'>
               {postDate
                 .toUTCString()
-                .split(" ")
+                .split(' ')
                 .slice(0, 4)
-                .join(" ")}
+                .join(' ')}
             </h6>
-            <hr className="hrPageBreak" />
+            <hr className='hrPageBreak' />
           </Col>
         </Row>
         <Row noGutters>
           <Col
-            xs="12"
-            md={{ span: 6, offset: 3 }}
-            dangerouslySetInnerHTML={{ __html: sanitizer(content) }}
-          ></Col>
+            xs='12'
+            md={{ span: 8, offset: 2 }}
+            dangerouslySetInnerHTML={{ __html: sanitizer(content) }}></Col>
         </Row>
       </StyledContainer>
     </>
-  )
-}
+  );
+};
 
-export default blogPost
+export default blogPost;

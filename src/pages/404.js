@@ -5,7 +5,7 @@ import styled from "styled-components"
 import "../styles/bootstrap-4.3.1.min.css"
 import "../styles/index.css"
 import SEO from "../components/seo"
-import Navbar from "../components/navbar"
+import Navbar from "../components/navbars/navbar"
 
 const StyledContainer = styled(Container)`
   padding: 0;
