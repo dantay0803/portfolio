@@ -11,6 +11,10 @@ const StyledNavbar = styled(Navbar)`
   -ms-transition: background 1s;
   -o-transition: background 1s;
   transition: background 1s;
+
+  @media (max-width:641px) {
+    background-color: var(--highlight);
+  }
 `;
 
 const Styles = styled.div`
@@ -94,7 +98,7 @@ export default function navbar(props) {
         expand='lg'
         fixed='top'
         backgroundcolor={props.backgroundcolor}>
-        <Link to={`/`}>
+        <Link to={`/`} className="noUnderline">
           <Navbar.Brand>Daniel Taylor</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -104,7 +108,7 @@ export default function navbar(props) {
               title='Latest Posts'
               id='latest-blog-posts'
               className='fill-width'>
-              {props.posts.edges.map(post => (
+              {props.posts.edges.slice(0, 6).map(post => (
                 <NavDropdown.Item key={post.node.slug}>
                   <Link to={`/blog/${post.node.slug}/`}>
                     {sanitizer(post.node.title)}

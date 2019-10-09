@@ -17,21 +17,26 @@ const StyledContainer = styled(Container)`
 
 const TheEdgeofCivilization = () => (
   <>
-    <SEO title="TheEdgeofCivilization" />
+    <SEO title='The Edge of Civilization'
+      description={'Information on my portfolio project The Edge of Civilization'}
+      pathname={'/projects/the-edge-of-civilization'}
+    />
     <StyledContainer fluid>
       <Row noGutters>
-        <Col xs={{ span: 8, offset: 2 }}>
-          <h1 className="center">The Edge of Civilization</h1>
-          <hr className="hrTitle" />
-        </Col>
-        <Col xs={{ span: 2, offset: 0 }}>
-          <Link to={"/"} className="noUnderline">
+        <Col xs={{ span: 1, offset: 11 }}>
+          <Link to={"/#projects"} className="noUnderline">
             <FontAwesomeIcon icon={faWindowClose} size="1x" />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 8, offset: 2 }}>
+          <h1 className="center">The Edge of Civilization</h1>
+          <hr className="hrTitle" />
+        </Col>
+      </Row>
+      <Row noGutters>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             The Edge of Civilization is a First Person survival game created in
             the Unreal 4 Engine as part of my 3D Level Design Class at
@@ -39,12 +44,11 @@ const TheEdgeofCivilization = () => (
           </p>
           <iframe
             title="The Edge of Civilization Gameplay Video"
-            width="560"
-            height="315"
             src="https://www.youtube.com/embed/56GOOdiHXV8"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
+            className="embeddedVideo"
           ></iframe>
           <p>
             The class involved us working in teams of two to design and create a
@@ -72,10 +76,9 @@ const TheEdgeofCivilization = () => (
           </p>
           <iframe
             title="The Edge of Civilization Download Link"
-            frameborder="0"
+            frameBorder="0"
             src="https://itch.io/embed/66495?border_width=2"
-            width="554"
-            height="169"
+            className="itchLink"
           ></iframe>
           <p>
             I also decided to add in level streaming to the game so that the

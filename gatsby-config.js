@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Daniel Taylor - Portfolio`,
-    description: `Personal portfolio website for Daniel Taylor.`,
-    author: `Daniel Taylor @dantay0803`,
+    title: "Daniel Taylor - Portfolio",
+    titleTemplate: "%s - Daniel Taylor",
+    description:
+      "Personal portfolio website for Daniel Taylor software engineer.",
+    url: "https://www.danielt.co.uk",
+    image: "/images/header.jpg", // needs updated
+    twitterUsername: "@dantay0803",
   },
   plugins: [
     {

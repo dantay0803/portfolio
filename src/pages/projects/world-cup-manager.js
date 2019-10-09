@@ -28,21 +28,26 @@ const StyledContainer = styled(Container)`
 
 const WorldCupManager = () => (
   <>
-    <SEO title="WorldCupManager" />
+    <SEO title='World Cup Manager'
+      description={'Information on my portfolio project World Cup Manager'}
+      pathname={'/projects/world-cup-manager'}
+    />
     <StyledContainer fluid>
       <Row noGutters>
-        <Col xs="12" md={{ span: 8, offset: 2 }}>
-          <h1>World Cup Manager</h1>
-          <hr className="hrTitle" />
-        </Col>
-        <Col xs={{ span: 2, offset: 0 }}>
-          <Link to={"/"} className="noUnderline">
+        <Col xs={{ span: 1, offset: 11 }}>
+          <Link to={"/#projects"} className="noUnderline">
             <FontAwesomeIcon icon={faWindowClose} size="1x" />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 8, offset: 2 }}>
+          <h1>World Cup Manager</h1>
+          <hr className="hrTitle" />
+        </Col>
+      </Row>
+      <Row noGutters>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             World Cup manager was created as part of a three man team for our
             computer project class, our brief was to create a piece of software
@@ -72,7 +77,7 @@ const WorldCupManager = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             The application displays the matches to be played in the tournament
             and then takes in user input of score from each game. Once the
@@ -108,7 +113,7 @@ const WorldCupManager = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             My role is the team was to get resources, compile minutes of
             meetings and help with half of the documentation; my main task was

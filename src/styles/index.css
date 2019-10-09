@@ -150,3 +150,35 @@ li:before {
   bottom: 0;
   left: 0;
 }
+
+.embeddedVideo{
+  width: 560px;
+  height: 315px;
+}
+
+.itchLink{
+  width: 552px;
+  height: 167px;
+}
+
+@media (max-width:641px) {
+  .embeddedVideo{
+    width: 400px;
+    height: 215px;
+  }
+
+  .itchLink{
+    width: 400px;
+  }
+}
+
+@media (max-width:411px) {
+  .embeddedVideo{
+    width: 350px;
+    height: 175px;
+  }
+
+  .itchLink{
+    width: 350px;
+  }
+}

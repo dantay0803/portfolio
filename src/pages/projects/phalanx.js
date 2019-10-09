@@ -28,21 +28,26 @@ const StyledContainer = styled(Container)`
 `
 const Phalanx = () => (
   <>
-    <SEO title="Phalanx" />
+    <SEO title='Phalanx'
+      description={'Information on my portfolio project Phalanx'}
+      pathname={'/projects/phalanx'}
+    />
     <StyledContainer fluid>
       <Row noGutters>
-        <Col xs="12" md={{ span: 8, offset: 2 }}>
-          <h1 className="center">PHALANX</h1>
-          <hr className="hrTitle" />
-        </Col>
-        <Col xs={{ span: 2, offset: 0 }}>
-          <Link to={"/"} className="noUnderline">
+        <Col xs={{ span: 1, offset: 11 }}>
+          <Link to={"/#projects"} className="noUnderline">
             <FontAwesomeIcon icon={faWindowClose} size="1x" />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 8, offset: 2 }}>
+          <h1 className="center">PHALANX</h1>
+          <hr className="hrTitle" />
+        </Col>
+      </Row>
+      <Row noGutters>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             PHALANX is an integrated operations software application that
             combines RFID/barcode technology, operational mobility with the use
@@ -114,7 +119,7 @@ const Phalanx = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             Whilst working on this project I have used various programming
             languages such as C#, JavaScript and SQL. Along side frameworks such

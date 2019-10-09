@@ -12,6 +12,7 @@ import dompurify from 'dompurify';
 const StyledContainer = styled(Container)`
   padding: 0;
   margin: 0;
+  margin-top: 1rem;
 `;
 
 const StyledCard = styled(Card)`
@@ -46,8 +47,6 @@ const BlogHome = props => {
   const sanitizer = dompurify.sanitize;
   const posts = props.data.wpgraphql.posts;
 
-  console.log(posts);
-
   const updateNavbar = () => {
     if (window.pageYOffset > 250) {
       setNavBackgroundColor('var(--highlight)');
@@ -65,7 +64,10 @@ const BlogHome = props => {
 
   return (
     <>
-      <SEO title='Home' />
+      <SEO title='Blog'
+        description={'The personal bog of Daniel Taylor software engineer that covers various software development, career and personal topics'}
+        pathname={'/blog/'}
+      />
       <Navbar backgroundcolor={navBackgroundColor} posts={posts} />
       <HeaderBlog />
       <StyledContainer fluid>
@@ -80,9 +82,10 @@ const BlogHome = props => {
                       post.node.featuredImage.sourceUrl ||
                       `https://via.placeholder.com/185x278?text=Image+not+available`
                     }
+                    alt={post.node.featuredImage.altText}
                   />
                   <Card.Body>
-                    <Link to={`blog/${post.node.slug}`}>
+                    <Link to={`/blog/${post.node.slug}/`}>
                       <Card.Title>{sanitizer(post.node.title)}</Card.Title>
                     </Link>
                     <Card.Text

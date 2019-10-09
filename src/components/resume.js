@@ -51,10 +51,10 @@ export default function resume() {
             </a>
           </h5>
         </Col>
-        <Col xs={8}>
+        <Col xs={12}>
           <Tab.Container id="list-group-tabs" defaultActiveKey="#experience">
-            <Row>
-              <Col xs={12} md={4}>
+            <Row noGutters>
+              <Col xs={{ span: 10, offset: 1 }} md={{ span: 2, offset: 2 }}>
                 <ListGroup>
                   <ListGroup.Item
                     action
@@ -86,7 +86,7 @@ export default function resume() {
                   </ListGroup.Item>
                 </ListGroup>
               </Col>
-              <Col xs={12} md={8}>
+              <Col xs={{ span: 10, offset: 1 }} md={6}>
                 <Tab.Content>
                   <Tab.Pane eventKey="#experience">
                     <div>
@@ -159,7 +159,7 @@ export default function resume() {
                     </p>
 
                     <Row>
-                      <Col xs={4}>
+                      <Col xs={6} md={4}>
                         <ul>
                           <li>C#</li>
                           <li>JavaScript</li>
@@ -168,7 +168,7 @@ export default function resume() {
                         </ul>
                       </Col>
 
-                      <Col xs={{ span: 4, offset: 1 }}>
+                      <Col xs={{ span: 6, offset: 0 }} md={{ span: 4, offset: 2 }}>
                         <ul>
                           <li>HTML/CSS</li>
                           <li>Bootstrap</li>

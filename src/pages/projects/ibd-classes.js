@@ -27,21 +27,26 @@ const StyledContainer = styled(Container)`
 
 const IBDClasses = () => (
   <>
-    <SEO title="IBDClasses" />
+    <SEO title='IBD Classes'
+      description={'Information on my portfolio project IBD Classes'}
+      pathname={'/projects/ibd-classes'}
+    />
     <StyledContainer fluid>
       <Row noGutters>
-        <Col xs={{ span: 8, offset: 2 }}>
-          <h1 className="center">IBD Classes</h1>
-          <hr className="hrTitle" />
-        </Col>
-        <Col xs={{ span: 2, offset: 0 }}>
-          <Link to={"/"} className="noUnderline">
+        <Col xs={{ span: 1, offset: 11 }}>
+          <Link to={"/#projects"} className="noUnderline">
             <FontAwesomeIcon icon={faWindowClose} size="1x" />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 8, offset: 2 }}>
+          <h1 className="center">IBD Classes</h1>
+          <hr className="hrTitle" />
+        </Col>
+      </Row>
+      <Row noGutters>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             The IBD Classes app was developed on behalf of the Catherine McEwan
             Foundation to assist clinicians in diagnosis paediatric inflammatory
@@ -78,7 +83,7 @@ const IBDClasses = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>My role on the development team was to:</p>
           <ul>
             <li>Design the user interface and experience of the app</li>

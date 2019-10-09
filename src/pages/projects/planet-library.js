@@ -20,21 +20,26 @@ const StyledContainer = styled(Container)`
 
 const PlanetLibraryPage = () => (
   <>
-    <SEO title="PlanetLibrary" />
+    <SEO title='Planet Library'
+      description={'Information on my portfolio project PlanetLibrary'}
+      pathname={'/projects/planet-library'}
+    />
     <StyledContainer fluid>
       <Row noGutters>
-        <Col xs="12" md={{ span: 8, offset: 2 }}>
-          <h1 className="center">Planet Library</h1>
-          <hr className="hrTitle" />
-        </Col>
-        <Col xs="12" md={{ span: 2, offset: 0 }}>
-          <Link to={"/"} className="noUnderline">
+        <Col xs={{ span: 1, offset: 11 }}>
+          <Link to={"/#projects"} className="noUnderline">
             <FontAwesomeIcon icon={faWindowClose} size="1x" />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 8, offset: 2 }}>
+          <h1 className="center">Planet Library</h1>
+          <hr className="hrTitle" />
+        </Col>
+      </Row>
+      <Row noGutters>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             Planet Library has been my main responsibility since working at
             Solus UK Ltd. The application was developed as a child specific
@@ -59,7 +64,7 @@ const PlanetLibraryPage = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>My role on the development team was to:</p>
           <ul>
             <li>Design and implement features.</li>

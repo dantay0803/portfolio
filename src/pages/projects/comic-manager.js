@@ -28,21 +28,26 @@ const StyledContainer = styled(Container)`
 `
 const ComicManager = () => (
   <>
-    <SEO title="ComicManager" />
+    <SEO title='Comic Manager'
+      description={'Information on my portfolio project Comic Manager'}
+      pathname={'/projects/comic-manager'}
+    />
     <StyledContainer fluid>
       <Row noGutters>
-        <Col xs="12" md={{ span: 8, offset: 2 }}>
-          <h1 className="center">Comic Manager</h1>
-          <hr className="hrTitle" />
-        </Col>
-        <Col xs={{ span: 2, offset: 0 }}>
-          <Link to={"/"} className="noUnderline">
+        <Col xs={{ span: 1, offset: 11 }}>
+          <Link to={"/#projects"} className="noUnderline">
             <FontAwesomeIcon icon={faWindowClose} size="1x" />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 8, offset: 2 }}>
+          <h1 className="center">Comic Manager</h1>
+          <hr className="hrTitle" />
+        </Col>
+      </Row>
+      <Row noGutters>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             This is a mobile application that I have been creating in my spare
             time to help me keep track of which storage box my various comic
@@ -87,7 +92,7 @@ const ComicManager = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             The application allows the user to scan the barcode of their
             selected comic, performs a number of searches against the Google
@@ -125,7 +130,7 @@ const ComicManager = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             All of the comics saved by the user are added to a list view and
             saved in a database. The list view items allow the user to select

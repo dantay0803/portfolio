@@ -27,7 +27,7 @@ export default function projects() {
         noGutters
       >
         <Row className="justify-content-md-center" noGutters>
-          <Col xs={12}>
+          <Col xs={{ span: 10, offset: 1 }}>
             <h1>Projects</h1>
             <hr className="hrTitle" />
             <p>A collection of some projects I have worked on</p>

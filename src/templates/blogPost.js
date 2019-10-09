@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 import styled from 'styled-components';
 import '../styles/bootstrap-4.3.1.min.css';
 import '../styles/index.css';
@@ -33,13 +33,25 @@ const StyledContainer = styled(Container)`
   figcaption: hover {
     opacity: 1;
   }
+
+  img{
+    max-width: 100%;
+  }
+  
+`;
+
+const JumbotronFeaturedImage = styled(Jumbotron)`
+  background-image: url(${props => props.featuredimage});
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 20rem;
 `;
 
 export const query = graphql`
   query($slug: String!) {
     wpgraphql {
       postBy(slug: $slug) {
-        uri
         title
         date
         content(format: RENDERED)
@@ -71,22 +83,31 @@ const blogPost = props => {
     content,
     date,
     featuredImage,
-    title,
-    uri
+    title
   } = props.data.wpgraphql.postBy;
   const sanitizer = dompurify.sanitize;
   const postDate = new Date(date);
   const posts = props.data.wpgraphql.posts;
 
-  console.log(props);
-
   return (
     <>
-      <SEO title='Home' />
+      <SEO title={sanitizer(title)}
+        description={`A blog post covering ${sanitizer(title)}`}
+        pathname={`/blog/${props.pageContext.slug}`}
+      />
       <Navbar backgroundcolor={'var(--highlight)'} posts={posts} />
       <StyledContainer fluid>
         <Row>
           <Col xs='12' md={{ span: 8, offset: 2 }}>
+            <JumbotronFeaturedImage fluid featuredimage={featuredImage.sourceUrl}>
+            </JumbotronFeaturedImage>
+          </Col>
+        </Row>
+        <Row noGutters>
+          <Col
+            xs='12'
+            md={{ span: 6, offset: 3 }}
+          >
             <h1>{sanitizer(title)}</h1>
             <h6 className='mutedText'>
               {postDate
@@ -100,8 +121,8 @@ const blogPost = props => {
         </Row>
         <Row noGutters>
           <Col
-            xs='12'
-            md={{ span: 8, offset: 2 }}
+            xs={12}
+            md={{ span: 6, offset: 3 }}
             dangerouslySetInnerHTML={{ __html: sanitizer(content) }}></Col>
         </Row>
       </StyledContainer>

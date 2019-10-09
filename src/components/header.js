@@ -42,6 +42,16 @@ const StyledJumbotron = styled(Jumbotron)`
       -webkit-box-shadow: 0 5px 0 0 black;
       box-shadow:         0 5px 0 0 black;
     }
+
+    @media (max-width:641px) {
+      h1{
+        font-size: 5rem;
+      }
+  
+      h2{
+        font-size: 2rem;
+      }
+    }
 `
 
 export default function Header() {

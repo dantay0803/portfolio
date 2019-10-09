@@ -10,6 +10,10 @@ const StyledNavbar = styled(Navbar)`
   -ms-transition: background 1s;
   -o-transition: background 1s;
   transition: background 1s;
+
+  @media (max-width:641px) {
+    background-color: var(--highlight);
+  }
 `
 
 const Styles = styled.div`

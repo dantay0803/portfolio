@@ -17,21 +17,26 @@ const StyledContainer = styled(Container)`
 
 const ClandestineOps = () => (
   <>
-    <SEO title="Clandestine Ops" />
+    <SEO title='Clandestine Ops'
+      description={'Information on my portfolio project Clandestine Ops'}
+      pathname={'/projects/clandestine-ops'}
+    />
     <StyledContainer fluid>
       <Row noGutters>
-        <Col xs="12" md={{ span: 8, offset: 2 }}>
-          <h1>Clandestine Ops</h1>
-          <hr className="hrTitle" />
-        </Col>
-        <Col xs={{ span: 2, offset: 0 }}>
-          <Link to={"/"} className="noUnderline">
+        <Col xs={{ span: 1, offset: 11 }}>
+          <Link to={"/#projects"} className="noUnderline">
             <FontAwesomeIcon icon={faWindowClose} size="1x" />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 6, offset: 3 }}>
+        <Col xs={{ span: 8, offset: 2 }}>
+          <h1>Clandestine Ops</h1>
+          <hr className="hrTitle" />
+        </Col>
+      </Row>
+      <Row noGutters>
+        <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
           <p>
             A First Person Shooter that I developed as an example violent video
             game for participants of my research to play in order to ensure they
@@ -39,12 +44,11 @@ const ClandestineOps = () => (
           </p>
           <iframe
             title="Clandestine Ops Gameplay Video"
-            width="560"
-            height="315"
             src="https://www.youtube.com/embed/k2P1gZUexSE"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
+            className="embeddedVideo"
           ></iframe>
           <p>
             This was the second game that I have developed using the Unity game
@@ -72,10 +76,9 @@ const ClandestineOps = () => (
           </p>
           <iframe
             title="Clandestine Ops Download Link"
-            frameborder="0"
+            frameBorder="0"
             src="https://itch.io/embed/66493?linkback=true"
-            width="552"
-            height="167"
+            className="itchLink"
           ></iframe>
           <p>
             The enemies in the game also use Unity’s navigation system in order
