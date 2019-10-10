@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Jumbotron } from 'react-bootstrap';
-import header from '../images/header.jpg';
+import headerImage from '../images/headerImage.jpg';
 
 const StyledJumbotron = styled(Jumbotron)`
-    background-image: url('${header}');
+    background-image: url('${headerImage}');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
