@@ -1,7 +1,7 @@
-import React from "react"
-import styled from "styled-components"
-import { Container, Jumbotron } from "react-bootstrap"
-import header from "../images/header.jpg"
+import React from 'react';
+import styled from 'styled-components';
+import { Container, Jumbotron } from 'react-bootstrap';
+import header from '../images/header.jpg';
 
 const StyledJumbotron = styled(Jumbotron)`
     background-image: url('${header}');
@@ -63,7 +63,7 @@ const StyledJumbotron = styled(Jumbotron)`
         font-size: 2.5rem;
       }
     }
-`
+`;
 
 export default function HeaderBlog() {
   return (
@@ -74,5 +74,5 @@ export default function HeaderBlog() {
         <h2>Blog</h2>
       </Container>
     </StyledJumbotron>
-  )
+  );
 }

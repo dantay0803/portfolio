@@ -6,7 +6,7 @@ import '../styles/index.css';
 import SEO from '../components/seo';
 import Navbar from '../components/navbars/navbarBlog';
 import { graphql } from 'gatsby';
-import dompurify from 'dompurify';
+import sanitizeHtml from 'sanitize-html';
 
 const StyledContainer = styled(Container)`
   margin-top: 4rem;
@@ -34,10 +34,9 @@ const StyledContainer = styled(Container)`
     opacity: 1;
   }
 
-  img{
+  img {
     max-width: 100%;
   }
-  
 `;
 
 const JumbotronFeaturedImage = styled(Jumbotron)`
@@ -79,36 +78,29 @@ export const query = graphql`
 `;
 
 const blogPost = props => {
-  const {
-    content,
-    date,
-    featuredImage,
-    title
-  } = props.data.wpgraphql.postBy;
-  const sanitizer = dompurify.sanitize;
+  const { content, date, featuredImage, title } = props.data.wpgraphql.postBy;
   const postDate = new Date(date);
   const posts = props.data.wpgraphql.posts;
 
   return (
     <>
-      <SEO title={sanitizer(title)}
-        description={`A blog post covering ${sanitizer(title)}`}
+      <SEO
+        title={sanitizeHtml(title)}
+        description={`A blog post covering ${sanitizeHtml(title)}`}
         pathname={`/blog/${props.pageContext.slug}`}
       />
       <Navbar backgroundcolor={'var(--highlight)'} posts={posts} />
       <StyledContainer fluid>
         <Row>
           <Col xs='12' md={{ span: 8, offset: 2 }}>
-            <JumbotronFeaturedImage fluid featuredimage={featuredImage.sourceUrl}>
-            </JumbotronFeaturedImage>
+            <JumbotronFeaturedImage
+              fluid
+              featuredimage={featuredImage.sourceUrl}></JumbotronFeaturedImage>
           </Col>
         </Row>
         <Row noGutters>
-          <Col
-            xs='12'
-            md={{ span: 6, offset: 3 }}
-          >
-            <h1>{sanitizer(title)}</h1>
+          <Col xs='12' md={{ span: 6, offset: 3 }}>
+            <h1>{sanitizeHtml(title)}</h1>
             <h6 className='mutedText'>
               {postDate
                 .toUTCString()
@@ -123,7 +115,7 @@ const blogPost = props => {
           <Col
             xs={12}
             md={{ span: 6, offset: 3 }}
-            dangerouslySetInnerHTML={{ __html: sanitizer(content) }}></Col>
+            dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }}></Col>
         </Row>
       </StyledContainer>
     </>

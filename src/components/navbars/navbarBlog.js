@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { Link, graphql } from 'gatsby';
-import dompurify from 'dompurify';
+import sanitizeHtml from 'sanitize-html';
 
 const StyledNavbar = styled(Navbar)`
   background-color: ${props => props.backgroundcolor || 'transparent'};
@@ -12,7 +12,7 @@ const StyledNavbar = styled(Navbar)`
   -o-transition: background 1s;
   transition: background 1s;
 
-  @media (max-width:641px) {
+  @media (max-width: 641px) {
     background-color: var(--highlight);
   }
 `;
@@ -90,15 +90,13 @@ export const query = graphql`
 `;
 
 export default function navbar(props) {
-  const sanitizer = dompurify.sanitize;
-
   return (
     <Styles>
       <StyledNavbar
         expand='lg'
         fixed='top'
         backgroundcolor={props.backgroundcolor}>
-        <Link to={`/`} className="noUnderline">
+        <Link to={`/`} className='noUnderline'>
           <Navbar.Brand>Daniel Taylor</Navbar.Brand>
         </Link>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
@@ -111,7 +109,7 @@ export default function navbar(props) {
               {props.posts.edges.slice(0, 6).map(post => (
                 <NavDropdown.Item key={post.node.slug}>
                   <Link to={`/blog/${post.node.slug}/`}>
-                    {sanitizer(post.node.title)}
+                    {sanitizeHtml(post.node.title)}
                   </Link>
                 </NavDropdown.Item>
               ))}
