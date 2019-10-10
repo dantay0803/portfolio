@@ -1,38 +1,41 @@
-import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
-import styled from "styled-components"
-import "../../styles/bootstrap-4.3.1.min.css"
-import "../../styles/index.css"
-import SEO from "../../components/seo"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faWindowClose } from "@fortawesome/free-solid-svg-icons"
-import { Link } from "gatsby-plugin-modal-routing"
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
+import '../../styles/bootstrap-4.3.1.min.css';
+import Layout from '../../components/layout/layout';
+import SEO from '../../components/seo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'gatsby-plugin-modal-routing';
 
 const StyledContainer = styled(Container)`
   padding: 0;
   margin: 0;
   padding-bottom: 2rem;
   text-align: center;
-`
+`;
 
 const TheEdgeofCivilization = () => (
-  <>
-    <SEO title='The Edge of Civilization'
-      description={'Information on my portfolio project The Edge of Civilization'}
+  <Layout>
+    <SEO
+      title='The Edge of Civilization'
+      description={
+        'Information on my portfolio project The Edge of Civilization'
+      }
       pathname={'/projects/the-edge-of-civilization'}
     />
     <StyledContainer fluid>
       <Row noGutters>
         <Col xs={{ span: 1, offset: 11 }}>
-          <Link to={"/#projects"} className="noUnderline">
-            <FontAwesomeIcon icon={faWindowClose} size="1x" />
+          <Link to={'/#projects'} className='noUnderline'>
+            <FontAwesomeIcon icon={faWindowClose} size='1x' />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
         <Col xs={{ span: 8, offset: 2 }}>
-          <h1 className="center">The Edge of Civilization</h1>
-          <hr className="hrTitle" />
+          <h1 className='center'>The Edge of Civilization</h1>
+          <hr className='hrTitle' />
         </Col>
       </Row>
       <Row noGutters>
@@ -43,13 +46,12 @@ const TheEdgeofCivilization = () => (
             University.
           </p>
           <iframe
-            title="The Edge of Civilization Gameplay Video"
-            src="https://www.youtube.com/embed/56GOOdiHXV8"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            title='The Edge of Civilization Gameplay Video'
+            src='https://www.youtube.com/embed/56GOOdiHXV8'
+            frameBorder='0'
+            allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
-            className="embeddedVideo"
-          ></iframe>
+            className='embeddedVideo'></iframe>
           <p>
             The class involved us working in teams of two to design and create a
             level for a game. The initial idea for the game was proposed by me
@@ -75,11 +77,10 @@ const TheEdgeofCivilization = () => (
             to Actor function in the blueprint of the enemies.
           </p>
           <iframe
-            title="The Edge of Civilization Download Link"
-            frameBorder="0"
-            src="https://itch.io/embed/66495?border_width=2"
-            className="itchLink"
-          ></iframe>
+            title='The Edge of Civilization Download Link'
+            frameBorder='0'
+            src='https://itch.io/embed/66495?border_width=2'
+            className='itchLink'></iframe>
           <p>
             I also decided to add in level streaming to the game so that the
             only floor of the level that is loaded at any time is the one the
@@ -102,7 +103,7 @@ const TheEdgeofCivilization = () => (
         </Col>
       </Row>
     </StyledContainer>
-  </>
-)
+  </Layout>
+);
 
-export default TheEdgeofCivilization
+export default TheEdgeofCivilization;

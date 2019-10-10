@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 import styled from 'styled-components';
 import '../styles/bootstrap-4.3.1.min.css';
-import '../styles/index.css';
+import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Navbar from '../components/navbars/navbarBlog';
 import { graphql } from 'gatsby';
@@ -83,7 +83,7 @@ const blogPost = props => {
   const posts = props.data.wpgraphql.posts;
 
   return (
-    <>
+    <Layout>
       <SEO
         title={sanitizeHtml(title)}
         description={`A blog post covering ${sanitizeHtml(title)}`}
@@ -118,7 +118,7 @@ const blogPost = props => {
             dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }}></Col>
         </Row>
       </StyledContainer>
-    </>
+    </Layout>
   );
 };
 

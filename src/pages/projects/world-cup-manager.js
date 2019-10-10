@@ -1,17 +1,17 @@
-import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
-import styled from "styled-components"
-import "../../styles/bootstrap-4.3.1.min.css"
-import "../../styles/index.css"
-import SEO from "../../components/seo"
-import googlePlay from "../../images/google-play-badge.png"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faWindowClose } from "@fortawesome/free-solid-svg-icons"
-import { Link } from "gatsby-plugin-modal-routing"
-import wcmMainMenu from "../../images/worldcupmanager/wcmMainMenu.png"
-import wcmInstructions from "../../images/worldcupmanager/wcmInstructions.png"
-import wcmGroup from "../../images/worldcupmanager/wcmGroup.png"
-import wcmKnockout from "../../images/worldcupmanager/wcmKnockout.png"
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
+import '../../styles/bootstrap-4.3.1.min.css';
+import Layout from '../../components/layout/layout';
+import SEO from '../../components/seo';
+import googlePlay from '../../images/google-play-badge.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'gatsby-plugin-modal-routing';
+import wcmMainMenu from '../../images/worldcupmanager/wcmMainMenu.png';
+import wcmInstructions from '../../images/worldcupmanager/wcmInstructions.png';
+import wcmGroup from '../../images/worldcupmanager/wcmGroup.png';
+import wcmKnockout from '../../images/worldcupmanager/wcmKnockout.png';
 
 const StyledContainer = styled(Container)`
   padding: 0;
@@ -24,26 +24,27 @@ const StyledContainer = styled(Container)`
     margin: 1rem;
     padding: 0.5rem;
   }
-`
+`;
 
 const WorldCupManager = () => (
-  <>
-    <SEO title='World Cup Manager'
+  <Layout>
+    <SEO
+      title='World Cup Manager'
       description={'Information on my portfolio project World Cup Manager'}
       pathname={'/projects/world-cup-manager'}
     />
     <StyledContainer fluid>
       <Row noGutters>
         <Col xs={{ span: 1, offset: 11 }}>
-          <Link to={"/#projects"} className="noUnderline">
-            <FontAwesomeIcon icon={faWindowClose} size="1x" />
+          <Link to={'/#projects'} className='noUnderline'>
+            <FontAwesomeIcon icon={faWindowClose} size='1x' />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
         <Col xs={{ span: 8, offset: 2 }}>
           <h1>World Cup Manager</h1>
-          <hr className="hrTitle" />
+          <hr className='hrTitle' />
         </Col>
       </Row>
       <Row noGutters>
@@ -59,19 +60,19 @@ const WorldCupManager = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 4, offset: 2 }}>
+        <Col xs='12' md={{ span: 4, offset: 2 }}>
           <img
             src={wcmMainMenu}
-            alt="World Cup Manager Main Menu"
-            className="img-responsive appImages"
+            alt='World Cup Manager Main Menu'
+            className='img-responsive appImages'
             fluid
           />
         </Col>
-        <Col xs="12" md="4">
+        <Col xs='12' md='4'>
           <img
             src={wcmInstructions}
-            alt="World Cup Instructions"
-            className="img-responsive appImages"
+            alt='World Cup Instructions'
+            className='img-responsive appImages'
             fluid
           />
         </Col>
@@ -95,19 +96,19 @@ const WorldCupManager = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 4, offset: 2 }}>
+        <Col xs='12' md={{ span: 4, offset: 2 }}>
           <img
             src={wcmGroup}
-            alt="World Cup Group Stage"
-            className="img-responsive appImages"
+            alt='World Cup Group Stage'
+            className='img-responsive appImages'
             fluid
           />
         </Col>
-        <Col xs="12" md="4">
+        <Col xs='12' md='4'>
           <img
             src={wcmKnockout}
-            alt="World Cup Manager Knockout Stage"
-            className="img-responsive appImages"
+            alt='World Cup Manager Knockout Stage'
+            className='img-responsive appImages'
             fluid
           />
         </Col>
@@ -128,24 +129,23 @@ const WorldCupManager = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 4, offset: 4 }}>
+        <Col xs='12' md={{ span: 4, offset: 4 }}>
           <a
-            href="https://play.google.com/store/apps/details?id=framework.core&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="noUnderline"
-          >
+            href='https://play.google.com/store/apps/details?id=framework.core&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='noUnderline'>
             <img
               src={googlePlay}
-              alt="Google Play Badge"
-              className="appStoreBadge"
+              alt='Google Play Badge'
+              className='appStoreBadge'
               fluid
             />
           </a>
         </Col>
       </Row>
     </StyledContainer>
-  </>
-)
+  </Layout>
+);
 
-export default WorldCupManager
+export default WorldCupManager;

@@ -1,41 +1,42 @@
-import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
-import styled from "styled-components"
-import "../../styles/bootstrap-4.3.1.min.css"
-import "../../styles/index.css"
-import SEO from "../../components/seo"
-import appleAppStore from "../../images/apple-app-store-badge.png"
-import googlePlay from "../../images/google-play-badge.png"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faWindowClose } from "@fortawesome/free-solid-svg-icons"
-import { Link } from "gatsby-plugin-modal-routing"
-import planetLibraryMain from "../../images/planetlibrary/PlanetLibrary_Poster.png"
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
+import '../../styles/bootstrap-4.3.1.min.css';
+import Layout from '../../components/layout/layout';
+import SEO from '../../components/seo';
+import appleAppStore from '../../images/apple-app-store-badge.png';
+import googlePlay from '../../images/google-play-badge.png';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'gatsby-plugin-modal-routing';
+import planetLibraryMain from '../../images/planetlibrary/PlanetLibrary_Poster.png';
 
 const StyledContainer = styled(Container)`
   padding: 0;
   margin: 0;
   padding-bottom: 2rem;
   text-align: center;
-`
+`;
 
 const PlanetLibraryPage = () => (
-  <>
-    <SEO title='Planet Library'
+  <Layout>
+    <SEO
+      title='Planet Library'
       description={'Information on my portfolio project PlanetLibrary'}
       pathname={'/projects/planet-library'}
     />
     <StyledContainer fluid>
       <Row noGutters>
         <Col xs={{ span: 1, offset: 11 }}>
-          <Link to={"/#projects"} className="noUnderline">
-            <FontAwesomeIcon icon={faWindowClose} size="1x" />
+          <Link to={'/#projects'} className='noUnderline'>
+            <FontAwesomeIcon icon={faWindowClose} size='1x' />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
         <Col xs={{ span: 8, offset: 2 }}>
-          <h1 className="center">Planet Library</h1>
-          <hr className="hrTitle" />
+          <h1 className='center'>Planet Library</h1>
+          <hr className='hrTitle' />
         </Col>
       </Row>
       <Row noGutters>
@@ -54,11 +55,11 @@ const PlanetLibraryPage = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 8, offset: 2 }} className="center">
+        <Col xs='12' md={{ span: 8, offset: 2 }} className='center'>
           <img
             src={planetLibraryMain}
-            alt="Planet Library Poster"
-            className="img-responsive"
+            alt='Planet Library Poster'
+            className='img-responsive'
             fluid
           />
         </Col>
@@ -80,39 +81,37 @@ const PlanetLibraryPage = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 3, offset: 3 }}>
+        <Col xs='12' md={{ span: 3, offset: 3 }}>
           <a
-            href="https://apps.apple.com/gb/app/darebin-planet-library/id1238643445"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="noUnderline"
-          >
+            href='https://apps.apple.com/gb/app/darebin-planet-library/id1238643445'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='noUnderline'>
             <img
               src={appleAppStore}
-              alt="Apple App Store Badge"
-              className="appStoreBadge"
+              alt='Apple App Store Badge'
+              className='appStoreBadge'
               fluid
             />
           </a>
         </Col>
-        <Col xs="12" md="3">
+        <Col xs='12' md='3'>
           <a
-            href="https://play.google.com/store/apps/details?id=au.com.solus.DarebinPlanetLibrary&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="noUnderline"
-          >
+            href='https://play.google.com/store/apps/details?id=au.com.solus.DarebinPlanetLibrary&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='noUnderline'>
             <img
               src={googlePlay}
-              alt="Google Play Badge"
-              className="appStoreBadge"
+              alt='Google Play Badge'
+              className='appStoreBadge'
               fluid
             />
           </a>
         </Col>
       </Row>
     </StyledContainer>
-  </>
-)
+  </Layout>
+);
 
-export default PlanetLibraryPage
+export default PlanetLibraryPage;

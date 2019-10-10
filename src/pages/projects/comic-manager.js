@@ -1,18 +1,18 @@
-import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
-import styled from "styled-components"
-import "../../styles/bootstrap-4.3.1.min.css"
-import "../../styles/index.css"
-import SEO from "../../components/seo"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faWindowClose } from "@fortawesome/free-solid-svg-icons"
-import { Link } from "gatsby-plugin-modal-routing"
-import comicManagerMainMenu from "../../images/comicmanager/MainMenu.jpg"
-import comicManagerSearchResults from "../../images/comicmanager/SearchResults.jpg"
-import comicManagerDetails from "../../images/comicmanager/Details.jpg"
-import comicManagerComicList from "../../images/comicmanager/ComicList.jpg"
-import comicManagerComicDetails from "../../images/comicmanager/ComicDetails.jpg"
-import comicManagerDelete from "../../images/comicmanager/Delete.jpg"
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
+import '../../styles/bootstrap-4.3.1.min.css';
+import Layout from '../../components/layout/layout';
+import SEO from '../../components/seo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'gatsby-plugin-modal-routing';
+import comicManagerMainMenu from '../../images/comicmanager/MainMenu.jpg';
+import comicManagerSearchResults from '../../images/comicmanager/SearchResults.jpg';
+import comicManagerDetails from '../../images/comicmanager/Details.jpg';
+import comicManagerComicList from '../../images/comicmanager/ComicList.jpg';
+import comicManagerComicDetails from '../../images/comicmanager/ComicDetails.jpg';
+import comicManagerDelete from '../../images/comicmanager/Delete.jpg';
 
 const StyledContainer = styled(Container)`
   padding: 0;
@@ -25,25 +25,26 @@ const StyledContainer = styled(Container)`
     margin-bottom: 1rem;
     border: 1px solid black;
   }
-`
+`;
 const ComicManager = () => (
-  <>
-    <SEO title='Comic Manager'
+  <Layout>
+    <SEO
+      title='Comic Manager'
       description={'Information on my portfolio project Comic Manager'}
       pathname={'/projects/comic-manager'}
     />
     <StyledContainer fluid>
       <Row noGutters>
         <Col xs={{ span: 1, offset: 11 }}>
-          <Link to={"/#projects"} className="noUnderline">
-            <FontAwesomeIcon icon={faWindowClose} size="1x" />
+          <Link to={'/#projects'} className='noUnderline'>
+            <FontAwesomeIcon icon={faWindowClose} size='1x' />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
         <Col xs={{ span: 8, offset: 2 }}>
-          <h1 className="center">Comic Manager</h1>
-          <hr className="hrTitle" />
+          <h1 className='center'>Comic Manager</h1>
+          <hr className='hrTitle' />
         </Col>
       </Row>
       <Row noGutters>
@@ -54,39 +55,38 @@ const ComicManager = () => (
             books are located in. The application is created using Apache
             Cordova, jQuery and a number of Apache Cordova plugins.
           </p>
-          <p className="center">
+          <p className='center'>
             <a
-              href="https://github.com/dantay0803/ComicManager"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+              href='https://github.com/dantay0803/ComicManager'
+              target='_blank'
+              rel='noopener noreferrer'>
               Github Repository
             </a>
           </p>
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 2, offset: 3 }}>
+        <Col xs='12' md={{ span: 2, offset: 3 }}>
           <img
             src={comicManagerMainMenu}
-            alt="Comic Manager Main Menu"
-            className="img-responsive appImages"
+            alt='Comic Manager Main Menu'
+            className='img-responsive appImages'
             fluid
           />
         </Col>
-        <Col xs="12" md="2">
+        <Col xs='12' md='2'>
           <img
             src={comicManagerSearchResults}
-            alt="Comic Manager Search Results"
-            className="img-responsive appImages"
+            alt='Comic Manager Search Results'
+            className='img-responsive appImages'
             fluid
           />
         </Col>
-        <Col xs="12" md="2">
+        <Col xs='12' md='2'>
           <img
             src={comicManagerDetails}
-            alt="Comic Manager Comic Details"
-            className="img-responsive appImages"
+            alt='Comic Manager Comic Details'
+            className='img-responsive appImages'
             fluid
           />
         </Col>
@@ -104,27 +104,27 @@ const ComicManager = () => (
         </Col>
       </Row>
       <Row noGutters>
-        <Col xs="12" md={{ span: 2, offset: 3 }}>
+        <Col xs='12' md={{ span: 2, offset: 3 }}>
           <img
             src={comicManagerComicList}
-            alt="Comic Manager Comic List"
-            className="img-responsive appImages"
+            alt='Comic Manager Comic List'
+            className='img-responsive appImages'
             fluid
           />
         </Col>
-        <Col xs="12" md="2">
+        <Col xs='12' md='2'>
           <img
             src={comicManagerComicDetails}
-            alt="Comic Manager Comic Detail"
-            className="img-responsive appImages"
+            alt='Comic Manager Comic Detail'
+            className='img-responsive appImages'
             fluid
           />
         </Col>
-        <Col xs="12" md="2">
+        <Col xs='12' md='2'>
           <img
             src={comicManagerDelete}
-            alt="Comic Manager Delete Page"
-            className="img-responsive appImages"
+            alt='Comic Manager Delete Page'
+            className='img-responsive appImages'
             fluid
           />
         </Col>
@@ -143,7 +143,7 @@ const ComicManager = () => (
         </Col>
       </Row>
     </StyledContainer>
-  </>
-)
+  </Layout>
+);
 
-export default ComicManager
+export default ComicManager;

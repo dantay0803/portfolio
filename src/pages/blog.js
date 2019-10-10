@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 import { Container, Row, Col, Card, CardColumns } from 'react-bootstrap';
 import styled from 'styled-components';
 import '../styles/bootstrap-4.3.1.min.css';
-import '../styles/index.css';
+import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Navbar from '../components/navbars/navbarBlog';
 import HeaderBlog from '../components/headerBlog';
@@ -62,7 +62,7 @@ const BlogHome = props => {
   }, []);
 
   return (
-    <>
+    <Layout>
       <SEO
         title='Blog'
         description={
@@ -115,7 +115,7 @@ const BlogHome = props => {
           </Col>
         </Row>
       </StyledContainer>
-    </>
+    </Layout>
   );
 };
 

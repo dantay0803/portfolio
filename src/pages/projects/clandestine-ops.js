@@ -1,38 +1,39 @@
-import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
-import styled from "styled-components"
-import "../../styles/bootstrap-4.3.1.min.css"
-import "../../styles/index.css"
-import SEO from "../../components/seo"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faWindowClose } from "@fortawesome/free-solid-svg-icons"
-import { Link } from "gatsby-plugin-modal-routing"
+import React from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import styled from 'styled-components';
+import '../../styles/bootstrap-4.3.1.min.css';
+import Layout from '../../components/layout/layout';
+import SEO from '../../components/seo';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import { Link } from 'gatsby-plugin-modal-routing';
 
 const StyledContainer = styled(Container)`
   padding: 0;
   margin: 0;
   padding-bottom: 2rem;
   text-align: center;
-`
+`;
 
 const ClandestineOps = () => (
-  <>
-    <SEO title='Clandestine Ops'
+  <Layout>
+    <SEO
+      title='Clandestine Ops'
       description={'Information on my portfolio project Clandestine Ops'}
       pathname={'/projects/clandestine-ops'}
     />
     <StyledContainer fluid>
       <Row noGutters>
         <Col xs={{ span: 1, offset: 11 }}>
-          <Link to={"/#projects"} className="noUnderline">
-            <FontAwesomeIcon icon={faWindowClose} size="1x" />
+          <Link to={'/#projects'} className='noUnderline'>
+            <FontAwesomeIcon icon={faWindowClose} size='1x' />
           </Link>
         </Col>
       </Row>
       <Row noGutters>
         <Col xs={{ span: 8, offset: 2 }}>
           <h1>Clandestine Ops</h1>
-          <hr className="hrTitle" />
+          <hr className='hrTitle' />
         </Col>
       </Row>
       <Row noGutters>
@@ -43,13 +44,12 @@ const ClandestineOps = () => (
             were being exposed to a game with violent content.
           </p>
           <iframe
-            title="Clandestine Ops Gameplay Video"
-            src="https://www.youtube.com/embed/k2P1gZUexSE"
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            title='Clandestine Ops Gameplay Video'
+            src='https://www.youtube.com/embed/k2P1gZUexSE'
+            frameBorder='0'
+            allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
             allowFullScreen
-            className="embeddedVideo"
-          ></iframe>
+            className='embeddedVideo'></iframe>
           <p>
             This was the second game that I have developed using the Unity game
             engine and my first time creating a First Person Shooter as well as
@@ -75,11 +75,10 @@ const ClandestineOps = () => (
             hit.
           </p>
           <iframe
-            title="Clandestine Ops Download Link"
-            frameBorder="0"
-            src="https://itch.io/embed/66493?linkback=true"
-            className="itchLink"
-          ></iframe>
+            title='Clandestine Ops Download Link'
+            frameBorder='0'
+            src='https://itch.io/embed/66493?linkback=true'
+            className='itchLink'></iframe>
           <p>
             The enemies in the game also use Unity’s navigation system in order
             to path find to predetermined locations. To do this a navigation
@@ -98,7 +97,7 @@ const ClandestineOps = () => (
         </Col>
       </Row>
     </StyledContainer>
-  </>
-)
+  </Layout>
+);
 
-export default ClandestineOps
+export default ClandestineOps;
