@@ -1,7 +1,8 @@
-import React from "react"
-import styled from "styled-components"
-import { Card, Button } from "react-bootstrap"
-import { Link } from "gatsby"
+import React from 'react';
+import styled from 'styled-components';
+import { Card, Button } from 'react-bootstrap';
+import { Link } from 'gatsby';
+import Img from 'gatsby-image';
 
 const Styles = styled.div`
   text-align: left;
@@ -40,19 +41,14 @@ const Styles = styled.div`
     font-size: 0.8rem;
     text-decoration: none;
   }
-`
+`;
 
-export default function projectCard(props) {
-  const { thumbnail, projectTitle, projectDescription, projectPath } = props
-
+const projectCard = props => {
+  const { thumbnail, projectTitle, projectDescription, projectPath } = props;
   return (
     <Styles>
       <Card>
-        <Card.Img
-          variant="top"
-          src={thumbnail}
-          alt={`Thumbnail for ${{ projectTitle }}`}
-        />
+        <Img fluid={thumbnail} className='card-img-top' />
         <Card.Body>
           <Card.Title>
             <h6>
@@ -61,10 +57,9 @@ export default function projectCard(props) {
                 state={{
                   modal: true,
                   noScroll: true,
-                  replace: false,
+                  replace: false
                 }}
-                className="noUnderline"
-              >
+                className='noUnderline'>
                 {projectTitle}
               </Link>
             </h6>
@@ -77,14 +72,15 @@ export default function projectCard(props) {
           <Link
             to={`/projects/${projectPath}/`}
             state={{
-              modal: true,
+              modal: true
             }}
-            className="noUnderline"
-          >
+            className='noUnderline'>
             <Button>More Details</Button>
           </Link>
         </Card.Footer>
       </Card>
     </Styles>
-  )
-}
+  );
+};
+
+export default projectCard;

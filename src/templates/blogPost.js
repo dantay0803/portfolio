@@ -115,7 +115,28 @@ const blogPost = props => {
           <Col
             xs={12}
             md={{ span: 6, offset: 3 }}
-            dangerouslySetInnerHTML={{ __html: sanitizeHtml(content) }}></Col>
+            dangerouslySetInnerHTML={{
+              __html: sanitizeHtml(content, {
+                allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+                  'figure',
+                  'img',
+                  'figcaption',
+                  'p',
+                  'em',
+                  'strong',
+                  'iframe'
+                ]),
+                allowedClasses: {
+                  p: ['fancy', 'simple'],
+                  figure: ['wp-block-image']
+                },
+                allowedAttributes: {
+                  iframe: ['src', 'width', 'height'],
+                  img: ['src', 'width', 'height', 'wp-image-231']
+                },
+                allowedIframeHostnames: ['www.youtube.com']
+              })
+            }}></Col>
         </Row>
       </StyledContainer>
     </Layout>

@@ -2,18 +2,15 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import styled from 'styled-components';
 import '../../styles/bootstrap-4.3.1.min.css';
+import { Link } from 'gatsby-plugin-modal-routing';
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'gatsby-plugin-modal-routing';
-import phalanxAppHome from '../../images/phalanx/phalanx-delivery-app.png';
-import phalanxDeliveryApp from '../../images/phalanx/phalanx-delivery-app-screen-4.png';
-import phalanxDeliveryAppTwo from '../../images/phalanx/phalanx-delivery-app-screenshot-2.png';
-import phalanxDeliveryPortal from '../../images/phalanx/phalanx-delivery-app-screenshot-2.png';
-import phalanxMap from '../../images/phalanx/phalanx-optimise-technicians-2.png';
-import phalanxQAApp from '../../images/phalanx/phalanx-qa-app-screenshot-2.png';
-import phalanxServicePortal from '../../images/phalanx/phalanx-service-app-screenshot-3.png';
+import phalanxMap from '../../images/phalanx/3-phalanx-optimise-technicians-2.webp';
+import phalanxServicePortal from '../../images/phalanx/4-phalanx-service-app-screenshot-3.webp';
 
 const StyledContainer = styled(Container)`
   padding: 0;
@@ -21,14 +18,32 @@ const StyledContainer = styled(Container)`
   text-align: center;
 
   .appImages {
-    width: 75%;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
+  .tabletImage {
+    width: 75%;
+  }
 `;
-const Phalanx = () => (
-  <Layout>
-    <StyledContainer>
+const Phalanx = () => {
+  const data = useStaticQuery(graphql`
+    query phalanxImages {
+      images: allFile(filter: { relativeDirectory: { eq: "phalanx" } }) {
+        nodes {
+          id
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+  `);
+
+  return (
+    <Layout>
       <SEO
         title='Phalanx'
         description={'Information on my portfolio project Phalanx'}
@@ -62,53 +77,21 @@ const Phalanx = () => (
           </Col>
         </Row>
         <Row noGutters>
-          <Col xs='12' md={{ span: 2, offset: 1 }}>
-            <img
-              src={phalanxAppHome}
-              alt='PHALANX Application Home'
-              className='img-responsive appImages'
-              fluid
-            />
-          </Col>
-          <Col xs='12' md='2'>
-            <img
-              src={phalanxDeliveryApp}
-              alt='PHALANX Delivery Page'
-              className='img-responsive appImages'
-              fluid
-            />
-          </Col>
-          <Col xs='12' md='2'>
-            <img
-              src={phalanxDeliveryAppTwo}
-              alt='PHALANX Delivery Page Two'
-              className='img-responsive appImages'
-              fluid
-            />
-          </Col>
-          <Col xs='12' md='2'>
-            <img
-              src={phalanxDeliveryPortal}
-              alt='PHALANX Delivery Portal Page'
-              className='img-responsive appImages'
-              fluid
-            />
-          </Col>
-          <Col xs='12' md='2'>
-            <img
-              src={phalanxQAApp}
-              alt='PHALANX Quality Assurance'
-              className='img-responsive appImages'
-              fluid
-            />
-          </Col>
+          {data.images.nodes.slice(0, 2).map((image, i) => (
+            <Col
+              xs='12'
+              md={i === 0 ? { span: 2, offset: 3 } : { span: 2, offset: 2 }}
+              key={image.childImageSharp.id}>
+              <Img fluid={image.childImageSharp.fluid} className='appImages' />
+            </Col>
+          ))}
         </Row>
         <Row noGutters>
           <Col xs='12' md={{ span: 4, offset: 2 }}>
             <img
               src={phalanxMap}
               alt='PHALANX Mapping'
-              className='img-responsive appImages'
+              className='img-responsive appImages tabletImage'
               fluid
             />
           </Col>
@@ -116,7 +99,7 @@ const Phalanx = () => (
             <img
               src={phalanxServicePortal}
               alt='PHALANX Service Portal Page'
-              className='img-responsive appImages'
+              className='img-responsive appImages tabletImage'
               fluid
             />
           </Col>
@@ -139,8 +122,8 @@ const Phalanx = () => (
           </Col>
         </Row>
       </StyledContainer>
-    </StyledContainer>
-  </Layout>
-);
+    </Layout>
+  );
+};
 
 export default Phalanx;

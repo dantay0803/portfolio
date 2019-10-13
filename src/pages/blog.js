@@ -16,8 +16,10 @@ const StyledContainer = styled(Container)`
 `;
 
 const StyledCard = styled(Card)`
+  max-width: 27.5rem;
+
   .card-img-top {
-    max-height: 250px;
+    height: 250px;
   }
 `;
 

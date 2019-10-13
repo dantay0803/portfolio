@@ -1,6 +1,6 @@
 module.exports = {
-  pathPrefix: '/portfolio',
   siteMetadata: {
+    lang: `en`,
     title: 'Daniel Taylor - Portfolio',
     titleTemplate: '%s - Daniel Taylor',
     description:

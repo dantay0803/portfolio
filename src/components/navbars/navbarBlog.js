@@ -41,19 +41,8 @@ const Styles = styled.div`
   .dropdown-item {
     color: var(--highlight);
     text-decoration: none;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding-left: 10px;
     font-size: 0.85rem;
-  }
-
-  .dropdown-item:before,
-  .dropdown-item:hover:before {
-    text-decoration: none;
-    border: none;
-    width: 0;
-    height: 0;
-    bottom: 0;
-    left: 0;
   }
 
   .fill-width.dropdown {
@@ -107,11 +96,12 @@ export default function navbar(props) {
               id='latest-blog-posts'
               className='fill-width'>
               {props.posts.edges.slice(0, 6).map(post => (
-                <NavDropdown.Item key={post.node.slug}>
-                  <Link to={`/blog/${post.node.slug}/`}>
-                    {sanitizeHtml(post.node.title)}
-                  </Link>
-                </NavDropdown.Item>
+                <Link
+                  key={post.node.slug}
+                  to={`/blog/${post.node.slug}/`}
+                  className='dropdown-item'>
+                  {sanitizeHtml(post.node.title)}
+                </Link>
               ))}
             </NavDropdown>
             <Link className='nav-link' to='/blog/'>
