@@ -7,10 +7,10 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo';
-import appleAppStore from '../../images/apple-app-store-badge.webp';
-import googlePlay from '../../images/google-play-badge.webp';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
+import GooglePlayBadge from '../../components/appStoreBadges/googlePlay';
+import AppleAppStoreBadge from '../../components/appStoreBadges/appleAppStore';
 
 const StyledContainer = styled(Container)`
   padding: 0;
@@ -100,33 +100,19 @@ const PlanetLibraryPage = () => {
           </Col>
         </Row>
         <Row noGutters>
-          <Col xs='12' md={{ span: 3, offset: 3 }}>
-            <a
-              href='https://apps.apple.com/gb/app/darebin-planet-library/id1238643445'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='noUnderline'>
-              <img
-                src={appleAppStore}
-                alt='Apple App Store Badge'
-                className='appStoreBadge'
-                fluid
-              />
-            </a>
+          <Col xs={{ span: 10, offset: 1 }} md={{ span: 3, offset: 2 }}>
+            <GooglePlayBadge
+              link={
+                'https://play.google.com/store/apps/details?id=au.com.solus.DarebinPlanetLibrary&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+              }
+            />
           </Col>
-          <Col xs='12' md='3'>
-            <a
-              href='https://play.google.com/store/apps/details?id=au.com.solus.DarebinPlanetLibrary&hl=en&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='noUnderline'>
-              <img
-                src={googlePlay}
-                alt='Google Play Badge'
-                className='appStoreBadge'
-                fluid
-              />
-            </a>
+          <Col xs={{ span: 10, offset: 1 }} md={{ span: 3, offset: 2 }}>
+            <AppleAppStoreBadge
+              link={
+                'https://apps.apple.com/gb/app/darebin-planet-library/id1238643445'
+              }
+            />
           </Col>
         </Row>
       </StyledContainer>

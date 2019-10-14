@@ -127,12 +127,6 @@ li:before {
   text-align: center;
 }
 
-.appStoreBadge {
-  width: 50%;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
 .fa-window-close {
   color: var(--muted);
 }

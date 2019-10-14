@@ -7,7 +7,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo';
-import googlePlay from '../../images/google-play-badge.webp';
+import GooglePlayBadge from '../../components/appStoreBadges/googlePlay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 
@@ -134,19 +134,12 @@ const WorldCupManager = () => {
           </Col>
         </Row>
         <Row noGutters>
-          <Col xs='12' md={{ span: 4, offset: 4 }}>
-            <a
-              href='https://play.google.com/store/apps/details?id=framework.core&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='noUnderline'>
-              <img
-                src={googlePlay}
-                alt='Google Play Badge'
-                className='appStoreBadge'
-                fluid
-              />
-            </a>
+          <Col xs={{ span: 10, offset: 1 }} md={{ span: 4, offset: 4 }}>
+            <GooglePlayBadge
+              link={
+                'https://play.google.com/store/apps/details?id=framework.core&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+              }
+            />
           </Col>
         </Row>
       </StyledContainer>
