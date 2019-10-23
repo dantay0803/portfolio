@@ -43,9 +43,16 @@ module.exports = {
         display: `minimal-ui`,
         icon: `src/images/icon-512x512.webp` // This path is relative to the root of the site.
       }
-    }
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-zopfli',
+      options: {
+        path: 'zopfli',
+        extensions: ['css', 'html', 'js']
+      }
+    }
   ]
 };
