@@ -48,7 +48,7 @@ const projectCard = props => {
   return (
     <Styles>
       <Card>
-        <Img fluid={thumbnail} className='card-img-top' />
+        <Img fluid={thumbnail} className="card-img-top" />
         <Card.Body>
           <Card.Title>
             <h6>
@@ -57,9 +57,10 @@ const projectCard = props => {
                 state={{
                   modal: true,
                   noScroll: true,
-                  replace: false
+                  replace: false,
                 }}
-                className='noUnderline'>
+                className="noUnderline"
+              >
                 {projectTitle}
               </Link>
             </h6>
@@ -72,9 +73,10 @@ const projectCard = props => {
           <Link
             to={`/projects/${projectPath}/`}
             state={{
-              modal: true
+              modal: true,
             }}
-            className='noUnderline'>
+            className="noUnderline"
+          >
             <Button>More Details</Button>
           </Link>
         </Card.Footer>

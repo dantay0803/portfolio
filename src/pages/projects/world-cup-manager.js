@@ -5,11 +5,11 @@ import '../../styles/bootstrap-4.3.1.min.css';
 import { Link } from 'gatsby-plugin-modal-routing';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../../components/layout/layout';
 import SEO from '../../components/seo';
 import GooglePlayBadge from '../../components/appStoreBadges/googlePlay';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 
 const StyledContainer = styled(Container)`
   padding: 0;
@@ -46,22 +46,22 @@ const WorldCupManager = () => {
   return (
     <Layout>
       <SEO
-        title='World Cup Manager'
-        description={'Information on my portfolio project World Cup Manager'}
-        pathname={'/projects/world-cup-manager'}
+        title="World Cup Manager"
+        description="Information on my portfolio project World Cup Manager"
+        pathname="/projects/world-cup-manager"
       />
       <StyledContainer fluid>
         <Row noGutters>
           <Col xs={{ span: 1, offset: 11 }}>
-            <Link to={'/#projects'} className='noUnderline'>
-              <FontAwesomeIcon icon={faWindowClose} size='1x' />
+            <Link to="/#projects" className="noUnderline">
+              <FontAwesomeIcon icon={faWindowClose} size="1x" />
             </Link>
           </Col>
         </Row>
         <Row noGutters>
           <Col xs={{ span: 8, offset: 2 }}>
             <h1>World Cup Manager</h1>
-            <hr className='hrTitle' />
+            <hr className="hrTitle" />
           </Col>
         </Row>
         <Row noGutters>
@@ -81,8 +81,9 @@ const WorldCupManager = () => {
             <Col
               xs={{ span: 12, offset: 0 }}
               md={i === 0 ? { span: 4, offset: 2 } : '4'}
-              key={image.childImageSharp.id}>
-              <Img fluid={image.childImageSharp.fluid} className='appImages' />
+              key={image.childImageSharp.id}
+            >
+              <Img fluid={image.childImageSharp.fluid} className="appImages" />
             </Col>
           ))}
         </Row>
@@ -109,10 +110,11 @@ const WorldCupManager = () => {
             <Col
               xs={{ span: 12, offset: 0 }}
               md={i === 0 ? { span: 4, offset: 2 } : '4'}
-              key={image.childImageSharp.id}>
+              key={image.childImageSharp.id}
+            >
               <Img
                 fluid={image.childImageSharp.fluid}
-                className='appImages'
+                className="appImages"
                 alt={i}
               />
             </Col>
@@ -128,18 +130,14 @@ const WorldCupManager = () => {
               available for download. I had a lot of fun designing and creating
               the application as well as learning a lot making it, it was a
               challenge at first to make such an application in a short period
-              of time with people I have never spoken to before but I feel the
-              outcome of the final product was fantastic.
+              with people I have never spoken to before but I feel the outcome
+              of the final product was fantastic.
             </p>
           </Col>
         </Row>
         <Row noGutters>
           <Col xs={{ span: 10, offset: 1 }} md={{ span: 4, offset: 4 }}>
-            <GooglePlayBadge
-              link={
-                'https://play.google.com/store/apps/details?id=framework.core&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
-              }
-            />
+            <GooglePlayBadge link="https://play.google.com/store/apps/details?id=framework.core&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" />
           </Col>
         </Row>
       </StyledContainer>

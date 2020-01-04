@@ -43,22 +43,22 @@ const ComicManager = () => {
   return (
     <Layout>
       <SEO
-        title='Comic Manager'
-        description={'Information on my portfolio project Comic Manager'}
-        pathname={'/projects/comic-manager'}
+        title="Comic Manager"
+        description="Information on my portfolio project Comic Manager"
+        pathname="/projects/comic-manager"
       />
       <StyledContainer fluid>
         <Row noGutters>
           <Col xs={{ span: 1, offset: 11 }}>
-            <Link to={'/#projects'} className='noUnderline'>
-              <FontAwesomeIcon icon={faWindowClose} size='1x' />
+            <Link to="/#projects" className="noUnderline">
+              <FontAwesomeIcon icon={faWindowClose} size="1x" />
             </Link>
           </Col>
         </Row>
         <Row noGutters>
           <Col xs={{ span: 8, offset: 2 }}>
-            <h1 className='center'>Comic Manager</h1>
-            <hr className='hrTitle' />
+            <h1 className="center">Comic Manager</h1>
+            <hr className="hrTitle" />
           </Col>
         </Row>
         <Row noGutters>
@@ -67,13 +67,14 @@ const ComicManager = () => {
               This is a mobile application that I have been creating in my spare
               time to help me keep track of which storage box my various comic
               books are located in. The application is created using Apache
-              Cordova, jQuery and a number of Apache Cordova plugins.
+              Cordova, jQuery and several Apache Cordova plugins.
             </p>
-            <p className='center'>
+            <p className="center">
               <a
-                href='https://github.com/dantay0803/ComicManager'
-                target='_blank'
-                rel='noopener noreferrer'>
+                href="https://github.com/dantay0803/ComicManager"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Github Repository
               </a>
             </p>
@@ -84,8 +85,9 @@ const ComicManager = () => {
             <Col
               xs={{ span: 10, offset: 1 }}
               md={i === 0 ? { span: 2, offset: 2 } : '2'}
-              key={image.childImageSharp.id}>
-              <Img fluid={image.childImageSharp.fluid} className='appImages' />
+              key={image.childImageSharp.id}
+            >
+              <Img fluid={image.childImageSharp.fluid} className="appImages" />
             </Col>
           ))}
         </Row>
@@ -93,11 +95,11 @@ const ComicManager = () => {
           <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
             <p>
               The application allows the user to scan the barcode of their
-              selected comic, performs a number of searches against the Google
-              Books API and lists the results for the user to select their
-              match. Once a comic has been selected they are taken to a form
-              where they can update the title, publisher, description of the
-              comic and set the box number where they can find the comic.
+              selected comic, performs several searches against the Google Books
+              API and lists the results for the user to select their match. Once
+              a comic has been selected they are taken to a form where they can
+              update the title, publisher, description of the comic and set the
+              box number where they can find the comic.
             </p>
           </Col>
         </Row>
@@ -106,8 +108,9 @@ const ComicManager = () => {
             <Col
               xs={{ span: 10, offset: 1 }}
               md={i === 0 ? { span: 2, offset: 2 } : '2'}
-              key={image.childImageSharp.id}>
-              <Img fluid={image.childImageSharp.fluid} className='appImages' />
+              key={image.childImageSharp.id}
+            >
+              <Img fluid={image.childImageSharp.fluid} className="appImages" />
             </Col>
           ))}
         </Row>
@@ -119,7 +122,7 @@ const ComicManager = () => {
               them to show a pop up with all of the information saved for the
               comic. As well as a button to remove the list item and the comic
               from the database. I also added the feature to export and import
-              the list of comics as a JSON file so they user can remove the app
+              the list of comics as a JSON file so the user can remove the app
               or change their device without the need to rescan all of their
               comics.
             </p>

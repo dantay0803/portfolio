@@ -51,18 +51,11 @@ export default () => {
         </Col>
         <Col xs={{ span: 10, offset: 1 }} md={{ span: 3, offset: 1 }}>
           <p>
-            Hello, I’m Daniel Taylor a software engineer based in Scotland. I
-            enjoy creating things for desktop, mobile and the web using
-            technologies like C#, JavaScript and React. I Graduated from the
-            University of the West of Scotland a few years ago with a BSc.
-            Honours in Computer Games Development.
+            Hello, I’m Daniel Taylor a software engineer based in Scotland. I enjoy creating things for desktop, mobile and the web using technologies like C#, JavaScript and React. I graduated from the University of the West of Scotland a few years ago with a BSc. Honours in Computer Games Development.
           </p>
 
           <p>
-            Shortly after graduating from university, I started my professional
-            career working as a Unity developer for two years. Before switching
-            things up and working as a fullstack developer over the third year
-            of my career.
+            Shortly after graduating from university, I started my professional career working as a Unity developer for two years. Before switching things up and working as a full-stack developer over the third year of my career.
           </p>
         </Col>
         <Col xs={{ span: 10, offset: 1 }} md={2}>

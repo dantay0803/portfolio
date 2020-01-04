@@ -37,22 +37,22 @@ const IBDClasses = () => {
   return (
     <Layout>
       <SEO
-        title='IBD Classes'
-        description={'Information on my portfolio project IBD Classes'}
-        pathname={'/projects/ibd-classes'}
+        title="IBD Classes"
+        description="Information on my portfolio project IBD Classes"
+        pathname="/projects/ibd-classes"
       />
       <StyledContainer fluid>
         <Row noGutters>
           <Col xs={{ span: 1, offset: 11 }}>
-            <Link to={'/#projects'} className='noUnderline'>
-              <FontAwesomeIcon icon={faWindowClose} size='1x' />
+            <Link to="/#projects" className="noUnderline">
+              <FontAwesomeIcon icon={faWindowClose} size="1x" />
             </Link>
           </Col>
         </Row>
         <Row noGutters>
           <Col xs={{ span: 8, offset: 2 }}>
-            <h1 className='center'>IBD Classes</h1>
-            <hr className='hrTitle' />
+            <h1 className="center">IBD Classes</h1>
+            <hr className="hrTitle" />
           </Col>
         </Row>
         <Row noGutters>
@@ -71,8 +71,9 @@ const IBDClasses = () => {
             <Col
               xs={{ span: 10, offset: 1 }}
               md={i === 0 ? { span: 2, offset: 2 } : '2'}
-              key={image.childImageSharp.id}>
-              <Img fluid={image.childImageSharp.fluid} className='appImages' />
+              key={image.childImageSharp.id}
+            >
+              <Img fluid={image.childImageSharp.fluid} className="appImages" />
             </Col>
           ))}
         </Row>
@@ -92,16 +93,10 @@ const IBDClasses = () => {
         </Row>
         <Row noGutters>
           <Col xs={{ span: 10, offset: 1 }} md={{ span: 3, offset: 2 }}>
-            <GooglePlayBadge
-              link={
-                'https://play.google.com/store/apps/details?id=uk.co.solus.health.PIBDCalc'
-              }
-            />
+            <GooglePlayBadge link="https://play.google.com/store/apps/details?id=uk.co.solus.health.PIBDCalc" />
           </Col>
           <Col xs={{ span: 10, offset: 1 }} md={{ span: 3, offset: 2 }}>
-            <AppleAppStoreBadge
-              link={'https://apps.apple.com/gb/app/ibd-classes/id1248829991'}
-            />
+            <AppleAppStoreBadge link="https://apps.apple.com/gb/app/ibd-classes/id1248829991" />
           </Col>
         </Row>
       </StyledContainer>
