@@ -45,15 +45,15 @@ const StyledJumbotron = styled(Jumbotron)`
     font-family: "Montserrat", sans-serif;
     line-height: 4.75rem;
     margin: 0;
-    padding: 275px 0 0 50px;
-    width: 860px;
+    padding: 17.1875rem 0 0 3.125rem;
+    width: 53.75rem;
   }
 
   h2{
     font-size: 3.125rem;
     color: var(--text-muted);
     margin: 0;
-    padding: 20px 0 0 50px;
+    padding: 1.25rem 0 0 3.125rem;
   }
 `;
 

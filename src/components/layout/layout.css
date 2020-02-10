@@ -4,7 +4,7 @@
 :root {
   --highlight: #ff0000;
   --text-primary: #eef0f2;
-  --text-muted: #bdbfc2;
+  --text-muted: #9b9d9f;
   --text-secondary: #141414;
   --background-primary: #141414;
   --background-secondary: #202020;
@@ -17,29 +17,28 @@ body {
   font-size: 16px;
   color: var(--text-primary);
   font-family: "Montserrat", sans-serif;
+  background-color: var(--background-primary);
 }
 
 h1 {
-  margin: 0;
-  margin-left: 3.125em;
+  margin: 1em 0 0 0.5em;
   font-size: 4.6875rem;
   font-family: "Segoe UI", sans-serif;
   text-transform: uppercase;
   font-style: bold;
-  line-height: 6.25rem;
+  line-height: (100 / 1000) * 1em;
 }
 
 p {
   font-size: 1.25rem;
-  line-height: 1.875rem;
-  letter-spacing: 0.3125rem;
+  line-height: (30 / 1000) * 1em;
+  letter-spacing: (5 / 1000) * 1em;
 }
 
 .hrTitle {
-  margin: 0;
-  margin-left: 3.125em;
+  margin: 0 0 5em 2.5em;
   border-color: var(--highlight);
-  border-width: 30px;
-  max-width: 179px;
+  border-width: 1.875rem;
+  max-width: 11.1875rem;
   text-align: center;
 }

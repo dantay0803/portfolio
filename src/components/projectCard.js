@@ -5,82 +5,105 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 const Styles = styled.div`
-  text-align: left;
-
   .card {
-    margin: 1rem;
-    -moz-box-shadow: 5px 10px 10px black;
-    -webkit-box-shadow: 5px 10px 10px black;
-    box-shadow: 5px 10px 10px black;
-    -webkit-transform: scale(1, 1);
-    transform: scale(1, 1);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-    width: 15rem;
-    height: 20rem;
+    width: 53.125rem;
+    height: 15rem;
+    overflow: hidden;
+    text-align: left;
+    color: var(--text-secondary);
+    padding: 0;
+    margin: 0 0 2em 0;
+    border: none;
+    border-radius: 0;
   }
 
-  .card:hover {
-    -webkit-transform: scale(1.1, 1.1);
-    transform: scale(1.1, 1.1);
+  .card:hover .card-img-overlay {
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -o-transform: translateX(0);
+    transition: all 1s;
+  }
+
+  .card-img-overlay {
+    background-color: var(--text-primary);
+    -webkit-clip-path: polygon(0 0, 100% 0%, 0% 100%, 0% 100%);
+    clip-path: polygon(0 0, 70% 0%, 48% 100%, 0% 100%);
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    transition: all 0.75s;
+  }
+
+  .card-img {
+    border: none;
+    border-radius: 0;
+  }
+
+  .card-title > h6 {
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+  }
+
+  .card-title > hr {
+    border-color: var(--highlight);
+    border-width: 0.625rem;
+    max-width: 11.1875rem;
+    margin: 0;
+    padding: 0;
   }
 
   .card-text {
-    font-size: 0.8rem;
+    max-width: 24.0625rem;
+    min-width: 24.0625rem;
+    font-size: 1.25rem;
+    margin: 0.9375rem 0 0 0;
+    padding: 0;
   }
 
-  .card-footer {
-    background: none;
-    border: none;
-  }
-
-  .btn,
-  .btn-primary {
-    background-color: var(--highlight);
-    border-color: var(--highlight);
-    font-size: 0.8rem;
-    text-decoration: none;
+  .card-tech {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    font-weight: bold;
   }
 `;
 
 const projectCard = props => {
-  const { thumbnail, projectTitle, projectDescription, projectPath } = props;
+  const {
+    thumbnail,
+    projectTitle,
+    projectTech,
+    projectDescription,
+    projectPath,
+  } = props;
   return (
     <Styles>
-      <Card>
-        <Img fluid={thumbnail} className="card-img-top" />
-        <Card.Body>
-          <Card.Title>
-            <h6>
-              <Link
-                to={`/projects/${projectPath}/`}
-                state={{
-                  modal: true,
-                  noScroll: true,
-                  replace: false,
-                }}
-                className="noUnderline"
-              >
-                {projectTitle}
-              </Link>
-            </h6>
-          </Card.Title>
-          <Card.Text>
-            Built with: <strong>{projectDescription}</strong>
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <Link
-            to={`/projects/${projectPath}/`}
-            state={{
-              modal: true,
-            }}
-            className="noUnderline"
-          >
-            <Button>More Details</Button>
-          </Link>
-        </Card.Footer>
-      </Card>
+      <Link
+        to={`/projects/${projectPath}/`}
+        state={{
+          modal: true,
+          noScroll: true,
+          replace: false,
+        }}
+        className="noUnderline"
+      >
+        <Card>
+          <Img fluid={thumbnail} className="card-img" />
+          <div className="overlay-shadow">
+            <Card.ImgOverlay>
+              <Card.Title>
+                <h6>{projectTitle}</h6>
+                <hr />
+              </Card.Title>
+              <Card.Text className="card-tech">{projectTech}</Card.Text>
+              <Card.Text>{projectDescription}</Card.Text>
+            </Card.ImgOverlay>
+          </div>
+        </Card>
+      </Link>
     </Styles>
   );
 };

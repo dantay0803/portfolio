@@ -19,7 +19,7 @@ const StyledNavbar = styled(Navbar)`
 
 const Styles = styled.div`
   #navbar-nav {
-    padding-right: 130px;
+    padding-right: 8.125rem;
   }
 
   .navbar-brand,
@@ -30,12 +30,12 @@ const Styles = styled.div`
     text-decoration: none;
     font-weight: bold;
     margin: 0;
-    padding-right: 40px;
+    padding-right: 2.5rem;
   }
 
   .navbar-brand {
     font-weight: normal;
-    padding-left: 50px;
+    padding-left: 3.125rem;
   }
 
   .navbar-brand: hover,
@@ -52,50 +52,55 @@ export default function navbar(props) {
   return (
     <Styles>
       <StyledNavbar
-        expand='lg'
-        fixed='top'
-        backgroundcolor={props.backgroundcolor}>
+        expand="lg"
+        fixed="top"
+        backgroundcolor={props.backgroundcolor}
+      >
         <Navbar.Brand onClick={() => scrollToTop()}>Daniel Taylor</Navbar.Brand>
-        <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='navbar-nav' className='justify-content-end'>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="navbar-nav" className="justify-content-end">
           <Nav>
             <Link
-              className='nav-link'
-              to='projects'
-              spy={true}
-              smooth={true}
+              className="nav-link"
+              to="projects"
+              spy
+              smooth
               offset={-70}
-              duration={500}>
+              duration={500}
+            >
               Projects
             </Link>
             <Link
-              className='nav-link'
-              to='about'
-              spy={true}
-              smooth={true}
+              className="nav-link"
+              to="about"
+              spy
+              smooth
               offset={-70}
-              duration={500}>
+              duration={500}
+            >
               About
             </Link>
             <Link
-              className='nav-link'
-              to='resume'
-              spy={true}
-              smooth={true}
+              className="nav-link"
+              to="resume"
+              spy
+              smooth
               offset={-70}
-              duration={500}>
+              duration={500}
+            >
               Resume
             </Link>
             <Link
-              className='nav-link'
-              to='contact'
-              spy={true}
-              smooth={true}
+              className="nav-link"
+              to="contact"
+              spy
+              smooth
               offset={-70}
-              duration={500}>
+              duration={500}
+            >
               Contact
             </Link>
-            <GatsbyLink to={`/blog/`} className='nav-link'>
+            <GatsbyLink to="/blog/" className="nav-link">
               Blog
             </GatsbyLink>
           </Nav>
