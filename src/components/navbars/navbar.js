@@ -18,15 +18,28 @@ const StyledNavbar = styled(Navbar)`
 `;
 
 const Styles = styled.div`
+  #navbar-nav {
+    padding-right: 130px;
+  }
+
   .navbar-brand,
   .navbar-light .navbar-nav .nav-link {
-    color: white;
+    color: var(--text-primary);
+    font-size: 1.75rem;
+    line-height: 2.125rem;
     text-decoration: none;
+    font-weight: bold;
+    margin: 0;
+    padding-right: 40px;
+  }
+
+  .navbar-brand {
+    font-weight: normal;
+    padding-left: 50px;
   }
 
   .navbar-brand: hover,
   .navbar-light .navbar-nav .nav-link: hover {
-    color: white;
     cursor: pointer;
   }
 `;
@@ -44,7 +57,7 @@ export default function navbar(props) {
         backgroundcolor={props.backgroundcolor}>
         <Navbar.Brand onClick={() => scrollToTop()}>Daniel Taylor</Navbar.Brand>
         <Navbar.Toggle aria-controls='basic-navbar-nav' />
-        <Navbar.Collapse id='basic-navbar-nav' className='justify-content-end'>
+        <Navbar.Collapse id='navbar-nav' className='justify-content-end'>
           <Nav>
             <Link
               className='nav-link'

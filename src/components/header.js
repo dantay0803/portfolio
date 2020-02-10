@@ -1,66 +1,77 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Jumbotron } from 'react-bootstrap';
+import { Container, Jumbotron, Row, Col } from 'react-bootstrap';
 import headerImage from '../images/headerImage.webp';
 
 const StyledJumbotron = styled(Jumbotron)`
-    background-image: url('${headerImage}');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
+  background-image: url('${headerImage}');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+
+  .container-fluid{
     padding: 0;
     margin: 0;
-    text-align: center;
-    color: #FFFFFF;
-    text-shadow: black 10px 10px 10px;
+  }
 
-    .container{
-      background-color: rgba(0, 47, 167, 0.8);
-      min-width: 100%;
-      min-height: 100%;
-    }
+  div{
+    height: 100vh;
+    width: 100vw;
+  }
 
-    h1{
-      padding-top: 30vh;
-      font-size: 7rem;
-      margin: 0;
-      color: var(--header-title);
-    }
+  .black{
+    background-color: var(--background-primary);
+    -webkit-clip-path: polygon(0 0, 100% 0%, 0% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0%, 0% 100%, 0% 100%);
+  }
 
-    h2{
-      font-size: 4rem;
-      margin: 0;
-      color: var(--header-title);
-    }
-    
-    hr{
-      border-color: white;
-      border-width: 5px;
-      max-width: 55%;
-      -moz-box-shadow:    0 5px 0 0 black;
-      -webkit-box-shadow: 0 5px 0 0 black;
-      box-shadow:         0 5px 0 0 black;
-    }
+  .red{
+    background-color: rgba(255, 0, 0, 0.75);
+    -webkit-clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(100% 0, 100% 0%, 100% 100%, 0% 100%);
+    position: absolute;
+    right: 0;
+  }
 
-    @media (max-width:641px) {
-      h1{
-        font-size: 5rem;
-      }
-  
-      h2{
-        font-size: 2rem;
-      }
-    }
+  h1{
+    font-size: 3.875rem;
+    line-height: 3.8125rem;
+    font-weight: bold;
+    text-transform: none;
+    font-family: "Montserrat", sans-serif;
+    line-height: 4.75rem;
+    margin: 0;
+    padding: 275px 0 0 50px;
+    width: 860px;
+  }
+
+  h2{
+    font-size: 3.125rem;
+    color: var(--text-muted);
+    margin: 0;
+    padding: 20px 0 0 50px;
+  }
 `;
 
 export default function Header() {
   return (
     <StyledJumbotron fluid>
-      <Container>
-        <h1>DANIEL TAYLOR</h1>
-        <hr />
-        <h2>Software Developer</h2>
+      <Container fluid>
+        <Row noGutters>
+          <Col xs={6}>
+            <div className="black">
+              <h1>I build high-quality web & mobile applications</h1>
+              <h2>Software Developer</h2>
+            </div>
+          </Col>
+          <Col xs={6}>
+            <div className="red" />
+          </Col>
+        </Row>
       </Container>
     </StyledJumbotron>
   );
