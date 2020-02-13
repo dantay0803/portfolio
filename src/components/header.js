@@ -25,14 +25,14 @@ const StyledJumbotron = styled(Jumbotron)`
 
   .black{
     background-color: var(--background-primary);
-    -webkit-clip-path: polygon(0 0, 100% 0%, 0% 100%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0%, 0% 100%, 0% 100%);
+    -webkit-clip-path: polygon(100% 0, 0 0, 0 100%);
+    clip-path: polygon(100% 0, 0 0, 0 100%);
   }
 
   .red{
     background-color: rgba(255, 0, 0, 0.75);
-    -webkit-clip-path: polygon(50% 0, 100% 0%, 100% 100%, 0% 100%);
-    clip-path: polygon(100% 0, 100% 0%, 100% 100%, 0% 100%);
+    -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+    clip-path: polygon(100% 0, 0 100%, 100% 100%);
     position: absolute;
     right: 0;
   }

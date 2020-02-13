@@ -11,8 +11,6 @@ const Styles = styled.div`
     overflow: hidden;
     text-align: left;
     color: var(--text-secondary);
-    padding: 0;
-    margin: 0 0 2em 0;
     border: none;
     border-radius: 0;
   }
@@ -22,7 +20,7 @@ const Styles = styled.div`
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
     -o-transform: translateX(0);
-    transition: all 1s;
+    transition: all 0.9s ease-in-out;
   }
 
   .card-img-overlay {
@@ -33,7 +31,7 @@ const Styles = styled.div`
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
     -o-transform: translateX(-100%);
-    transition: all 0.75s;
+    transition: all 0.75s ease-in-out;
   }
 
   .card-img {

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, CardDeck } from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import { graphql, useStaticQuery } from 'gatsby';
 import ProjectCard from './projectCard';
 
@@ -9,7 +9,8 @@ const Styles = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    margin: 0 2.5rem 0 2.5rem;
+    margin: 2.5rem;
+    grid-gap: 2.5em;
     padding: 0;
   }
 
