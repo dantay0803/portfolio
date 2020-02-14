@@ -5,13 +5,18 @@ import { graphql, useStaticQuery } from 'gatsby';
 import ProjectCard from './projectCard';
 
 const Styles = styled.div`
+  .container-fluid {
+    padding: 0;
+  }
+
   .project-card-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     margin: 2.5rem;
     grid-gap: 2.5em;
     padding: 0;
+    overflow: hidden;
   }
 
   .project-left-grid {
@@ -105,16 +110,17 @@ export default () => {
               projectTech="C#, JavaScript, ASP.Net"
               projectDescription="Integrated web and mobile apps to automate field service, depot service and equipment logistics."
               projectPath="phalanx"
+              additionalClasses=""
             />
           </div>
           <div className="project-right-grid">
             <ProjectCard
-              className="project-right-grid"
               thumbnail={data.planetLibraryImage.childImageSharp.fluid}
               projectTitle="Planet Library"
               projectTech="UNITY & C#"
               projectDescription="Planet Library transforms your Library into a fun and engaging digital space for children."
               projectPath="planet-library"
+              additionalClasses="rightCard"
             />
           </div>
           <div className="project-left-grid">
@@ -124,6 +130,7 @@ export default () => {
               projectTech="UNITY & C#"
               projectDescription="Developed on behalf of the Catherine McEwan Foundation to assist in the diagnosis of bowel disease."
               projectPath="ibd-classes"
+              additionalClasses=""
             />
           </div>
           <div className="project-right-grid">
@@ -133,6 +140,7 @@ export default () => {
               projectTech="JavaScript & React"
               projectDescription="A TV show and movie searching website created with React and powered by the MovieDB API."
               projectPath="what-to-watch"
+              additionalClasses="rightCard"
             />
           </div>
           <div className="project-left-grid">
@@ -142,6 +150,7 @@ export default () => {
               projectTech="JavaScript & Cordova"
               projectDescription="Mobile application I created using Apache Cordova to track my comics in storage."
               projectPath="comic-manager"
+              additionalClasses=""
             />
           </div>
           <div className="project-right-grid">
@@ -151,6 +160,7 @@ export default () => {
               projectTech="UNITY & C#"
               projectDescription="A First Person Shooter developed to aid in the research of the effects of violent video games."
               projectPath="clandestine-ops"
+              additionalClasses="rightCard"
             />
           </div>
         </div>

@@ -35,6 +35,24 @@ p {
   letter-spacing: (5 / 1000) * 1em;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+  flex: 1;
+}
+
+li::before {
+  color: var(--highlight);
+  content: "►";
+  margin-right: 5px;
+  font-weight: bold;
+  padding: 3px 8px 3px 0;
+}
+
+li {
+  padding: 8px 0;
+}
+
 .hrTitle {
   margin: 0 0 5em 2.5em;
   border-color: var(--highlight);

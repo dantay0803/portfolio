@@ -6,8 +6,8 @@ import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Navbar from '../components/navbars/navbar';
 import Header from '../components/header';
-import Projects from '../components/projects';
-import About from '../components/about';
+import Projects from '../components/projects/projects';
+import About from '../components/about/about';
 import Resume from '../components/resume';
 import Contact from '../components/contact';
 
@@ -31,20 +31,20 @@ const IndexPage = () => {
     return () => {
       window.removeEventListener('mousemove', updateNavbar);
     };
-  }, []);
+  }, [updateNavbar]);
 
   return (
     <Layout>
-      <SEO title='Home' />
+      <SEO title="Home" />
       <Navbar backgroundcolor={navBackgroundColor} />
       <Header />
       <StyledContainer fluid>
         <Projects />
-        <hr className='hrPageBreak' />
+        <hr className="hrPageBreak" />
         <About />
-        <hr className='hrPageBreak' />
+        <hr className="hrPageBreak" />
         <Resume />
-        <hr className='hrPageBreak' />
+        <hr className="hrPageBreak" />
         <Contact />
       </StyledContainer>
     </Layout>

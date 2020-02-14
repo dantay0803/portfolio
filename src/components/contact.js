@@ -1,102 +1,84 @@
-import React from "react"
-import styled from "styled-components"
-import { Row, Col } from "react-bootstrap"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons"
-import {
-  faTwitterSquare,
-  faLinkedin,
-  faGithubSquare,
-} from "@fortawesome/free-brands-svg-icons"
+import React from 'react';
+import styled from 'styled-components';
+import { Container } from 'react-bootstrap';
+import { FiMail, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
 
 const Styles = styled.div`
-  padding: 0;
-  margin: 0;
-  margin-bottom: 5rem;
-  text-align: center;
-
-  a {
-    color: var(--highlight);
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
 
-  .contactLinks {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
+  .contact-links {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-colums: repeat(4, 1fr);
+    grid-gap: 5em;
+    justify-items: center;
     align-items: center;
   }
 
-  .fa-4x {
-    color: var(--highlight);
+  .contact-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
   }
-`
+`;
 
 export default function contact() {
   return (
     <Styles>
-      <Row
-        key="contact"
-        id="contact"
-        className="justify-content-md-center"
-        noGutters
-      >
-        <Row className="justify-content-md-center" noGutters>
-          <Col xs={12}>
-            <h1>Get in Touch</h1>
-            <hr className="hrTitle" />
-            <p>
-              Looking to speak with me about something or just want to stay up
-              to date with my work?
-            </p>
-            <p>Just follow the links below</p>
-            <Row>
-              <Col xs={12} md={3}>
-                <a
-                  href="mailto:danielt0803@outlook.com"
-                  rel="noopener noreferrer"
-                  className="contactLinks"
-                >
-                  <FontAwesomeIcon icon={faEnvelopeSquare} size="4x" />
-                  <p>Email</p>
-                </a>
-              </Col>
-              <Col xs={12} md={3}>
-                <a
-                  href="https://www.linkedin.com/in/danielt0803/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contactLinks"
-                >
-                  <FontAwesomeIcon icon={faLinkedin} size="4x" />
-                  <p>LinkedIn</p>
-                </a>
-              </Col>
-              <Col xs={12} md={3}>
-                <a
-                  href="https://twitter.com/dantay0803"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contactLinks"
-                >
-                  <FontAwesomeIcon icon={faTwitterSquare} size="4x" />
-                  <p>Twitter</p>
-                </a>
-              </Col>
-              <Col xs={12} md={3}>
-                <a
-                  href="https://github.com/dantay0803"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="contactLinks"
-                >
-                  <FontAwesomeIcon icon={faGithubSquare} size="4x" />
-                  <p>GitHub</p>
-                </a>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-      </Row>
+      <Container key="contact" id="contact" fluid>
+        <h1>Contact</h1>
+        <hr className="hrTitle" />
+        <div className="contact-info">
+          <p>
+            Looking to speak with me about something or just want to stay up to
+            date with my work?
+          </p>
+          <p>Just follow the links below</p>
+          <div className="contact-links">
+            <a
+              href="mailto:danielt0803@outlook.com"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              <FiMail />
+              <p>Email</p>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/danielt0803/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              <FiLinkedin />
+              <p>LinkedIn</p>
+            </a>
+            <a
+              href="https://twitter.com/dantay0803"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              <FiTwitter />
+              <p>Twitter</p>
+            </a>
+            <a
+              href="https://github.com/dantay0803"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact-link"
+            >
+              <FiGithub />
+              <p>GitHub</p>
+            </a>
+          </div>
+        </div>
+      </Container>
     </Styles>
-  )
+  );
 }
