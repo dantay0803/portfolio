@@ -5,17 +5,12 @@ import { graphql, useStaticQuery } from 'gatsby';
 import ProjectCard from './projectCard';
 
 const Styles = styled.div`
-  .container-fluid {
-    padding: 0;
-  }
-
   .project-card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    margin: 2.5rem;
     grid-gap: 2.5em;
-    padding: 0;
+    margin: 0 2.5rem;
     overflow: hidden;
   }
 

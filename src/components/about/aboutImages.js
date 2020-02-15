@@ -7,8 +7,6 @@ const PolaroidBackground = styled.div`
   width: 25.1875rem;
   height: 26.61875rem;
   background-color: var(--text-primary);
-  padding: 0;
-  margin: 0;
   transform: scale(1);
   display: flex;
   flex-direction: column;
@@ -18,7 +16,7 @@ const PolaroidBackground = styled.div`
 
   img {
     width: 22.6875rem;
-    height: 22.0625rem;
+    max-height: 22.0625rem;
     margin: 1em 0;
   }
 
@@ -33,24 +31,21 @@ const PolaroidBackground = styled.div`
 `;
 
 const Styles = styled.div`
+  height: 30rem;
+
   .profileImage {
-    max-width: 25.1875rem;
-    max-height: 26.61875rem;
     transition: all 0.75s ease-in-out;
-    position: relative;
     -webkit-transform: rotate(-10deg) translateY(-100%);
     transform: rotate(-10deg) translateY(-100%);
   }
 
-  .profileImageTrigger:hover .profileImage {
+  .profileImage:hover {
     -webkit-transform: scale(1.5) translateY(-75%);
     transform: scale(1.5) translateY(-75%);
     transition: all 0.75s ease-in-out;
   }
 
   .presentationImage {
-    max-width: 25.1875rem;
-    max-height: 26.61875rem;
     animation: presentationImageAnimationBack 2s ease-in-out 0s 1 normal
       forwards;
   }
@@ -135,15 +130,13 @@ export default () => {
           <p>STUDENT PRESENTATION TIME!</p>
         </PolaroidBackground>
       </div>
-      <div className="profileImageTrigger">
-        <PolaroidBackground className="profileImage">
-          <Img
-            fixed={data.profileImage.childImageSharp.fixed}
-            alt="Image of Daniel Taylor"
-          />
-          <p>Daniel Taylor</p>
-        </PolaroidBackground>
-      </div>
+      <PolaroidBackground className="profileImage">
+        <Img
+          fixed={data.profileImage.childImageSharp.fixed}
+          alt="Image of Daniel Taylor"
+        />
+        <p>Daniel Taylor</p>
+      </PolaroidBackground>
     </Styles>
   );
 };

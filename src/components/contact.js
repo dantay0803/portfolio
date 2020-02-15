@@ -4,27 +4,54 @@ import { Container } from 'react-bootstrap';
 import { FiMail, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
 
 const Styles = styled.div`
+  margin-bottom: 10rem;
+
   .contact-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    text-align: center;
   }
 
   .contact-links {
     display: grid;
     grid-template-rows: 1fr;
-    grid-template-colums: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 5em;
     justify-items: center;
     align-items: center;
+    margin-top: 3rem;
   }
 
   .contact-link {
+    background-color: var(--background-secondary);
+    width: 100px;
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0.625rem 0.375rem rgba(0, 0, 0, 1);
+    transition: all 0.75s ease-in-out;
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact-link:hover {
+    background-color: var(--highlight);
+    transition: all 0.75s ease-in-out;
+  }
+
+  svg {
+    stroke-width: 1;
+    transition: all 0.75s ease-in-out;
+  }
+
+  .contact-link:hover svg {
+    color: var(--text-primary);
+    transition: all 0.75s ease-in-out;
   }
 `;
 
@@ -38,16 +65,16 @@ export default function contact() {
           <p>
             Looking to speak with me about something or just want to stay up to
             date with my work?
+            <br />
+            Just follow the links below
           </p>
-          <p>Just follow the links below</p>
           <div className="contact-links">
             <a
               href="mailto:danielt0803@outlook.com"
               rel="noopener noreferrer"
               className="contact-link"
             >
-              <FiMail />
-              <p>Email</p>
+              <FiMail size={65} />
             </a>
             <a
               href="https://www.linkedin.com/in/danielt0803/"
@@ -55,8 +82,7 @@ export default function contact() {
               rel="noopener noreferrer"
               className="contact-link"
             >
-              <FiLinkedin />
-              <p>LinkedIn</p>
+              <FiLinkedin size={65} />
             </a>
             <a
               href="https://twitter.com/dantay0803"
@@ -64,8 +90,7 @@ export default function contact() {
               rel="noopener noreferrer"
               className="contact-link"
             >
-              <FiTwitter />
-              <p>Twitter</p>
+              <FiTwitter size={65} />
             </a>
             <a
               href="https://github.com/dantay0803"
@@ -73,8 +98,7 @@ export default function contact() {
               rel="noopener noreferrer"
               className="contact-link"
             >
-              <FiGithub />
-              <p>GitHub</p>
+              <FiGithub size={65} />
             </a>
           </div>
         </div>

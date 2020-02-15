@@ -2,13 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Styles = styled.div`
-  align-self: start;
-  justify-self: end;
-
   .recentTechList {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
+  }
+
+  p {
     max-width: 560px;
   }
 `;

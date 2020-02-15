@@ -9,11 +9,16 @@ import Header from '../components/header';
 import Projects from '../components/projects/projects';
 import About from '../components/about/about';
 import Resume from '../components/resume';
+import BlogShowcase from '../components/blogShowcase/blogShowcase';
 import Contact from '../components/contact';
 
 const StyledContainer = styled(Container)`
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: space-evenly;
+  justify-content: center;
 `;
 const IndexPage = () => {
   const [navBackgroundColor, setNavBackgroundColor] = useState('transparent');
@@ -40,11 +45,9 @@ const IndexPage = () => {
       <Header />
       <StyledContainer fluid>
         <Projects />
-        <hr className="hrPageBreak" />
         <About />
-        <hr className="hrPageBreak" />
         <Resume />
-        <hr className="hrPageBreak" />
+        <BlogShowcase />
         <Contact />
       </StyledContainer>
     </Layout>
