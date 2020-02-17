@@ -4,20 +4,11 @@ import { Navbar, Nav } from 'react-bootstrap';
 import { Link, animateScroll as scroll } from 'react-scroll';
 import { Link as GatsbyLink } from 'gatsby';
 
-const StyledNavbar = styled(Navbar)`
-  background-color: ${props => props.backgroundcolor || 'transparent'};
-  -webkit-transition: background 1s;
-  -moz-transition: background 1s;
-  -ms-transition: background 1s;
-  -o-transition: background 1s;
-  transition: background 1s;
-
-  @media (max-width: 641px) {
-    background-color: var(--highlight);
-  }
-`;
-
 const Styles = styled.div`
+  .navbar {
+    background-color: var(--background-primary);
+  }
+
   #navbar-nav {
     padding-right: 8.125rem;
   }
@@ -38,24 +29,20 @@ const Styles = styled.div`
     padding-left: 3.125rem;
   }
 
-  .navbar-brand: hover,
-  .navbar-light .navbar-nav .nav-link: hover {
+  .navbar-brand:hover,
+  .navbar-light .navbar-nav .nav-link:hover {
     cursor: pointer;
   }
 `;
 
-export default function navbar(props) {
+export default function navbar() {
   const scrollToTop = () => {
     scroll.scrollToTop();
   };
 
   return (
     <Styles>
-      <StyledNavbar
-        expand="lg"
-        fixed="top"
-        backgroundcolor={props.backgroundcolor}
-      >
+      <Navbar expand="lg">
         <Navbar.Brand onClick={() => scrollToTop()}>Daniel Taylor</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="navbar-nav" className="justify-content-end">
@@ -105,7 +92,7 @@ export default function navbar(props) {
             </GatsbyLink>
           </Nav>
         </Navbar.Collapse>
-      </StyledNavbar>
+      </Navbar>
     </Styles>
   );
 }

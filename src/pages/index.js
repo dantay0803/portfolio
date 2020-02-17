@@ -20,38 +20,20 @@ const StyledContainer = styled(Container)`
   align-items: space-evenly;
   justify-content: center;
 `;
-const IndexPage = () => {
-  const [navBackgroundColor, setNavBackgroundColor] = useState('transparent');
 
-  const updateNavbar = () => {
-    if (window.pageYOffset > 250) {
-      setNavBackgroundColor('var(--highlight)');
-    } else if (window.pageYOffset < 250) {
-      setNavBackgroundColor('transparent');
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', updateNavbar);
-    return () => {
-      window.removeEventListener('mousemove', updateNavbar);
-    };
-  }, [updateNavbar]);
-
-  return (
-    <Layout>
-      <SEO title="Home" />
-      <Navbar backgroundcolor={navBackgroundColor} />
-      <Header />
-      <StyledContainer fluid>
-        <Projects />
-        <About />
-        <Resume />
-        <BlogShowcase />
-        <Contact />
-      </StyledContainer>
-    </Layout>
-  );
-};
+const IndexPage = () => (
+  <Layout>
+    <SEO title="Home" />
+    <Navbar />
+    <Header />
+    <StyledContainer fluid>
+      <Projects />
+      <About />
+      <Resume />
+      <BlogShowcase />
+      <Contact />
+    </StyledContainer>
+  </Layout>
+);
 
 export default IndexPage;
