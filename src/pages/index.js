@@ -8,7 +8,7 @@ import Navbar from '../components/navbars/navbar';
 import Header from '../components/header';
 import Projects from '../components/projects/projects';
 import About from '../components/about/about';
-import Resume from '../components/resume';
+import Resume from '../components/resume/resume';
 import BlogShowcase from '../components/blogShowcase/blogShowcase';
 import Contact from '../components/contact';
 
