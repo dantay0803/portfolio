@@ -9,7 +9,7 @@ import Header from '../components/header';
 import Projects from '../components/projects/projects';
 import About from '../components/about/about';
 import Resume from '../components/resume/resume';
-import BlogShowcase from '../components/blogShowcase/blogShowcase';
+import BlogHighlight from '../components/blog/blogHighlight';
 import Contact from '../components/contact';
 
 const StyledContainer = styled(Container)`
@@ -30,7 +30,7 @@ const IndexPage = () => (
       <Projects />
       <About />
       <Resume />
-      <BlogShowcase />
+      <BlogHighlight />
       <Contact />
     </StyledContainer>
   </Layout>

@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Card } from 'react-bootstrap';
 import { Link } from 'gatsby';
-import Img from 'gatsby-image';
 
 const StyledCard = styled(Card)`
   width: 575px;
@@ -15,7 +14,7 @@ const StyledCard = styled(Card)`
   transform: scale(1);
   transition: transform 0.75s ease-in-out;
   padding: 0;
-  margin: 0;
+  margin: 1rem 0;
   overflow: hidden;
 
   :hover {
@@ -53,9 +52,13 @@ const StyledCard = styled(Card)`
     }
   }
 
-  .card-img {
+  .card-img-top {
     border: none;
     border-radius: 0;
+    max-width: 575px;
+    max-height: 295px;
+    min-width: 575px;
+    min-height: 295px;
   }
 
   .card-body {
@@ -103,12 +106,19 @@ const StyledCard = styled(Card)`
 
 // eslint-disable-next-line react/display-name
 export default props => {
-  const { thumbnail, postTitle, postDate, postDescription, postPath } = props;
+  const {
+    thumbnail,
+    alt,
+    postTitle,
+    postDate,
+    postDescription,
+    postPath,
+  } = props;
 
   return (
-    <Link to={`/blog/${postPath}/`} className="noUnderline">
+    <Link to={postPath} className="noUnderline">
       <StyledCard>
-        <Img fluid={thumbnail} variant="top" className="card-img" />
+        <Card.Img variant="top" src={thumbnail} alt={alt || `Blog Thumbnail`} />
         <div className="img-clip" />
         <Card.Body>
           <Card.Title>
@@ -116,7 +126,11 @@ export default props => {
             <hr />
           </Card.Title>
           <Card.Text className="card-date">{postDate}</Card.Text>
-          <Card.Text>{postDescription}</Card.Text>
+          <Card.Text
+            dangerouslySetInnerHTML={{
+              __html: postDescription,
+            }}
+          />
         </Card.Body>
       </StyledCard>
     </Link>

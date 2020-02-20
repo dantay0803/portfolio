@@ -88,6 +88,10 @@ export default function resume() {
         <h1>Resume</h1>
         <hr className="hrTitle" />
         <div className="resumeContent">
+          <Experience />
+          <Education />
+          <Awards />
+          <Skills />
           <a
             href={danieltaylorResume}
             target="_blank"
@@ -97,10 +101,6 @@ export default function resume() {
             <MdFileDownload size={32} />
             <p>DOWNLOAD</p>
           </a>
-          <Experience />
-          <Education />
-          <Awards />
-          <Skills />
         </div>
       </Container>
     </Styles>
