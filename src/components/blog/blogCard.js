@@ -18,8 +18,8 @@ const StyledCard = styled(Card)`
   overflow: hidden;
 
   :hover {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
     border: 2px solid var(--text-primary);
     box-shadow: 0.425rem 0.675rem 0.425rem rgba(0, 0, 0, 0.75);
     transition: transform 0.75s ease-in-out;
@@ -96,11 +96,10 @@ const StyledCard = styled(Card)`
     background-color: var(--background-primary);
     -webkit-clip-path: polygon(0 75%, 100% 100%, 100% 100%, 0% 100%);
     clip-path: polygon(0 75%, 100% 100%, 100% 100%, 0% 100%);
-    width: 100%;
+    width: 110%;
     height: 50%;
     position: absolute;
     top: 1.5rem;
-    left: 0;
   }
 `;
 

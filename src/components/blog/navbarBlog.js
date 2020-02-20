@@ -6,25 +6,24 @@ import sanitizeHtml from 'sanitize-html';
 
 const Styles = styled.div`
   .navbar {
-    background-color: rgba(20, 20, 20, 0.75);
+    background-color: none;
   }
 
-  .dropdown-item {
-    color: var(--highlight);
-    text-decoration: none;
-    padding-left: 10px;
+  .dropdown-menu {
+    padding: 0;
+    background-color: var(--background-primary);
+    border-color: var(--background-primary);
     font-size: 0.85rem;
   }
 
-  .fill-width.dropdown {
-    position: static;
+  .dropdown-item {
+    color: var(--text-primary);
+    margin: 0.25rem 0.5rem;
   }
-  .fill-width.dropdown > .dropdown-menu {
-    left: auto;
-    position: absolute;
-  }
-  .fill-width.dropdown > .dropdown-menu > .dropdown-item {
-    white-space: normal;
+
+  .dropdown-item:hover {
+    color: var(--highlight);
+    text-decoration: underline;
   }
 `;
 

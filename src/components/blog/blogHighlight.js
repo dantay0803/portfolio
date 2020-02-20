@@ -49,7 +49,7 @@ export default () => {
             postTitle="Student Employment Advice Presentation – 2019"
             postDate="Sat, 14 Sep 2019"
             postDescription="A few months ago I was invited back to the university I used to attend, the University of the West of Scotland. To deliver my t..."
-            postPath="blog/Student Employment Advice Presentation – 2019"
+            postPath="/blog/student-employment-advice-presentation–2019/"
           />
           <BlogCard
             key="MFWBS"
@@ -57,7 +57,7 @@ export default () => {
             postTitle="Student Employment Advice Presentation – 2019"
             postDate="Sat, 14 Sep 2019"
             postDescription="A few months ago I was invited back to the university I used to attend, the University of the West of Scotland. To deliver my t..."
-            postPath="blog/Student Employment Advice Presentation – 2019"
+            postPath="blog/student-employment-advice-presentation–2019/"
           />
           <BlogCard
             key="SEAP"
@@ -65,7 +65,7 @@ export default () => {
             postTitle="Student Employment Advice Presentation – 2019"
             postDate="Sat, 14 Sep 2019"
             postDescription="A few months ago I was invited back to the university I used to attend, the University of the West of Scotland. To deliver my t..."
-            postPath="blog/Student Employment Advice Presentation – 2019"
+            postPath="blog/student-employment-advice-presentation–2019/"
           />
         </div>
       </Container>

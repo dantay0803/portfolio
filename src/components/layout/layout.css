@@ -17,7 +17,7 @@ body {
   font-size: 16px;
   color: var(--text-primary);
   font-family: "Montserrat", sans-serif;
-  background-color: var(--background-secondary);
+  background-color: var(--background-primary);
 }
 
 h1 {
@@ -125,4 +125,6 @@ li {
 .navbar-light .navbar-nav .nav-link:hover {
   cursor: pointer;
   color: var(--text-primary);
+  justify-content: center;
+  align-content: center;
 }

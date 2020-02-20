@@ -17,9 +17,10 @@ const StyledJumbotron = styled(Jumbotron)`
   .container {
     background-color: rgba(20, 20, 20, 0.75);
     min-width: 100%;
-    min-height: 83.5%;
-    padding: 3rem 0 0 0;
-    padding: 3rem 0 0 0;
+    height: 40vh;
+    padding: 10rem 0 0 0;
+    top: 0;
+    position: absolute;
   }
 
   h1{

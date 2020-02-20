@@ -75,8 +75,8 @@ const BlogHome = props => {
                 .slice(0, 4)
                 .join(' ')}
               postDescription={sanitizeHtml(
-                post.node.excerpt.length > 130
-                  ? post.node.excerpt.substring(0, 130).concat('...')
+                post.node.excerpt.length > 115
+                  ? post.node.excerpt.substring(0, 115).concat('...')
                   : post.node.excerpt
               )}
               postPath={`/blog/${post.node.slug}/`}
