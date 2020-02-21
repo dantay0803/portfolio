@@ -5,6 +5,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import ProjectCard from './projectCard';
 
 const Styles = styled.div`
+  z-index: 1;
+
   .project-card-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

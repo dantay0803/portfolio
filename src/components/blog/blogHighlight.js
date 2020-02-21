@@ -5,6 +5,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import BlogCard from './blogCard';
 
 const Styles = styled.div`
+  z-index: 1;
+  margin-bottom: 27.5rem;
+
   .card-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

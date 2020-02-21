@@ -10,6 +10,8 @@ import Skills from './skills';
 
 const Styles = styled.div`
   text-align: left;
+  z-index: 1;
+  margin-bottom: 7rem;
 
   .resumeContent {
     display: flex;

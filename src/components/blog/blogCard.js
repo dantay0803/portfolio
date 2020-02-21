@@ -4,8 +4,8 @@ import { Card } from 'react-bootstrap';
 import { Link } from 'gatsby';
 
 const StyledCard = styled(Card)`
-  width: 575px;
-  height: 550px;
+  width: 525px;
+  height: 500px;
   color: var(--text-primary);
   box-shadow: 0.375rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
   border: none;
@@ -55,10 +55,10 @@ const StyledCard = styled(Card)`
   .card-img-top {
     border: none;
     border-radius: 0;
-    max-width: 575px;
-    max-height: 295px;
-    min-width: 575px;
-    min-height: 295px;
+    max-width: 525px;
+    max-height: 275px;
+    min-width: 525px;
+    min-height: 275px;
   }
 
   .card-body {
@@ -67,6 +67,7 @@ const StyledCard = styled(Card)`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 10px;
   }
 
   .card-title,
@@ -84,7 +85,7 @@ const StyledCard = styled(Card)`
     border-width: 0.625rem;
     max-width: 100%;
     margin: 0;
-    padding: 5px 20px;
+    padding: 0px 20px;
   }
 
   .card-date {
@@ -99,7 +100,7 @@ const StyledCard = styled(Card)`
     width: 110%;
     height: 50%;
     position: absolute;
-    top: 1.5rem;
+    top: 1.75rem;
   }
 `;
 

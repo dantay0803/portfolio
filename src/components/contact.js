@@ -4,6 +4,7 @@ import { Container } from 'react-bootstrap';
 import { FiMail, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
 
 const Styles = styled.div`
+  z-index: 1;
   margin-bottom: 10rem;
 
   .contact-info {
