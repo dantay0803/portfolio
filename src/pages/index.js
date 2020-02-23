@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Helmet } from 'react-helmet';
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import '../styles/bootstrap-4.3.1.min.css';
@@ -24,12 +25,18 @@ const StyledContainer = styled(Container)`
 
 const IndexPage = () => (
   <Layout>
+    <Helmet>
+      <meta
+        httpEquiv="Content-security-Policy"
+        content="upgrade-insecure-requests"
+      />
+    </Helmet>
     <SEO title="Home" />
     <Navbar />
     <Header />
     <StyledContainer fluid>
-      <ClippedSection top={100} />
-      <ClippedSection top={303} />
+      <ClippedSection top={103} />
+      <ClippedSection top={306} />
       <Projects />
       <About />
       <Resume />

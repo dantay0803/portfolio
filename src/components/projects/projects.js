@@ -38,56 +38,58 @@ export default () => {
   const data = useStaticQuery(graphql`
     query projectThumbnailImage {
       phalanxImage: file(
-        relativePath: { eq: "thumbnails/thumbnail_phalanx.webp" }
+        relativePath: { eq: "thumbnails/thumbnail_phalanx.jpg" }
       ) {
         id
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
       planetLibraryImage: file(
-        relativePath: { eq: "thumbnails/thumbnail_pl.webp" }
+        relativePath: { eq: "thumbnails/thumbnail_pl.jpg" }
       ) {
         id
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
-      ibdImage: file(relativePath: { eq: "thumbnails/thumbnail_ibd.webp" }) {
+      ibdImage: file(relativePath: { eq: "thumbnails/thumbnail_ibd.jpg" }) {
         id
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
-      wtwImage: file(relativePath: { eq: "thumbnails/thumbnail_wtw.webp" }) {
+      wtwImage: file(
+        relativePath: { eq: "thumbnails/thumbnail_whatToWatch.jpg" }
+      ) {
         id
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
       comicManagerImage: file(
-        relativePath: { eq: "thumbnails/thumbnail_comicmanager.webp" }
+        relativePath: { eq: "thumbnails/thumbnail_comicmanager.jpg" }
       ) {
         id
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }
-      coImage: file(relativePath: { eq: "thumbnails/thumbnail_co.webp" }) {
+      coImage: file(relativePath: { eq: "thumbnails/thumbnail_co.jpg" }) {
         id
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }

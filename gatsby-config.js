@@ -7,7 +7,7 @@ module.exports = {
       'Personal portfolio website for Daniel Taylor software engineer.',
     url: 'https://www.danielt.co.uk',
     image: '/images/header.jpg', // needs updated
-    twitterUsername: '@dantay0803'
+    twitterUsername: '@dantay0803',
   },
   plugins: [
     {
@@ -15,20 +15,20 @@ module.exports = {
       options: {
         typeName: 'WordPress',
         fieldName: 'wpgraphql',
-        url: 'https://danielt.co.uk/blog/graphql',
-        refetchInterval: 60
-      }
+        url: 'https://danielt.co.uk/wp/graphql',
+        refetchInterval: 60,
+      },
     },
     {
-      resolve: `gatsby-plugin-styled-components`
+      resolve: `gatsby-plugin-styled-components`,
     },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`
-      }
+        path: `${__dirname}/src/images`,
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
@@ -41,8 +41,8 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/icon-512x512.webp` // This path is relative to the root of the site.
-      }
+        icon: `src/images/icon-512x512.webp`, // This path is relative to the root of the site.
+      },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
@@ -51,8 +51,8 @@ module.exports = {
       resolve: 'gatsby-plugin-zopfli',
       options: {
         path: 'zopfli',
-        extensions: ['css', 'html', 'js']
-      }
-    }
-  ]
+        extensions: ['css', 'html', 'js'],
+      },
+    },
+  ],
 };

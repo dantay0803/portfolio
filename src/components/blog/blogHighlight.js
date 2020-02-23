@@ -28,12 +28,12 @@ export default () => {
   const data = useStaticQuery(graphql`
     query BlogThumbnails {
       planetLibraryImage: file(
-        relativePath: { eq: "thumbnails/thumbnail_pl.webp" }
+        relativePath: { eq: "thumbnails/thumbnail_pl.jpg" }
       ) {
         id
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid
           }
         }
       }

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Jumbotron } from 'react-bootstrap';
 import styled from 'styled-components';
 import '../styles/bootstrap-4.3.1.min.css';
 import { graphql } from 'gatsby';
@@ -13,6 +12,7 @@ const Article = styled.article`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding-bottom: 2rem;
 
   header {
     max-width: 800px;
@@ -27,18 +27,33 @@ const Article = styled.article`
     max-width: 800px;
   }
 
+  img {
+    max-width: 800px;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .headerImage {
+    min-width: 95vw;
+    height: 50vh;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .headerImage img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
   .date {
     color: var(--text-muted);
     font-size: 1rem;
   }
-`;
-
-const JumbotronFeaturedImage = styled(Jumbotron)`
-  background-image: url(${props => props.featuredimage});
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 40vh;
 `;
 
 export const query = graphql`
@@ -84,8 +99,10 @@ const blogPost = props => {
         pathname={`/blog/${props.pageContext.slug}`}
       />
       <Navbar posts={posts} />
-      <JumbotronFeaturedImage fluid featuredimage={featuredImage.sourceUrl} />
-      <Article>
+      <Article textColor="--text-secondary">
+        <div className="headerImage">
+          <img src={featuredImage.sourceUrl} alt="" />
+        </div>
         <header>
           <h1>{sanitizeHtml(title)}</h1>
           <p className="date">
