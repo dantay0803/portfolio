@@ -74,32 +74,40 @@ export default function contact() {
               href="mailto:danielt0803@outlook.com"
               rel="noopener noreferrer"
               className="contact-link"
+              key="contact-email"
+              title="Link to send me an email"
             >
-              <FiMail size={65} />
+              <FiMail size={65} alt="Email Image" />
             </a>
             <a
               href="https://www.linkedin.com/in/danielt0803/"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link"
+              key="contact-linkedin"
+              title="Link to my LinkedIn profile"
             >
-              <FiLinkedin size={65} />
+              <FiLinkedin size={65} alt="LinkedIn Logo" />
             </a>
             <a
               href="https://twitter.com/dantay0803"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link"
+              key="contact-twitter"
+              title="Link to my personal Twitter"
             >
-              <FiTwitter size={65} />
+              <FiTwitter size={65} alt="Twitter Logo" />
             </a>
             <a
               href="https://github.com/dantay0803"
               target="_blank"
               rel="noopener noreferrer"
               className="contact-link"
+              key="contact-github"
+              title="Link to my personal GitHub"
             >
-              <FiGithub size={65} />
+              <FiGithub size={65} alt="GitHub Logo" />
             </a>
           </div>
         </div>

@@ -62,6 +62,11 @@ li {
   padding: 8px 0;
 }
 
+a,
+a:hover {
+  color: var(--highlight);
+}
+
 .headerTitle,
 .blogHeaderTitle {
   font-size: 3.875rem;
@@ -136,4 +141,12 @@ li {
   color: var(--text-primary);
   justify-content: center;
   align-content: center;
+}
+
+.fa-window-close {
+  color: var(--text-muted);
+}
+
+.fa-window-close:hover {
+  color: var(--highlight);
 }

@@ -98,11 +98,11 @@ const Styles = styled.div`
 export default () => {
   const data = useStaticQuery(graphql`
     query Image {
-      profileImage: file(relativePath: { eq: "profileImage.webp" }) {
+      profileImage: file(relativePath: { eq: "profileImage.jpg" }) {
         id
         childImageSharp {
           fixed(width: 363, height: 353, quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp
+            ...GatsbyImageSharpFixed
           }
         }
       }

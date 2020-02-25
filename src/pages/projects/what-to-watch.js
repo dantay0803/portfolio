@@ -1,20 +1,7 @@
 import React from 'react';
-import { Container, Row, Col, Carousel } from 'react-bootstrap';
-import styled from 'styled-components';
-import '../../styles/bootstrap-4.3.1.min.css';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
-import { Link } from 'gatsby-plugin-modal-routing';
-import SEO from '../../components/seo';
-import Layout from '../../components/layout/layout';
-
-const StyledContainer = styled(Container)`
-  padding: 0;
-  margin: 0;
-  padding-bottom: 2rem;
-`;
+import ProjectDetails from '../../templates/projectDetails';
 
 const SecondPage = () => {
   const data = useStaticQuery(graphql`
@@ -22,9 +9,10 @@ const SecondPage = () => {
       images: allFile(filter: { relativeDirectory: { eq: "whattowatch" } }) {
         nodes {
           id
+          publicURL
           childImageSharp {
             fluid(quality: 100) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -33,76 +21,120 @@ const SecondPage = () => {
   `);
 
   return (
-    <Layout>
-      <SEO
-        title="What to Watch"
-        description="Information on my portfolio project What to Watch"
-        pathname="/projects/what-to-watch"
-      />
-      <StyledContainer fluid>
-        <Row noGutters>
-          <Col xs={{ span: 1, offset: 11 }}>
-            <Link to="/#projects" className="noUnderline">
-              <FontAwesomeIcon icon={faWindowClose} size="1x" />
-            </Link>
-          </Col>
-        </Row>
-        <Row noGutters>
-          <Col xs={{ span: 8, offset: 2 }}>
-            <h1 className="center">What to Watch</h1>
-            <hr className="hrTitle" />
-          </Col>
-        </Row>
-        <Row noGutters>
-          <Col xs={{ span: 10, offset: 1 }} md={{ span: 6, offset: 3 }}>
-            <p className="center">
-              What to Watch is a website I created in React, using the {''}
-              <a
-                href="https://developers.themoviedb.org/3/getting-started/introduction"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                MovieDB API
-              </a>
-              {''} for the data of the site. The website includes several
-              features such as:
-            </p>
-            <ul>
-              <li>Netflix styled homepage with featured content</li>
-              <li>Movie, TV and person searching</li>
-              <li>Details on movies, TV shows and people</li>
-              <li>
-                View collections of related items, such as movie collections
-                with their overview, average rating and the number of items in
-                the collection
-              </li>
-              <li>View trailers using the YouTube Player API</li>
-              <li>View comments from users on the MovieDB website</li>
-            </ul>
-            <Carousel>
-              {data.images.nodes.map((image, i) => (
-                <Carousel.Item key={image.childImageSharp.id}>
-                  <Img
-                    fluid={image.childImageSharp.fluid}
-                    className="d-block w-100"
-                  />
-                </Carousel.Item>
-              ))}
-            </Carousel>
-            <p className="center">Technologies used in the project:</p>
-            <ul>
-              <li>React</li>
-              <li>JavaScript</li>
-              <li>React Router</li>
-              <li>Styled Components</li>
-              <li>React Bootstrap</li>
-              <li>React Icons</li>
-              <li>YouTube Player API</li>
-            </ul>
-          </Col>
-        </Row>
-      </StyledContainer>
-    </Layout>
+    <ProjectDetails
+      title="What to Watch"
+      desc="Information on my portfolio project What to Watch"
+      path="/projects/what-to-watch"
+    >
+      <div>
+        <p>
+          What to Watch is a website I created in React, using the {''}
+          <a
+            href="https://developers.themoviedb.org/3/getting-started/introduction"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            MovieDB API
+          </a>
+          {''} for the data of the site. The website includes several features
+          such as:
+        </p>
+        <div className="two-column-layout">
+          <ul key="featureSetOne">
+            <li key="feature-1">
+              Netflix styled homepage with featured content
+            </li>
+            <li key="feature-2">Movie, TV and person searching</li>
+            <li key="feature-3">Details on movies, TV shows and people</li>
+          </ul>
+          <ul key="featureSetTwo">
+            <li key="feature-4">View collections of related products</li>
+            <li key="feature-5">View trailers using the YouTube Player API</li>
+            <li key="feature-6">View comments from MovieDB users</li>
+          </ul>
+        </div>
+        <p>
+          You can view the source code for the project in this{' '}
+          <a
+            href="https://github.com/dantay0803/React_Projects/tree/master/movie-listing-website"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="What to Watch GitHub Repository"
+          >
+            GitHub Repository
+          </a>{' '}
+          ,as well as view a{' '}
+          <a
+            href="https://danielt.co.uk/whattowatch/"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="What to Watch Demo"
+          >
+            live demo
+          </a>{' '}
+          by following the link.
+        </p>
+      </div>
+      <div className="appImages">
+        {data.images.nodes.slice(0, 4).map((image, i) => (
+          <a
+            href={image.publicURL}
+            target="_blank"
+            rel="noopener noreferrer"
+            key={`LinkToWhatToWatchSiteImage-Set1-${i}`}
+          >
+            <Img
+              fluid={image.childImageSharp.fluid}
+              alt={`Screenshot of What to Watch Site - ${i}`}
+              className="appImage"
+              imgStyle={{
+                objectFit: 'fill',
+                objectPosition: '50% 50%',
+              }}
+            />
+          </a>
+        ))}
+      </div>
+      <div>
+        <p className="center">Technologies used in the project:</p>
+        <div className="two-column-layout">
+          <ul key="TechUsedSetOne">
+            <li key="Tech Used React">React</li>
+            <li key="Tech Used JS">JavaScript</li>
+            <li key="Tech Used RR">React Router</li>
+            <li key="Tech Used SC">Styled Components</li>
+          </ul>
+          <ul key="TechUsedSetTwo">
+            <li key="Tech Used RB">React Bootstrap</li>
+            <li key="Tech Used RI">React Icons</li>
+            <li key="Tech Used RS">React Scroll</li>
+            <li key="Tech Used YTAPI">YouTube Player API</li>
+          </ul>
+        </div>
+      </div>
+      <div className="appImages">
+        {data.images.nodes
+          .slice(4, data.images.nodes.length)
+          .map((image, i) => (
+            <a
+              href={image.publicURL}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={`LinkToWhatToWatchSiteImage-Set2-${i}`}
+            >
+              <Img
+                fluid={image.childImageSharp.fluid}
+                alt={`Screenshot of What to Watch Site - ${i}`}
+                className="appImage"
+                imgStyle={{
+                  objectFit: 'fill',
+                  objectPosition: '50% 50%',
+                }}
+              />
+            </a>
+          ))}
+      </div>
+    </ProjectDetails>
   );
 };
 

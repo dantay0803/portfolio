@@ -59,7 +59,6 @@ const StyledCard = styled(Card)`
   }
 
   .card-tech {
-    color: var(--text-muted);
     text-transform: uppercase;
     font-size: 1.125rem;
     font-weight: bold;
