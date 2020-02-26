@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Card } from 'react-bootstrap';
-import { graphql, useStaticQuery } from 'gatsby';
+import { Container } from 'react-bootstrap';
+import sanitizeHtml from 'sanitize-html';
+import { StaticQuery, graphql } from 'gatsby';
 import BlogCard from './blogCard';
 
 const Styles = styled.div`
@@ -23,22 +24,34 @@ const Styles = styled.div`
   }
 `;
 
-// eslint-disable-next-line react/display-name
-export default () => {
-  const data = useStaticQuery(graphql`
-    query BlogThumbnails {
-      planetLibraryImage: file(
-        relativePath: { eq: "thumbnails/thumbnail_pl.jpg" }
-      ) {
-        id
-        childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+export default props => (
+  <StaticQuery
+    query={graphql`
+      query {
+        wpgraphql {
+          posts {
+            edges {
+              node {
+                date
+                slug
+                featuredImage {
+                  altText
+                  sourceUrl
+                }
+                excerpt
+                title
+              }
+            }
           }
         }
       }
-    }
-  `);
+    `}
+    render={data => <BlogHighlight data={data} {...props} />}
+  />
+);
+
+const BlogHighlight = ({ data }) => {
+  const { posts } = data.wpgraphql;
 
   return (
     <Styles>
@@ -46,30 +59,28 @@ export default () => {
         <h1>Blog</h1>
         <hr className="hrTitle" />
         <div className="card-grid">
-          <BlogCard
-            key="NROG"
-            thumbnail={data.planetLibraryImage.childImageSharp.fluid}
-            postTitle="Student Employment Advice Presentation – 2019"
-            postDate="Sat, 14 Sep 2019"
-            postDescription="A few months ago I was invited back to the university I used to attend, the University of the West of Scotland. To deliver my t..."
-            postPath="/blog/student-employment-advice-presentation–2019/"
-          />
-          <BlogCard
-            key="MFWBS"
-            thumbnail={data.planetLibraryImage.childImageSharp.fluid}
-            postTitle="Student Employment Advice Presentation – 2019"
-            postDate="Sat, 14 Sep 2019"
-            postDescription="A few months ago I was invited back to the university I used to attend, the University of the West of Scotland. To deliver my t..."
-            postPath="blog/student-employment-advice-presentation–2019/"
-          />
-          <BlogCard
-            key="SEAP"
-            thumbnail={data.planetLibraryImage.childImageSharp.fluid}
-            postTitle="Student Employment Advice Presentation – 2019"
-            postDate="Sat, 14 Sep 2019"
-            postDescription="A few months ago I was invited back to the university I used to attend, the University of the West of Scotland. To deliver my t..."
-            postPath="blog/student-employment-advice-presentation–2019/"
-          />
+          {posts.edges.slice(0, 3).map(post => (
+            <BlogCard
+              key={post.node.slug}
+              thumbnail={
+                post.node.featuredImage.sourceUrl ||
+                `https://via.placeholder.com/185x278?text=Image+not+available`
+              }
+              alt={post.node.featuredImage.altText}
+              postTitle={sanitizeHtml(post.node.title)}
+              postDate={new Date(post.node.date)
+                .toUTCString()
+                .split(' ')
+                .slice(0, 4)
+                .join(' ')}
+              postDescription={sanitizeHtml(
+                post.node.excerpt.length > 115
+                  ? post.node.excerpt.substring(0, 115).concat('...')
+                  : post.node.excerpt
+              )}
+              postPath={`/blog/${post.node.slug}/`}
+            />
+          ))}
         </div>
       </Container>
     </Styles>

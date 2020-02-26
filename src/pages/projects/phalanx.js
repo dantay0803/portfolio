@@ -6,7 +6,9 @@ import ProjectDetails from '../../templates/projectDetails';
 const Phalanx = () => {
   const data = useStaticQuery(graphql`
     query phalanxImages {
-      images: allFile(filter: { relativeDirectory: { eq: "phalanx" } }) {
+      images: allFile(
+        filter: { relativeDirectory: { eq: "projects/phalanx" } }
+      ) {
         nodes {
           id
           publicURL

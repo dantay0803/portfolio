@@ -6,7 +6,9 @@ import ProjectDetails from '../../templates/projectDetails';
 const PlanetLibraryPage = () => {
   const data = useStaticQuery(graphql`
     query planetlibraryImages {
-      images: allFile(filter: { relativeDirectory: { eq: "planetlibrary" } }) {
+      images: allFile(
+        filter: { relativeDirectory: { eq: "projects/planetlibrary" } }
+      ) {
         nodes {
           id
           publicURL

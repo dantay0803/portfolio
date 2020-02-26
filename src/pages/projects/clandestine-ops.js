@@ -6,7 +6,9 @@ import ProjectDetails from '../../templates/projectDetails';
 const ClandestineOps = () => {
   const data = useStaticQuery(graphql`
     query clandestineOpsImages {
-      images: allFile(filter: { relativeDirectory: { eq: "clandestineops" } }) {
+      images: allFile(
+        filter: { relativeDirectory: { eq: "projects/clandestineops" } }
+      ) {
         nodes {
           id
           publicURL

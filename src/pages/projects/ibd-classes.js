@@ -6,7 +6,9 @@ import ProjectDetails from '../../templates/projectDetails';
 const IBDClasses = () => {
   const data = useStaticQuery(graphql`
     query ibdClassesImages {
-      images: allFile(filter: { relativeDirectory: { eq: "ibdclasses" } }) {
+      images: allFile(
+        filter: { relativeDirectory: { eq: "projects/ibdclasses" } }
+      ) {
         nodes {
           id
           publicURL

@@ -59,6 +59,8 @@ const StyledCard = styled(Card)`
     max-height: 275px;
     min-width: 525px;
     min-height: 275px;
+    background-color: var(--text-primary);
+    object-fit: cover;
   }
 
   .card-body {

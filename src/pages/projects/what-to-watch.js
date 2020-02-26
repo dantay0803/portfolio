@@ -6,7 +6,9 @@ import ProjectDetails from '../../templates/projectDetails';
 const SecondPage = () => {
   const data = useStaticQuery(graphql`
     query wtwImages {
-      images: allFile(filter: { relativeDirectory: { eq: "whattowatch" } }) {
+      images: allFile(
+        filter: { relativeDirectory: { eq: "projects/whattowatch" } }
+      ) {
         nodes {
           id
           publicURL

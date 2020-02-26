@@ -11,7 +11,7 @@ const Div = styled.div`
 
 export default () => (
   <Div>
-    <Container key="about" id="about" fluid style={{'z-index': 1,}}>
+    <Container key="about" id="about" fluid style={{ zIndex: 1 }}>
       <h1>About</h1>
       <hr className="hrTitle" />
       <div className="two-column-layout">

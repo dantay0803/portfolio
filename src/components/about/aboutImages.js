@@ -98,7 +98,7 @@ const Styles = styled.div`
 export default () => {
   const data = useStaticQuery(graphql`
     query Image {
-      profileImage: file(relativePath: { eq: "profileImage.jpg" }) {
+      profileImage: file(relativePath: { eq: "about/profileImage.jpg" }) {
         id
         childImageSharp {
           fixed(width: 363, height: 353, quality: 100) {
@@ -107,7 +107,7 @@ export default () => {
         }
       }
       studentPresentationImage: file(
-        relativePath: { eq: "studentemploymentadvicepresentation.jpg" }
+        relativePath: { eq: "about/studentemploymentadvicepresentation.jpg" }
       ) {
         id
         childImageSharp {

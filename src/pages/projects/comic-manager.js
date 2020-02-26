@@ -6,7 +6,9 @@ import ProjectDetails from '../../templates/projectDetails';
 const ComicManager = () => {
   const data = useStaticQuery(graphql`
     query comicManagerImages {
-      images: allFile(filter: { relativeDirectory: { eq: "comicmanager" } }) {
+      images: allFile(
+        filter: { relativeDirectory: { eq: "projects/comicmanager" } }
+      ) {
         nodes {
           id
           publicURL
