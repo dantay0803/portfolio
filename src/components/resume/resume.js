@@ -192,6 +192,7 @@ export default function resume() {
             target="_blank"
             rel="noopener noreferrer"
             className="resumeDownload"
+            download
           >
             <MdFileDownload size={32} />
             <p>DOWNLOAD</p>

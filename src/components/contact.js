@@ -12,26 +12,21 @@ const Styles = styled.div`
     transition: all 0.75s ease-in-out;
   }
 
-  p {
-    max-width: 300px;
-  }
-
   .contact-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, 1fr);
+    justify-content: center;
+    grid-gap: 3em;
+    padding: 3em;
     text-align: center;
   }
 
   .contact-links {
     display: grid;
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: 1fr;
-    grid-gap: 5em;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 2em;
     justify-items: center;
     align-items: center;
-    margin-top: 3rem;
   }
 
   .contact-link {
@@ -57,68 +52,6 @@ const Styles = styled.div`
   .contact-link:hover svg {
     color: var(--text-primary);
     transition: all 0.75s ease-in-out;
-  }
-
-  @media (min-width: 576px) {
-  }
-
-  @media (min-width: 768px) {
-  }
-
-  @media (min-width: 992px) {
-  }
-
-  @media (min-width: 1200px) {
-    z-index: 1;
-    margin-bottom: 10rem;
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-      text-align: center;
-    }
-
-    .contact-links {
-      display: grid;
-      grid-template-rows: 1fr;
-      grid-template-columns: repeat(4, 1fr);
-      grid-gap: 5em;
-      justify-items: center;
-      align-items: center;
-      margin-top: 3rem;
-    }
-
-    .contact-link {
-      background-color: var(--background-secondary);
-      width: 100px;
-      height: 100px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: rgb(0, 0, 0);
-      box-shadow: 0 0.625rem 0.375rem rgba(0, 0, 0, 1);
-      transition: all 0.75s ease-in-out;
-      margin: 0;
-      padding: 0;
-    }
-
-    .contact-link:hover {
-      background-color: var(--highlight);
-      transition: all 0.75s ease-in-out;
-    }
-
-    svg {
-      stroke-width: 1;
-      transition: all 0.75s ease-in-out;
-    }
-
-    .contact-link:hover svg {
-      color: var(--text-primary);
-      transition: all 0.75s ease-in-out;
-    }
   }
 `;
 
