@@ -6,30 +6,56 @@ import ProjectCard from './projectCard';
 
 const Styles = styled.div`
   z-index: 1;
-
   .project-card-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 2.5em;
-    margin: 0 2.5rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 2em;
+    margin: 0 2rem;
     overflow: hidden;
   }
 
-  .project-left-grid {
+  .project-left-grid,
+  .project-right-grid {
     justify-self: start;
   }
 
-  .project-left-grid .card {
+  .project-left-grid .card,
+  .project-right-grid .card {
     box-shadow: 0.625rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
   }
 
-  .project-right-grid {
-    justify-self: end;
+  @media (min-width: 576px) {
   }
 
-  .project-right-grid .card {
-    box-shadow: -0.625rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 992px) {
+  }
+
+  @media (min-width: 1200px) {
+    .project-card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    .project-left-grid {
+      justify-self: start;
+    }
+
+    .project-left-grid .card {
+      box-shadow: 0.625rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
+    }
+
+    .project-right-grid {
+      justify-self: end;
+    }
+
+    .project-right-grid .card {
+      box-shadow: -0.625rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
+    }
   }
 `;
 

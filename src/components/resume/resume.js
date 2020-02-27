@@ -11,7 +11,7 @@ import Skills from './skills';
 const Styles = styled.div`
   text-align: left;
   z-index: 1;
-  margin-bottom: 7rem;
+  margin-bottom: 3rem;
 
   .resumeContent {
     display: flex;
@@ -22,8 +22,11 @@ const Styles = styled.div`
 
   .resumeTitle,
   .resumeDetails {
-    min-width: 350px;
-    margin: 1.75rem 1rem;
+    width: 300px;
+  }
+
+  .resumeTitle {
+    margin: 2.5rem 0 0 0;
   }
 
   .resumeTitle a {
@@ -35,12 +38,13 @@ const Styles = styled.div`
     color: var(--text-primary);
     text-transform: capitalize;
     font-style: italic;
+    font-size: 1.5rem;
   }
 
-  .resumeDetails {
-    width: 850px;
-    border-left: 1px solid var(--text-muted);
-    padding-left: 10rem;
+  .skillList {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
   }
 
   .resumeDate {
@@ -50,7 +54,6 @@ const Styles = styled.div`
 
   svg {
     stroke-width: 1;
-    margin-right: 0.5rem;
     color: var(--highlight);
   }
 
@@ -62,6 +65,8 @@ const Styles = styled.div`
     overflow: hidden;
     cursor: pointer;
     transition: width 0.5s ease-in-out;
+    margin: 2rem 0 0 0;
+    padding: 0;
   }
 
   .resumeDownload svg,
@@ -72,6 +77,10 @@ const Styles = styled.div`
     margin: 10px;
   }
 
+  .resumeDownload p {
+    margin-top: 12px;
+  }
+
   .resumeDownload:hover {
     border-color: var(--highlight);
     width: 225px;
@@ -80,6 +89,90 @@ const Styles = styled.div`
 
   .resumeDownload:hover svg {
     color: var(--highlight);
+  }
+
+  @media (min-width: 576px) {
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 992px) {
+  }
+
+  @media (min-width: 1200px) {
+    text-align: left;
+    z-index: 1;
+    margin-bottom: 7rem;
+
+    .resumeContent {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .resumeTitle,
+    .resumeDetails {
+      min-width: 350px;
+      margin: 1.75rem 1rem;
+    }
+
+    .resumeTitle a {
+      color: var(--highlight);
+    }
+
+    .resumeTitle h3 {
+      font-weight: bold;
+      color: var(--text-primary);
+      text-transform: capitalize;
+      font-style: italic;
+    }
+
+    .resumeDetails {
+      width: 850px;
+      border-left: 1px solid var(--text-muted);
+      padding-left: 10rem;
+    }
+
+    .resumeDate {
+      color: var(--text-muted);
+      font-size: 10px;
+    }
+
+    svg {
+      stroke-width: 1;
+      margin-right: 0.5rem;
+      color: var(--highlight);
+    }
+
+    .resumeDownload {
+      border: 2px solid var(--text-primary);
+      background: transparent;
+      width: 55px;
+      height: 55px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: width 0.5s ease-in-out;
+    }
+
+    .resumeDownload svg,
+    .resumeDownload p {
+      color: var(--text-primary);
+      font-weight: bold;
+      float: left;
+      margin: 10px;
+    }
+
+    .resumeDownload:hover {
+      border-color: var(--highlight);
+      width: 225px;
+      transition: width 0.5s ease-in-out;
+    }
+
+    .resumeDownload:hover svg {
+      color: var(--highlight);
+    }
   }
 `;
 

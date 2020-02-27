@@ -10,17 +10,17 @@ export default function skills() {
           Skills
         </h3>
       </div>
-      <div className="resumeDetails two-column-layout">
+      <div className="resumeDetails skillList">
         <ul>
           <li>C#</li>
           <li>JavaScript</li>
-          <li>React/React Native</li>
+          <li>React</li>
           <li>Redux</li>
         </ul>
         <ul>
           <li>HTML/CSS</li>
           <li>Bootstrap</li>
-          <li>jQuery</li>
+          <li>React Native</li>
           <li>Unity</li>
         </ul>
       </div>

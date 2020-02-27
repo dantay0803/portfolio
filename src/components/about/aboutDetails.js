@@ -9,7 +9,22 @@ const Styles = styled.div`
   }
 
   p {
-    max-width: 560px;
+    max-width: 300px;
+  }
+
+  @media (min-width: 576px) {
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 992px) {
+  }
+
+  @media (min-width: 1200px) {
+    p {
+      max-width: 560px;
+    }
   }
 `;
 

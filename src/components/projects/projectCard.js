@@ -5,14 +5,15 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 const StyledCard = styled(Card)`
-  width: 53.125rem;
-  height: 15rem;
+  width: 20rem;
+  height: 5rem;
   overflow: hidden;
   color: var(--text-secondary);
   border: none;
   border-radius: 0;
 
-  :hover .card-img-overlay, :hover .rightCard .card-img-overlay {
+  :hover .card-img-overlay,
+  :hover .rightCard .card-img-overlay {
     transform: translateX(0%);
     -webkit-transform: translateX(0);
     -moz-transform: translateX(0);
@@ -20,10 +21,9 @@ const StyledCard = styled(Card)`
     transition: all 0.9s ease-in-out;
   }
 
-  .card-img-overlay {
+  .card-img-overlay,
+  .rightCard .card-img-overlay {
     background-color: var(--text-primary);
-    -webkit-clip-path: polygon(0 0, 70% 0%, 48% 100%, 0% 100%);
-    clip-path: polygon(0 0, 70% 0%, 48% 100%, 0% 100%);
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
@@ -36,53 +36,111 @@ const StyledCard = styled(Card)`
     border-radius: 0;
   }
 
+  .card-title {
+    margin: 0;
+    padding: 0;
+  }
+
   .card-title > h6 {
     font-weight: bold;
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-transform: uppercase;
   }
 
   .card-title > hr {
     border-color: var(--highlight);
-    border-width: 0.625rem;
+    border-width: 0.5rem;
     max-width: 11.1875rem;
     margin: 0;
     padding: 0;
   }
 
-  .card-text {
-    max-width: 24.0625rem;
-    min-width: 24.0625rem;
-    font-size: 1.25rem;
-    margin: 0.9375rem 0 0 0};
-    padding: 0;
-  }
-
   .card-tech {
     text-transform: uppercase;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-weight: bold;
+    visibility: visible;
   }
 
-  .rightCard{
-    text-align: right;
+  @media (min-width: 576px) {
   }
 
-  .rightCard .card-title > hr {
-    margin-left: 40rem;
+  @media (min-width: 768px) {
   }
 
-  .rightCard .card-text{
-    margin: 0.9375rem 0 0 26.5rem;
+  @media (min-width: 992px) {
   }
 
-  .rightCard .card-img-overlay {
-    -webkit-clip-path: polygon(53% 0, 100% 0%, 100% 100%, 31% 100%);
-    clip-path: polygon(53% 0, 100% 0%, 100% 100%, 31% 100%);
-    transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-    -o-transform: translateX(100%);
+  @media (min-width: 1200px) {
+    width: 53.125rem;
+    height: 15rem;
+    overflow: hidden;
+    color: var(--text-secondary);
+    border: none;
+    border-radius: 0;
+    :hover .card-img-overlay,
+    :hover .rightCard .card-img-overlay {
+      transform: translateX(0%);
+      -webkit-transform: translateX(0);
+      -moz-transform: translateX(0);
+      -o-transform: translateX(0);
+      transition: all 0.9s ease-in-out;
+    }
+    .card-img-overlay {
+      background-color: var(--text-primary);
+      -webkit-clip-path: polygon(0 0, 70% 0%, 48% 100%, 0% 100%);
+      clip-path: polygon(0 0, 70% 0%, 48% 100%, 0% 100%);
+      transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      -moz-transform: translateX(-100%);
+      -o-transform: translateX(-100%);
+      transition: all 0.75s ease-in-out;
+    }
+    .card-img {
+      border: none;
+      border-radius: 0;
+    }
+    .card-title > h6 {
+      font-weight: bold;
+      font-size: 1.25rem;
+      text-transform: uppercase;
+    }
+    .card-title > hr {
+      border-color: var(--highlight);
+      border-width: 0.625rem;
+      max-width: 11.1875rem;
+      margin: 0;
+      padding: 0;
+    }
+    .card-text {
+      max-width: 24.0625rem;
+      min-width: 24.0625rem;
+      font-size: 1.25rem;
+      margin: 0.9375rem 0 0 0;
+      padding: 0;
+    }
+    .card-tech {
+      text-transform: uppercase;
+      font-size: 1.125rem;
+      font-weight: bold;
+    }
+    .rightCard {
+      text-align: right;
+    }
+    .rightCard .card-title > hr {
+      margin-left: 40rem;
+    }
+    .rightCard .card-text {
+      margin: 0.9375rem 0 0 26.5rem;
+    }
+    .rightCard .card-img-overlay {
+      -webkit-clip-path: polygon(53% 0, 100% 0%, 100% 100%, 31% 100%);
+      clip-path: polygon(53% 0, 100% 0%, 100% 100%, 31% 100%);
+      transform: translateX(100%);
+      -webkit-transform: translateX(100%);
+      -moz-transform: translateX(100%);
+      -o-transform: translateX(100%);
+    }
   }
 `;
 

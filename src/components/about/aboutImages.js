@@ -4,8 +4,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 
 const PolaroidBackground = styled.div`
-  width: 25.1875rem;
-  height: 26.61875rem;
+  width: 12.625rem;
+  height: 13.3125rem;
   background-color: var(--text-primary);
   transform: scale(1);
   display: flex;
@@ -15,23 +15,62 @@ const PolaroidBackground = styled.div`
   box-shadow: 0.625rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
 
   img {
-    width: 22.6875rem;
-    max-height: 22.0625rem;
+    width: 11.3437rem;
+    max-height: 11.0312rem;
     margin: 1em 0;
+    pointer-events: none;
   }
 
   p {
-    max-width: 22.6875rem;
-    max-height: 3.3125rem;
+    max-width: 11.3437rem;
+    max-height: 1.5rem;
     color: var(--text-secondary);
     text-transform: uppercase;
     font-weight: bold;
     font-style: italic;
+    font-size: 0.75rem;
+    pointer-events: none;
+  }
+
+  @media (min-width: 576px) {
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 992px) {
+  }
+
+  @media (min-width: 1200px) {
+    width: 25.1875rem;
+    height: 26.61875rem;
+    background-color: var(--text-primary);
+    transform: scale(1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0.625rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
+
+    img {
+      width: 22.6875rem;
+      max-height: 22.0625rem;
+      margin: 1em 0;
+    }
+
+    p {
+      max-width: 22.6875rem;
+      max-height: 3.3125rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      font-weight: bold;
+      font-style: italic;
+    }
   }
 `;
 
 const Styles = styled.div`
-  height: 30rem;
+  height: 15rem;
 
   .profileImage {
     transition: all 0.75s ease-in-out;
@@ -92,6 +131,19 @@ const Styles = styled.div`
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
   }
+
+  @media (min-width: 576px) {
+  }
+
+  @media (min-width: 768px) {
+  }
+
+  @media (min-width: 992px) {
+  }
+
+  @media (min-width: 1200px) {
+    height: 30rem;
+  }
 `;
 
 // eslint-disable-next-line react/display-name
@@ -126,6 +178,10 @@ export default () => {
           <Img
             fixed={data.studentPresentationImage.childImageSharp.fixed}
             alt="Daniel Taylor giving an employment presentation at UWS"
+            imgStyle={{
+              objectFit: 'scale-down',
+              objectPosition: '50% 50%',
+            }}
           />
           <p>STUDENT PRESENTATION TIME!</p>
         </PolaroidBackground>
@@ -134,6 +190,10 @@ export default () => {
         <Img
           fixed={data.profileImage.childImageSharp.fixed}
           alt="Image of Daniel Taylor"
+          imgStyle={{
+            objectFit: 'scale-down',
+            objectPosition: '50% 50%',
+          }}
         />
         <p>Daniel Taylor</p>
       </PolaroidBackground>
