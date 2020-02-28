@@ -15,7 +15,7 @@ module.exports = {
       options: {
         typeName: 'WordPress',
         fieldName: 'wpgraphql',
-        url: 'https://danielt.co.uk/blog/graphql',
+        url: 'https://danielt.co.uk/wp/graphql',
         refetchInterval: 60
       }
     },
