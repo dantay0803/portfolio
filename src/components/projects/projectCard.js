@@ -21,14 +21,27 @@ const StyledCard = styled(Card)`
     transition: all 0.9s ease-in-out;
   }
 
-  .card-img-overlay,
-  .rightCard .card-img-overlay {
+  .card-img-overlay {
     background-color: var(--text-primary);
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
     -moz-transform: translateX(-100%);
     -o-transform: translateX(-100%);
     transition: all 0.75s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .rightCard .card-img-overlay {
+    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transition: all 0.75s ease-in-out;
+    align-items: flex-end;
+    text-align: right;
   }
 
   .card-img {
@@ -36,15 +49,12 @@ const StyledCard = styled(Card)`
     border-radius: 0;
   }
 
-  .card-title {
-    margin: 0;
-    padding: 0;
-  }
-
   .card-title > h6 {
     font-weight: bold;
     font-size: 1rem;
     text-transform: uppercase;
+    margin: 0;
+    padding: 0;
   }
 
   .card-title > hr {
@@ -55,92 +65,66 @@ const StyledCard = styled(Card)`
     padding: 0;
   }
 
+  .card-text {
+    font-size: 0.75rem;
+    margin: 0;
+    padding: 0;
+    visibility: hidden;
+    width: 100%;
+  }
+
   .card-tech {
     text-transform: uppercase;
-    font-size: 1rem;
     font-weight: bold;
     visibility: visible;
   }
 
   @media (min-width: 576px) {
+    width: 28.282rem;
+    height: 7.5rem;
   }
 
   @media (min-width: 768px) {
+    width: 36.563rem;
+    height: 10rem;
+
+    .card-title > h6 {
+      font-size: 1.25rem;
+    }
+
+    .card-text {
+      font-size: 1rem;
+      visibility: visible;
+    }
+
+    .card-tech {
+      font-size: 1.125rem;
+    }
   }
 
   @media (min-width: 992px) {
+    width: 44.844rem;
+    height: 12.5rem;
+
+    .card-img-overlay {
+      -webkit-clip-path: polygon(0 0, 75% 0%, 53% 100%, 0% 100%);
+      clip-path: polygon(0 0, 75% 0%, 53% 100%, 0% 100%);
+    }
+
+    .card-text {
+      width: 60%;
+    }
+
+    .rightCard .card-img-overlay {
+      -webkit-clip-path: polygon(58% 0, 100% 0%, 100% 100%, 31% 100%);
+      clip-path: polygon(48% 0, 100% 0%, 100% 100%, 26% 100%);
+      transform: translateX(100%);
+    }
   }
 
   @media (min-width: 1200px) {
     width: 53.125rem;
     height: 15rem;
-    overflow: hidden;
-    color: var(--text-secondary);
-    border: none;
-    border-radius: 0;
-    :hover .card-img-overlay,
-    :hover .rightCard .card-img-overlay {
-      transform: translateX(0%);
-      -webkit-transform: translateX(0);
-      -moz-transform: translateX(0);
-      -o-transform: translateX(0);
-      transition: all 0.9s ease-in-out;
-    }
-    .card-img-overlay {
-      background-color: var(--text-primary);
-      -webkit-clip-path: polygon(0 0, 70% 0%, 48% 100%, 0% 100%);
-      clip-path: polygon(0 0, 70% 0%, 48% 100%, 0% 100%);
-      transform: translateX(-100%);
-      -webkit-transform: translateX(-100%);
-      -moz-transform: translateX(-100%);
-      -o-transform: translateX(-100%);
-      transition: all 0.75s ease-in-out;
-    }
-    .card-img {
-      border: none;
-      border-radius: 0;
-    }
-    .card-title > h6 {
-      font-weight: bold;
-      font-size: 1.25rem;
-      text-transform: uppercase;
-    }
-    .card-title > hr {
-      border-color: var(--highlight);
-      border-width: 0.625rem;
-      max-width: 11.1875rem;
-      margin: 0;
-      padding: 0;
-    }
-    .card-text {
-      max-width: 24.0625rem;
-      min-width: 24.0625rem;
-      font-size: 1.25rem;
-      margin: 0.9375rem 0 0 0;
-      padding: 0;
-    }
-    .card-tech {
-      text-transform: uppercase;
-      font-size: 1.125rem;
-      font-weight: bold;
-    }
-    .rightCard {
-      text-align: right;
-    }
-    .rightCard .card-title > hr {
-      margin-left: 40rem;
-    }
-    .rightCard .card-text {
-      margin: 0.9375rem 0 0 26.5rem;
-    }
-    .rightCard .card-img-overlay {
-      -webkit-clip-path: polygon(53% 0, 100% 0%, 100% 100%, 31% 100%);
-      clip-path: polygon(53% 0, 100% 0%, 100% 100%, 31% 100%);
-      transform: translateX(100%);
-      -webkit-transform: translateX(100%);
-      -moz-transform: translateX(100%);
-      -o-transform: translateX(100%);
-    }
   }
 `;
 

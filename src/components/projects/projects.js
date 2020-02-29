@@ -6,18 +6,15 @@ import ProjectCard from './projectCard';
 
 const Styles = styled.div`
   z-index: 1;
+
   .project-card-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: auto;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 53.125rem));
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
     grid-gap: 2em;
-    margin: 0 2rem;
-    overflow: hidden;
-  }
-
-  .project-left-grid,
-  .project-right-grid {
-    justify-self: start;
+    padding: 1rem;
   }
 
   .project-left-grid .card,
@@ -35,22 +32,11 @@ const Styles = styled.div`
   }
 
   @media (min-width: 1200px) {
-    .project-card-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, 1fr);
-    }
+  }
 
-    .project-left-grid {
-      justify-self: start;
-    }
-
+  @media (min-width: 1700px) {
     .project-left-grid .card {
       box-shadow: 0.625rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
-    }
-
-    .project-right-grid {
-      justify-self: end;
     }
 
     .project-right-grid .card {

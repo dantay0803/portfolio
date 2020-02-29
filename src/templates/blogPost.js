@@ -179,6 +179,7 @@ const blogPost = props => {
                 'em',
                 'strong',
                 'iframe',
+                'a',
               ]),
               allowedClasses: {
                 p: ['fancy', 'simple'],
@@ -187,6 +188,7 @@ const blogPost = props => {
               allowedAttributes: {
                 iframe: ['src', 'width', 'height'],
                 img: ['src', 'width', 'height', 'wp-image-231'],
+                a: ['href'],
               },
               allowedIframeHostnames: ['www.youtube.com'],
             }),

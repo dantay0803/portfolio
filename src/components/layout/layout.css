@@ -152,6 +152,12 @@ a:hover {
 }
 
 @media (min-width: 768px) {
+  .two-column-layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+  }
 }
 
 @media (min-width: 992px) {
