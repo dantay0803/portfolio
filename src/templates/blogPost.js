@@ -2,11 +2,11 @@ import React from 'react';
 import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 import styled from 'styled-components';
 import '../styles/bootstrap-4.3.1.min.css';
+import { graphql } from 'gatsby';
+import sanitizeHtml from 'sanitize-html';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Navbar from '../components/navbars/navbarBlog';
-import { graphql } from 'gatsby';
-import sanitizeHtml from 'sanitize-html';
 
 const StyledContainer = styled(Container)`
   margin-top: 4rem;
@@ -80,7 +80,7 @@ export const query = graphql`
 const blogPost = props => {
   const { content, date, featuredImage, title } = props.data.wpgraphql.postBy;
   const postDate = new Date(date);
-  const posts = props.data.wpgraphql.posts;
+  const { posts } = props.data.wpgraphql;
 
   return (
     <Layout>
@@ -89,26 +89,27 @@ const blogPost = props => {
         description={`A blog post covering ${sanitizeHtml(title)}`}
         pathname={`/blog/${props.pageContext.slug}`}
       />
-      <Navbar backgroundcolor={'var(--highlight)'} posts={posts} />
+      <Navbar backgroundcolor="var(--highlight)" posts={posts} />
       <StyledContainer fluid>
         <Row>
-          <Col xs='12' md={{ span: 8, offset: 2 }}>
+          <Col xs="12" md={{ span: 8, offset: 2 }}>
             <JumbotronFeaturedImage
               fluid
-              featuredimage={featuredImage.sourceUrl}></JumbotronFeaturedImage>
+              featuredimage={featuredImage.sourceUrl}
+            />
           </Col>
         </Row>
         <Row noGutters>
-          <Col xs='12' md={{ span: 6, offset: 3 }}>
+          <Col xs="12" md={{ span: 6, offset: 3 }}>
             <h1>{sanitizeHtml(title)}</h1>
-            <h6 className='mutedText'>
+            <h6 className="mutedText">
               {postDate
                 .toUTCString()
                 .split(' ')
                 .slice(0, 4)
                 .join(' ')}
             </h6>
-            <hr className='hrPageBreak' />
+            <hr className="hrPageBreak" />
           </Col>
         </Row>
         <Row noGutters>
@@ -124,19 +125,34 @@ const blogPost = props => {
                   'p',
                   'em',
                   'strong',
-                  'iframe'
+                  'iframe',
+                  'a',
                 ]),
                 allowedClasses: {
                   p: ['fancy', 'simple'],
-                  figure: ['wp-block-image']
+                  figure: ['wp-block-image'],
                 },
                 allowedAttributes: {
                   iframe: ['src', 'width', 'height'],
-                  img: ['src', 'width', 'height', 'wp-image-231']
+                  img: ['src', 'width', 'height', 'wp-image-231'],
+                  a: ['href', 'target', 'rel'],
                 },
-                allowedIframeHostnames: ['www.youtube.com']
-              })
-            }}></Col>
+                transformTags: {
+                  a(tagName, attribs) {
+                    return {
+                      tagName: 'a',
+                      attribs: {
+                        target: '_blank',
+                        rel: 'noopener noreferrer',
+                        ...attribs,
+                      },
+                    };
+                  },
+                },
+                allowedIframeHostnames: ['www.youtube.com'],
+              }),
+            }}
+          />
         </Row>
       </StyledContainer>
     </Layout>

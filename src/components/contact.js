@@ -1,13 +1,13 @@
-import React from "react"
-import styled from "styled-components"
-import { Row, Col } from "react-bootstrap"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons"
+import React from 'react';
+import styled from 'styled-components';
+import { Row, Col } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEnvelopeSquare } from '@fortawesome/free-solid-svg-icons';
 import {
   faTwitterSquare,
   faLinkedin,
   faGithubSquare,
-} from "@fortawesome/free-brands-svg-icons"
+} from '@fortawesome/free-brands-svg-icons';
 
 const Styles = styled.div`
   padding: 0;
@@ -29,7 +29,7 @@ const Styles = styled.div`
   .fa-4x {
     color: var(--highlight);
   }
-`
+`;
 
 export default function contact() {
   return (
@@ -52,7 +52,7 @@ export default function contact() {
             <Row>
               <Col xs={12} md={3}>
                 <a
-                  href="mailto:danielt0803@outlook.com"
+                  href="mailto:daniel@danielt.co.uk"
                   rel="noopener noreferrer"
                   className="contactLinks"
                 >
@@ -98,5 +98,5 @@ export default function contact() {
         </Row>
       </Row>
     </Styles>
-  )
+  );
 }
