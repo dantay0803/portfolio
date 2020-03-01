@@ -7,50 +7,6 @@ import BlogCard from './blogCard';
 
 const Styles = styled.div`
   z-index: 1;
-  margin-bottom: 3rem;
-
-  .card-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    grid-gap: 2rem;
-    margin: 0;
-    padding: 0;
-    justify-items: center;
-    align-items: center;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  @media (min-width: 576px) {
-  }
-
-  @media (min-width: 768px) {
-  }
-
-  @media (min-width: 992px) {
-  }
-
-  @media (min-width: 1200px) {
-    z-index: 1;
-    margin-bottom: 27.5rem;
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 1fr;
-      margin: 0;
-      padding: 0;
-      justify-items: center;
-      align-items: center;
-    }
-
-    a {
-      text-decoration: none;
-    }
-  }
 `;
 
 export default props => (
@@ -87,7 +43,7 @@ const BlogHighlight = ({ data }) => {
       <Container key="blog" id="blog" fluid>
         <h1>Blog</h1>
         <hr className="hrTitle" />
-        <div className="card-grid">
+        <div className="blogGrid">
           {posts.edges.slice(0, 3).map(post => (
             <BlogCard
               key={post.node.slug}

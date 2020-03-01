@@ -70,7 +70,7 @@ export default function contact() {
           </p>
           <div className="contact-links">
             <a
-              href="mailto:danielt0803@outlook.com"
+              href="mailto:daniel@danielt.co.uk"
               rel="noopener noreferrer"
               className="contact-link"
               key="contact-email"

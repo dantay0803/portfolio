@@ -91,87 +91,37 @@ const Styles = styled.div`
     color: var(--highlight);
   }
 
-  @media (min-width: 576px) {
-  }
-
   @media (min-width: 768px) {
+    .resumeTitle,
+    .resumeDetails {
+      width: 350px;
+      margin: 0;
+      padding: 1rem;
+      border: none;
+    }
+
+    .resumeDetails {
+      border-left: 1px solid var(--text-muted);
+      padding-left: 2rem;
+    }
   }
 
   @media (min-width: 992px) {
+    .resumeDetails {
+      width: 500px;
+    }
   }
 
   @media (min-width: 1200px) {
-    text-align: left;
-    z-index: 1;
-    margin-bottom: 7rem;
-
-    .resumeContent {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .resumeTitle,
-    .resumeDetails {
-      min-width: 350px;
+    .resumeTitle {
+      width: 350px;
       margin: 1.75rem 1rem;
-    }
-
-    .resumeTitle a {
-      color: var(--highlight);
-    }
-
-    .resumeTitle h3 {
-      font-weight: bold;
-      color: var(--text-primary);
-      text-transform: capitalize;
-      font-style: italic;
     }
 
     .resumeDetails {
       width: 850px;
       border-left: 1px solid var(--text-muted);
       padding-left: 10rem;
-    }
-
-    .resumeDate {
-      color: var(--text-muted);
-      font-size: 10px;
-    }
-
-    svg {
-      stroke-width: 1;
-      margin-right: 0.5rem;
-      color: var(--highlight);
-    }
-
-    .resumeDownload {
-      border: 2px solid var(--text-primary);
-      background: transparent;
-      width: 55px;
-      height: 55px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: width 0.5s ease-in-out;
-    }
-
-    .resumeDownload svg,
-    .resumeDownload p {
-      color: var(--text-primary);
-      font-weight: bold;
-      float: left;
-      margin: 10px;
-    }
-
-    .resumeDownload:hover {
-      border-color: var(--highlight);
-      width: 225px;
-      transition: width 0.5s ease-in-out;
-    }
-
-    .resumeDownload:hover svg {
-      color: var(--highlight);
     }
   }
 `;

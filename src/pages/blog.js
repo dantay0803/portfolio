@@ -1,30 +1,10 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
-import styled from 'styled-components';
-import '../styles/bootstrap-4.3.1.min.css';
 import sanitizeHtml from 'sanitize-html';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import HeaderBlog from '../components/blog/headerBlog';
 import BlogCard from '../components/blog/blogCard';
-
-const StyledContainer = styled(Container)`
-  padding: 0;
-  margin: 2rem 0;
-
-  .blogGrid {
-    padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    justify-items: center;
-  }
-
-  a {
-    text-decoration: none;
-  }
-`;
 
 export const query = graphql`
   {
@@ -58,7 +38,7 @@ const BlogHome = props => {
         pathname="/blog/"
       />
       <HeaderBlog posts={posts} />
-      <StyledContainer fluid>
+      <Container fluid>
         <div className="blogGrid">
           {posts.edges.map(post => (
             <BlogCard
@@ -83,7 +63,7 @@ const BlogHome = props => {
             />
           ))}
         </div>
-      </StyledContainer>
+      </Container>
     </Layout>
   );
 };
