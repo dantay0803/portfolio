@@ -7,8 +7,10 @@ const StyledCard = styled(Card)`
   width: 325px;
   height: 300px;
   color: var(--text-primary);
+  background-color: var(--background-primary);
   box-shadow: 0.375rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
   border: none;
+  border-radius: 0;
   -webkit-transform: scale(1);
   transform: scale(1);
   transition: transform 0.75s ease-in-out;

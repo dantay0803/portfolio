@@ -71,22 +71,17 @@ const StyledContainer = styled(Container)`
   }
 
   @media (min-width: 576px) {
-    header {
-      margin: 0;
-      margin-top: 1rem;
-      grid-template-columns: 1fr 40px;
-      width: 85%;
-    }
-
     div,
-    p {
+    p,
+    header {
       width: 475px;
     }
   }
 
   @media (min-width: 768px) {
     div,
-    p {
+    p,
+    header {
       width: 650px;
     }
 
@@ -96,29 +91,17 @@ const StyledContainer = styled(Container)`
   }
 
   @media (min-width: 992px) {
-    header {
-      margin: 0;
-      margin-top: 1rem;
-      grid-template-columns: 1fr 40px;
-      width: 80%;
-    }
-
     div,
-    p {
+    p,
+    header {
       width: 725px;
     }
   }
 
   @media (min-width: 1200px) {
-    header {
-      margin: 0;
-      margin-top: 1rem;
-      grid-template-columns: 1fr 40px;
-      width: 90%;
-    }
-
     div,
-    p {
+    p,
+    header {
       width: 850px;
     }
 
@@ -140,7 +123,11 @@ export default ({ title, desc, path, children }) => (
           <hr />
         </h1>
         <Link to="/#projects" className="noUnderline">
-          <FontAwesomeIcon icon={faWindowClose} size="1x" />
+          <FontAwesomeIcon
+            icon={faWindowClose}
+            size="1x"
+            title="Project close icon"
+          />
         </Link>
       </header>
       {children}

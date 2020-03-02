@@ -18,12 +18,10 @@ const Article = styled.article`
   div,
   p,
   img,
-  iframe {
+  iframe,
+  hr,
+  figcaption {
     width: 300px;
-  }
-
-  header {
-    margin-bottom: 3rem;
   }
 
   h1 {
@@ -41,6 +39,23 @@ const Article = styled.article`
     object-fit: cover;
   }
 
+  hr {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(155, 157, 144, 1) 45%,
+      rgba(155, 157, 144, 1) 55%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    margin: 2rem;
+    text-align: center;
+    height: 5px;
+  }
+
+  figcaption {
+    font-size: 0.75rem;
+  }
+
   .headerImage {
     width: 90vw;
     height: 15vh;
@@ -49,6 +64,7 @@ const Article = styled.article`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 1rem;
   }
 
   .headerImage img {
@@ -60,6 +76,9 @@ const Article = styled.article`
   .date {
     color: var(--text-muted);
     font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    margin-top: 0.5rem;
   }
 
   @media (min-width: 576px) {
@@ -67,7 +86,9 @@ const Article = styled.article`
     div,
     p,
     img,
-    iframe {
+    iframe,
+    hr,
+    figcaption {
       width: 450px;
     }
   }
@@ -77,7 +98,9 @@ const Article = styled.article`
     div,
     p,
     img,
-    iframe {
+    iframe,
+    hr,
+    figcaption {
       width: 650px;
     }
 
@@ -99,7 +122,9 @@ const Article = styled.article`
     div,
     p,
     img,
-    iframe {
+    iframe,
+    hr,
+    figcaption {
       width: 750px;
     }
 
@@ -121,7 +146,9 @@ const Article = styled.article`
     div,
     p,
     img,
-    iframe {
+    iframe,
+    hr,
+    figcaption {
       width: 900px;
     }
 
@@ -198,6 +225,7 @@ const blogPost = props => {
               .join(' ')}
           </p>
         </header>
+        <hr />
         <div
           // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
@@ -218,8 +246,8 @@ const blogPost = props => {
                 figure: ['wp-block-image'],
               },
               allowedAttributes: {
-                iframe: ['src', 'width', 'height'],
-                img: ['src', 'width', 'height', 'wp-image-231'],
+                iframe: ['src', 'width', 'height', 'title'],
+                img: ['src', 'width', 'height', 'wp-image-231', 'alt'],
                 a: ['href', 'target', 'rel'],
               },
               transformTags: {

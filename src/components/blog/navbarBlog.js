@@ -11,19 +11,23 @@ const Styles = styled.div`
 
   .dropdown-menu {
     padding: 0;
-    background-color: var(--background-primary);
-    border-color: var(--background-primary);
-    font-size: 0.85rem;
+    background-color: var(--background-secondary);
+    border-color: var(--background-secondary);
+    font-size: 0.8rem;
+    max-width: 22rem;
   }
 
   .dropdown-item {
     color: var(--text-primary);
     margin: 0.25rem 0.5rem;
+    padding: 5px 0px;
+    max-width: 22rem;
   }
 
   .dropdown-item:hover {
     color: var(--highlight);
     text-decoration: underline;
+    background-color: var(--background-secondary);
   }
 `;
 
@@ -62,6 +66,7 @@ export default function navbar(props) {
               title="Latest Posts"
               id="latest-blog-posts"
               className="fill-width"
+              role="tablist"
             >
               {props.posts.edges.slice(0, 6).map(post => (
                 <Link
