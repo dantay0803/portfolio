@@ -5,9 +5,18 @@ import { Link, graphql } from 'gatsby';
 import sanitizeHtml from 'sanitize-html';
 
 const Styles = styled.div`
+  z-index: 1;
+  position: relative;
+  text-align: left;
+
   .navbar {
     background-color: none;
   }
+
+  /* .navbar .show,
+  .navbar .show:before {
+    background-color: var(--background-primary);
+  } */
 
   .dropdown-menu {
     padding: 0;
