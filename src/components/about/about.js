@@ -6,7 +6,6 @@ import AboutDetails from './aboutDetails';
 
 const Div = styled.div`
   z-index: 1;
-  margin-bottom: 1rem;
 
   @media (min-width: 576px) {
   }

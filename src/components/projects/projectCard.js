@@ -14,19 +14,19 @@ const StyledCard = styled(Card)`
 
   :hover .card-img-overlay,
   :hover .rightCard .card-img-overlay {
-    transform: translateX(0%);
-    -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -o-transform: translateX(0);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
     transition: all 0.9s ease-in-out;
   }
 
   .card-img-overlay {
     background-color: var(--text-primary);
-    transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    -moz-transform: translateX(-100%);
-    -o-transform: translateX(-100%);
+    transform: translate3d(-100%, 0, 0);
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -moz-transform: translate3d(-100%, 0, 0);
+    -o-transform: translate3d(-100%, 0, 0);
     transition: all 0.75s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -35,10 +35,10 @@ const StyledCard = styled(Card)`
   }
 
   .rightCard .card-img-overlay {
-    transform: translateX(100%);
-    -webkit-transform: translateX(100%);
-    -moz-transform: translateX(100%);
-    -o-transform: translateX(100%);
+    transform: translate3d(100%, 0, 0);
+    -webkit-transform: translate3d(100%, 0, 0);
+    -moz-transform: translate3d(100%, 0, 0);
+    -o-transform: translate3d(100%, 0, 0);
     transition: all 0.75s ease-in-out;
     align-items: flex-end;
     text-align: right;
@@ -118,7 +118,7 @@ const StyledCard = styled(Card)`
     .rightCard .card-img-overlay {
       -webkit-clip-path: polygon(58% 0, 100% 0%, 100% 100%, 31% 100%);
       clip-path: polygon(48% 0, 100% 0%, 100% 100%, 26% 100%);
-      transform: translateX(100%);
+      transform: translate3d(100%, 0, 0);
     }
   }
 

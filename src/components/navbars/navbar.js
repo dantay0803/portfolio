@@ -40,7 +40,7 @@ const Styles = styled.div`
 
   input:checked + label:after {
     left: calc(100% - 5px);
-    transform: translateX(-100%);
+    transform: translate3d(-100%, 0, 0);
   }
 
   label:active:after {

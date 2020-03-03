@@ -71,6 +71,7 @@ const PolaroidBackground = styled.div`
 
 const Styles = styled.div`
   height: 15rem;
+  margin-bottom: 3rem;
 
   .profileImage {
     transition: all 0.75s ease-in-out;
@@ -82,6 +83,10 @@ const Styles = styled.div`
     -webkit-transform: scale(1.5) translateY(-75%);
     transform: scale(1.5) translateY(-75%);
     transition: all 0.75s ease-in-out;
+  }
+
+  .profileImage > .gatsby-image-wrapper {
+    pointer-events: none;
   }
 
   .presentationImage {

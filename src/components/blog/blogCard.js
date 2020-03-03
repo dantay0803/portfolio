@@ -11,16 +11,16 @@ const StyledCard = styled(Card)`
   box-shadow: 0.375rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
   border: none;
   border-radius: 0;
-  -webkit-transform: scale(1);
-  transform: scale(1);
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
   transition: transform 0.75s ease-in-out;
   padding: 0;
   margin: 1rem 0;
   overflow: hidden;
 
   :hover {
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+    -webkit-transform: scale3d(1.05, 1.05, 1);
+    transform: scale3d(1.05, 1.05, 1);
     border: 2px solid var(--text-primary);
     box-shadow: 0.425rem 0.675rem 0.425rem rgba(0, 0, 0, 0.75);
     transition: transform 0.75s ease-in-out;
@@ -28,7 +28,7 @@ const StyledCard = styled(Card)`
 
   :hover :after {
     content: '';
-    transform: translateX(-100%);
+    transform: translate3d(-100%, -100%, 0);
     width: 200%;
     height: 200%;
     position: absolute;
@@ -46,10 +46,10 @@ const StyledCard = styled(Card)`
 
   @keyframes slide {
     0% {
-      transform: translateX(-100%) translateY(-100%) rotate(30deg);
+      transform: translate3d(-100%, -100%, 0) rotate(30deg);
     }
     100% {
-      transform: translateX(100%) translateY(100%) rotate(30deg);
+      transform: translate3d(100%, 100%, 0) rotate(30deg);
     }
   }
 
