@@ -32,39 +32,50 @@ const PolaroidBackground = styled.div`
     pointer-events: none;
   }
 
-  @media (min-width: 576px) {
-  }
-
   @media (min-width: 768px) {
+    width: 14.9rem;
+    height: 15.96rem;
+
+    img {
+      width: 13rem;
+      max-height: 12.55rem;
+    }
+
+    p {
+      max-width: 13rem;
+      max-height: 2.41rem;
+    }
   }
 
   @media (min-width: 992px) {
+    width: 20.1875rem;
+    height: 21.61875rem;
+
+    img {
+      width: 18rem;
+      max-height: 17.55rem;
+    }
+
+    p {
+      max-width: 18rem;
+      max-height: 2rem;
+      font-size: 1rem;
+    }
   }
 
   @media (min-width: 1200px) {
     width: 25.1875rem;
     height: 26.61875rem;
-    background-color: var(--text-primary);
-    transform: scale(1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0.625rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
 
     img {
       width: 22.6875rem;
       max-height: 22.0625rem;
-      margin: 1em 0;
     }
 
     p {
       max-width: 22.6875rem;
       max-height: 3.3125rem;
-      color: var(--text-secondary);
-      text-transform: uppercase;
-      font-weight: bold;
-      font-style: italic;
+      font-size: 1.25rem;
     }
   }
 `;

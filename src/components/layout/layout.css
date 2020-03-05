@@ -11,15 +11,6 @@ html {
   --background-secondary: #202020;
 }
 
-html[data-theme="light"] {
-  --highlight: #ff0000;
-  --text-primary: #141414;
-  --text-muted: #9b9d9f;
-  --text-secondary: #eef0f2;
-  --background-primary: #eef0f2;
-  --background-secondary: #9b9d9f;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -249,8 +240,5 @@ a:hover {
   .headerSubtitle {
     font-size: 3.125rem;
     padding-top: 1.25rem;
-  }
-
-  .navbar-light .navbar-brand {
   }
 }

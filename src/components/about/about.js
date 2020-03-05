@@ -7,17 +7,8 @@ import AboutDetails from './aboutDetails';
 const Div = styled.div`
   z-index: 1;
 
-  @media (min-width: 576px) {
-  }
-
-  @media (min-width: 768px) {
-  }
-
-  @media (min-width: 992px) {
-  }
-
   @media (min-width: 1200px) {
-    margin-bottom: 25rem;
+    margin-bottom: 20rem;
   }
 `;
 

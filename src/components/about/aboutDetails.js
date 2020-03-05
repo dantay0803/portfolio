@@ -12,13 +12,10 @@ const Styles = styled.div`
     max-width: 300px;
   }
 
-  @media (min-width: 576px) {
-  }
-
-  @media (min-width: 768px) {
-  }
-
   @media (min-width: 992px) {
+    p {
+      max-width: 400px;
+    }
   }
 
   @media (min-width: 1200px) {
