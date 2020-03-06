@@ -12,47 +12,76 @@ import TiledBackground from '../images/tiledBackground.png';
 const StyledContainer = styled(Container)`
   padding: 0;
   margin: 0;
-  text-align: center;
   width: 100%;
-  height: 100%;
 
   object,
   h1,
   h3,
   p {
     pointer-events: none;
-    background-color: rgba(20, 20, 20, 0.75);
+    background-color: rgba(20, 20, 20, 0.65);
+    padding: 0;
+    margin: 0;
+    width: 300px;
   }
 
   a {
     pointer-events: all;
+    font-weight: bold;
   }
 
   object {
-    margin: 2rem;
-    height: 55vh;
-    width: auto;
+    height: 65vh;
   }
 
   .cover {
     width: 100%;
     height: 100%;
+    text-align: center;
     clip-path: circle(25% at var(--x) var(--y));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-image: url(${TiledBackground});
     background-repeat: repeat;
     background-size: 500px;
   }
 
   @media (min-width: 576px) {
+    object,
+    h1,
+    h3,
+    p {
+      width: 500px;
+    }
   }
 
   @media (min-width: 768px) {
+    object,
+    h1,
+    h3,
+    p {
+      width: 700px;
+    }
   }
 
   @media (min-width: 992px) {
+    object,
+    h1,
+    h3,
+    p {
+      width: 950px;
+    }
   }
 
   @media (min-width: 1200px) {
+    object,
+    h1,
+    h3,
+    p {
+      width: 1000px;
+    }
   }
 `;
 const NotFoundPage = () => {

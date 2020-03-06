@@ -5,9 +5,14 @@ import { Link as GatsbyLink } from 'gatsby';
 
 const StyledNavbar = styled(Navbar)`
   background-color: var(--background-primary);
-  height: 50px;
+  height: 66px;
+  width: 100%
   margin: 0;
   padding: 8px 16px;
+
+  .nav-link{
+    padding: 0;
+  }
 `;
 
 export default function navbarNotFound() {
