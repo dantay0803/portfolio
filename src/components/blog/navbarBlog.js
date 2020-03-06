@@ -4,19 +4,11 @@ import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { Link, graphql } from 'gatsby';
 import sanitizeHtml from 'sanitize-html';
 
-const Styles = styled.div`
+const StyledNavbar = styled(Navbar)`
   z-index: 1;
   position: relative;
   text-align: left;
-
-  .navbar {
-    background-color: none;
-  }
-
-  /* .navbar .show,
-  .navbar .show:before {
-    background-color: var(--background-primary);
-  } */
+  background-color: none;
 
   .dropdown-menu {
     padding: 0;
@@ -61,38 +53,37 @@ export const query = graphql`
   }
 `;
 
-export default function navbar(props) {
+export default function navbar({ posts }) {
+  const { edges } = posts;
   return (
-    <Styles>
-      <Navbar expand="lg" sticky="top">
-        <Link to="/" className="noUnderline">
-          <Navbar.Brand>Daniel Taylor</Navbar.Brand>
-        </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Nav>
-            <NavDropdown
-              title="Latest Posts"
-              id="latest-blog-posts"
-              className="fill-width"
-              role="tablist"
-            >
-              {props.posts.edges.slice(0, 6).map(post => (
-                <Link
-                  key={post.node.slug}
-                  to={`/blog/${post.node.slug}/`}
-                  className="dropdown-item"
-                >
-                  {sanitizeHtml(post.node.title)}
-                </Link>
-              ))}
-            </NavDropdown>
-            <Link className="nav-link" to="/blog/">
-              All Posts
-            </Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </Styles>
+    <StyledNavbar expand="lg" sticky="top">
+      <Link to="/" className="noUnderline">
+        <Navbar.Brand>Daniel Taylor</Navbar.Brand>
+      </Link>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+        <Nav>
+          <NavDropdown
+            title="Latest Posts"
+            id="latest-blog-posts"
+            className="fill-width"
+            role="tablist"
+          >
+            {edges.slice(0, 6).map(post => (
+              <Link
+                key={post.node.slug}
+                to={`/blog/${post.node.slug}/`}
+                className="dropdown-item"
+              >
+                {sanitizeHtml(post.node.title)}
+              </Link>
+            ))}
+          </NavDropdown>
+          <Link className="nav-link" to="/blog/">
+            All Posts
+          </Link>
+        </Nav>
+      </Navbar.Collapse>
+    </StyledNavbar>
   );
 }
