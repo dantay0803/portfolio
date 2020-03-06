@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import '../styles/bootstrap-4.3.1.min.css';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
-import Navbar from '../components/navbar';
+import Navbar from '../components/navbars/navbar';
 import Header from '../components/header';
 import Projects from '../components/projects/projects';
 import About from '../components/about/about';
