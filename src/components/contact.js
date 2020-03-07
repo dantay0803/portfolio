@@ -4,8 +4,7 @@ import { Container } from 'react-bootstrap';
 import { FiMail, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
 
 const Styles = styled.div`
-  z-index: 1;
-  margin-bottom: 5rem;
+  margin-top: 4rem;
 
   svg {
     stroke-width: 1;
@@ -52,6 +51,10 @@ const Styles = styled.div`
   .contact-link:hover svg {
     color: var(--text-primary);
     transition: all 0.75s ease-in-out;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: 8rem;
   }
 `;
 

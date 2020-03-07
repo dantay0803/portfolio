@@ -12,7 +12,6 @@ import About from '../components/about/about';
 import Resume from '../components/resume/resume';
 import BlogHighlight from '../components/blog/blogHighlight';
 import Contact from '../components/contact';
-import ClippedSection from '../components/clippedSection';
 
 const StyledContainer = styled(Container)`
   padding: 0;
@@ -35,8 +34,6 @@ const IndexPage = () => (
     <Navbar />
     <Header />
     <StyledContainer fluid>
-      <ClippedSection top={103} />
-      <ClippedSection top={306} />
       <Projects />
       <About />
       <Resume />
