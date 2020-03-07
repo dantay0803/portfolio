@@ -200,9 +200,7 @@ const blogPost = props => {
   const { content, date, featuredImage, title } = props.data.wpgraphql.postBy;
   const postDate = new Date(date);
   const { posts } = props.data.wpgraphql;
-
-  console.log(props.data.wpgraphql.postBy);
-
+  
   return (
     <Layout>
       <SEO
