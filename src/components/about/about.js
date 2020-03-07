@@ -5,7 +5,6 @@ import AboutImages from './aboutImages';
 import AboutDetails from './aboutDetails';
 
 const Div = styled.div`
-  z-index: -1;
   --width: 100%;
   --angle: 11deg;
   --magic-number: 0.09719;
