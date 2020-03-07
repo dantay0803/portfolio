@@ -143,6 +143,9 @@ export default props => {
     postPath,
   } = props;
 
+  let excerpt = postDescription.replace('<p>', '');
+  excerpt = excerpt.replace('</p>', '');
+
   return (
     <Link to={postPath} className="noUnderline">
       <StyledCard>
@@ -154,11 +157,7 @@ export default props => {
               <hr />
             </Card.Title>
             <Card.Text className="card-date">{postDate}</Card.Text>
-            <Card.Text
-              dangerouslySetInnerHTML={{
-                __html: postDescription,
-              }}
-            />
+            <Card.Text>{excerpt}</Card.Text>
           </div>
         </Card.ImgOverlay>
       </StyledCard>
