@@ -1,27 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'gatsby';
-import { Container, Row, Col, Card, CardColumns } from 'react-bootstrap';
-import styled from 'styled-components';
-import '../styles/bootstrap-4.3.1.min.css';
+import React from 'react';
+import { Container } from 'react-bootstrap';
+import sanitizeHtml from 'sanitize-html';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
-import Navbar from '../components/navbars/navbarBlog';
-import HeaderBlog from '../components/headerBlog';
-import sanitizeHtml from 'sanitize-html';
-
-const StyledContainer = styled(Container)`
-  padding: 0;
-  margin: 0;
-  margin-top: 1rem;
-`;
-
-const StyledCard = styled(Card)`
-  max-width: 27.5rem;
-
-  .card-img-top {
-    height: 250px;
-  }
-`;
+import HeaderBlog from '../components/blog/headerBlog';
+import BlogCard from '../components/blog/blogCard';
 
 export const query = graphql`
   {
@@ -45,78 +28,42 @@ export const query = graphql`
 `;
 
 const BlogHome = props => {
-  const [navBackgroundColor, setNavBackgroundColor] = useState('transparent');
-  const posts = props.data.wpgraphql.posts;
-
-  const updateNavbar = () => {
-    if (window.pageYOffset > 250) {
-      setNavBackgroundColor('var(--highlight)');
-    } else if (window.pageYOffset < 250) {
-      setNavBackgroundColor('transparent');
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', updateNavbar);
-    return () => {
-      window.removeEventListener('mousemove', updateNavbar);
-    };
-  }, []);
+  const { posts } = props.data.wpgraphql;
 
   return (
     <Layout>
       <SEO
-        title='Blog'
-        description={
-          'The personal bog of Daniel Taylor software engineer that covers various software development, career and personal topics'
-        }
-        pathname={'/blog/'}
+        title="Blog"
+        description="The personal bog of Daniel Taylor software engineer that covers various software development, career and personal topics"
+        pathname="/blog/"
       />
-      <Navbar backgroundcolor={navBackgroundColor} posts={posts} />
-      <HeaderBlog />
-      <StyledContainer fluid>
-        <Row noGutters>
-          <Col xs='12' md={{ span: 10, offset: 1 }}>
-            <CardColumns>
-              {posts.edges.map(post => (
-                <StyledCard key={post.node.slug}>
-                  <Card.Img
-                    variant='top'
-                    src={
-                      post.node.featuredImage.sourceUrl ||
-                      `https://via.placeholder.com/185x278?text=Image+not+available`
-                    }
-                    alt={post.node.featuredImage.altText}
-                  />
-                  <Card.Body>
-                    <Link to={`/blog/${post.node.slug}/`}>
-                      <Card.Title>{sanitizeHtml(post.node.title)}</Card.Title>
-                    </Link>
-                    <Card.Text
-                      dangerouslySetInnerHTML={{
-                        __html: sanitizeHtml(
-                          post.node.excerpt.length > 130
-                            ? post.node.excerpt.substring(0, 130).concat('...')
-                            : post.node.excerpt
-                        )
-                      }}
-                    />
-                  </Card.Body>
-                  <Card.Footer>
-                    <small className='muted'>
-                      {new Date(post.node.date)
-                        .toUTCString()
-                        .split(' ')
-                        .slice(0, 4)
-                        .join(' ')}
-                    </small>
-                  </Card.Footer>
-                </StyledCard>
-              ))}
-            </CardColumns>
-          </Col>
-        </Row>
-      </StyledContainer>
+      <HeaderBlog posts={posts} />
+      <Container fluid>
+        <div className="blogGrid">
+          {posts.edges.map(post => (
+            <BlogCard
+              key={post.node.slug}
+              thumbnail={
+                post.node.featuredImage.sourceUrl ||
+                `https://via.placeholder.com/185x278?text=Image+not+available`
+              }
+              alt={post.node.featuredImage.altText}
+              postTitle={sanitizeHtml(post.node.title)}
+              postDate={new Date(post.node.date)
+                .toUTCString()
+                .split(' ')
+                .slice(0, 4)
+                .join(' ')}
+              postDescription={sanitizeHtml(
+                post.node.excerpt.length > 115
+                  ? post.node.excerpt.substring(0, 115).concat('...')
+                  : post.node.excerpt
+              )}
+              postPath={`/blog/${post.node.slug}/`}
+            />
+          ))}
+        </div>
+      </Container>
     </Layout>
   );
 };
