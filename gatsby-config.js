@@ -1,12 +1,12 @@
+const config = require('./data/siteConfig');
+
 module.exports = {
+  pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
   siteMetadata: {
-    lang: `en`,
-    title: 'Daniel Taylor - Portfolio',
+    siteUrl: `${config.siteUrl}${config.pathPrefix}`,
+    lang: config.lang,
     titleTemplate: '%s - Daniel Taylor',
-    description:
-      'Personal portfolio website for Daniel Taylor software engineer.',
-    url: 'https://www.danielt.co.uk',
-    image: '/images/header.jpg', // needs updated
+    image: '/images/headerImage.jpg',
     twitterUsername: '@dantay0803',
   },
   plugins: [
@@ -35,13 +35,33 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Daniel Taylor - Portfolio`,
+        short_name: `Daniel Taylor`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#141414`,
+        theme_color: `#FF0000`,
         display: `minimal-ui`,
         icon: `src/images/icon-512x512.png`, // This path is relative to the root of the site.
+      },
+    },
+    'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-manifest',
+      options: {
+        name: config.siteTitle,
+        short_name: config.siteTitleShort,
+        description: config.siteDescription,
+        start_url: config.pathPrefix,
+        background_color: config.backgroundColor,
+        theme_color: config.themeColor,
+        display: 'minimal-ui',
+        icons: [
+          {
+            src: '/logos/logo-512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+        ],
       },
     },
   ],
