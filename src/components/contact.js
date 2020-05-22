@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
 import { FiMail, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
+import ContactForm from './contactForm';
 
 const Styles = styled.div`
   z-index: 1;
@@ -59,62 +60,61 @@ const Styles = styled.div`
   }
 `;
 
-export default function contact() {
-  return (
-    <Styles>
-      <Container key="contact" id="contact" fluid>
-        <h1>Contact</h1>
-        <hr className="hrTitle" />
-        <div className="contact-info">
-          <p>
-            Looking to speak with me about something or just want to stay up to
-            date with my work?
-            <br />
-            Just follow the links below
-          </p>
-          <div className="contact-links">
-            <a
-              href="mailto:daniel@danielt.co.uk"
-              rel="noopener noreferrer"
-              className="contact-link"
-              key="contact-email"
-              title="Link to send me an email"
-            >
-              <FiMail size={65} alt="Email Image" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/danielt0803/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-link"
-              key="contact-linkedin"
-              title="Link to my LinkedIn profile"
-            >
-              <FiLinkedin size={65} alt="LinkedIn Logo" />
-            </a>
-            <a
-              href="https://twitter.com/dantay0803"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-link"
-              key="contact-twitter"
-              title="Link to my personal Twitter"
-            >
-              <FiTwitter size={65} alt="Twitter Logo" />
-            </a>
-            <a
-              href="https://github.com/dantay0803"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="contact-link"
-              key="contact-github"
-              title="Link to my personal GitHub"
-            >
-              <FiGithub size={65} alt="GitHub Logo" />
-            </a>
-          </div>
+const Contact = () => (
+  <Styles>
+    <Container key="contact" id="contact" fluid>
+      <h1>Contact</h1>
+      <hr className="hrTitle" />
+      <div className="contact-info">
+        <p>
+          Feel free to connect with me. I'm always open to discussing new
+          projects, creative ideas, or opportunities to be part of your visions.
+        </p>
+        <ContactForm />
+        <div className="contact-links">
+          <a
+            href="mailto:daniel@danielt.co.uk"
+            rel="noopener noreferrer"
+            className="contact-link"
+            key="contact-email"
+            title="Link to send me an email"
+          >
+            <FiMail size={65} alt="Email Image" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/danielt0803/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-link"
+            key="contact-linkedin"
+            title="Link to my LinkedIn profile"
+          >
+            <FiLinkedin size={65} alt="LinkedIn Logo" />
+          </a>
+          <a
+            href="https://twitter.com/dantay0803"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-link"
+            key="contact-twitter"
+            title="Link to my personal Twitter"
+          >
+            <FiTwitter size={65} alt="Twitter Logo" />
+          </a>
+          <a
+            href="https://github.com/dantay0803"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-link"
+            key="contact-github"
+            title="Link to my personal GitHub"
+          >
+            <FiGithub size={65} alt="GitHub Logo" />
+          </a>
         </div>
-      </Container>
-    </Styles>
-  );
-}
+      </div>
+    </Container>
+  </Styles>
+);
+
+export default Contact;
