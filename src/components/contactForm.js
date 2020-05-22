@@ -55,12 +55,7 @@ const ContactForm = () => {
 
   return (
     <Styles>
-      <form
-        name="contact"
-        method="POST"
-        data-netlify-recaptcha="true"
-        data-netlify="true"
-      >
+      <form name="contact" action="contact-form.php" method="POST">
         <label htmlFor="name">
           Your name
           <input
@@ -69,6 +64,7 @@ const ContactForm = () => {
             id="name"
             value={formState.name}
             onChange={handleFormChange}
+            required
           />
         </label>
         <label htmlFor="email">
@@ -79,6 +75,7 @@ const ContactForm = () => {
             id="email"
             value={formState.email}
             onChange={handleFormChange}
+            required
           />
         </label>
         <label htmlFor="message">
@@ -89,6 +86,7 @@ const ContactForm = () => {
             rows="5"
             value={formState.message}
             onChange={handleFormChange}
+            required
           />
         </label>
         <button type="submit">Send</button>
