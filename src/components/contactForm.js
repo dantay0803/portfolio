@@ -55,7 +55,18 @@ const ContactForm = () => {
 
   return (
     <Styles>
-      <form name="contact" action="contact-form.php" method="POST">
+      <form
+        name="contact"
+        method="POST"
+        netlify-honeypot="bot-field"
+        data-netlify-recaptcha="true"
+        data-netlify="true"
+      >
+        <p className="hidden">
+          <label htmlFor="bot-field">
+            Don’t fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
         <label htmlFor="name">
           Your name
           <input
@@ -89,6 +100,7 @@ const ContactForm = () => {
             required
           />
         </label>
+        <div data-netlify-recaptcha="true"></div>
         <button type="submit">Send</button>
       </form>
     </Styles>
