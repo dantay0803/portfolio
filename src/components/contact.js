@@ -1,7 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
-import { FiMail, FiTwitter, FiLinkedin, FiGithub } from 'react-icons/fi';
+import {
+  FiMail,
+  FiTwitter,
+  FiLinkedin,
+  FiGithub,
+  FiInstagram,
+} from 'react-icons/fi';
 import ContactForm from './contactForm';
 
 const Styles = styled.div`
@@ -82,6 +88,16 @@ const Contact = () => (
             <FiMail size={65} alt="Email Image" />
           </a>
           <a
+            href="https://github.com/dantay0803"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-link"
+            key="contact-github"
+            title="Link to my personal GitHub"
+          >
+            <FiGithub size={65} alt="GitHub Logo" />
+          </a>
+          <a
             href="https://www.linkedin.com/in/danielt0803/"
             target="_blank"
             rel="noopener noreferrer"
@@ -102,14 +118,14 @@ const Contact = () => (
             <FiTwitter size={65} alt="Twitter Logo" />
           </a>
           <a
-            href="https://github.com/dantay0803"
+            href="https://www.instagram.com/dantay0803/"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-link"
-            key="contact-github"
-            title="Link to my personal GitHub"
+            key="contact-instagram"
+            title="Link to my personal Instagram"
           >
-            <FiGithub size={65} alt="GitHub Logo" />
+            <FiInstagram size={65} alt="Instagram Logo" />
           </a>
         </div>
       </div>
