@@ -7,6 +7,13 @@ import ContactForm from './contactForm';
 const Styles = styled.div`
   z-index: 1;
   margin-top: 4rem;
+  --width: 100%;
+  --angle: -11deg;
+  --magic-number: 0.09719;
+  --skew-padding: calc(var(--width) * var(--magic-number));
+  position: relative;
+  padding: var(--skew-padding) 0;
+  margin-top: -1px;
 
   svg {
     stroke-width: 1;

@@ -57,22 +57,27 @@ const ContactForm = () => {
     });
   };
 
+  const encode = data =>
+    Object.keys(data)
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .join('&');
+
   const handleSubmit = e => {
     e.preventDefault();
 
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encodeURI({ 'form-name': 'contact', ...formState }),
+      body: encode({ 'form-name': 'contact', ...formState }),
     })
       .then(() => {
-        console.log('form sent');
-        document.querySelector(`form[name='contact']`).reset();
+        console.log('form submitted');
         setFormState({
           name: '',
           email: '',
           message: '',
         });
+        document.querySelector(`form[name='contact']`).reset();
       })
       .catch(error => console.log(error));
   };

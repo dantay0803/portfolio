@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
 import { MdFileDownload } from 'react-icons/md';
-import danieltaylorResume from '../../files/DanielTaylor_Resume.pdf';
+import danieltaylorResume from '../../assets/files/DanielTaylor_Resume.pdf';
 import Experience from './experience';
 import Education from './education';
 import Awards from './awards';

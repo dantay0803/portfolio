@@ -10,7 +10,7 @@ const config = {
   lang: `en`,
   themeColor: '#FF0000',
   backgroundColor: '#141414',
-  image: '/images/headerImage.jpg',
+  image: '/assets/images/headerImage.jpg',
   titleTemplate: '%s - Daniel Taylor',
 };
 

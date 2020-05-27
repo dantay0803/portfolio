@@ -6,7 +6,7 @@ module.exports = {
     siteUrl: `${config.siteUrl}${config.pathPrefix}`,
     lang: config.lang,
     titleTemplate: '%s - Daniel Taylor',
-    image: '/images/headerImage.jpg',
+    image: '/assets/images/headerImage.jpg',
     twitterUsername: '@dantay0803',
   },
   plugins: [
@@ -27,7 +27,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -41,7 +41,7 @@ module.exports = {
         background_color: `#141414`,
         theme_color: `#FF0000`,
         display: `minimal-ui`,
-        icon: `src/images/icon-512x512.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/icon-512x512.png`, // This path is relative to the root of the site.
       },
     },
     'gatsby-plugin-sitemap',

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Jumbotron, Row, Col } from 'react-bootstrap';
-import headerImage from '../images/headerImage.jpg';
+import headerImage from '../assets/images/headerImage.jpg';
 
 const StyledJumbotron = styled(Jumbotron)`
   background-image: url('${headerImage}');

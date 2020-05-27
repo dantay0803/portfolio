@@ -6,8 +6,8 @@ import '../styles/bootstrap-4.3.1.min.css';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Navbar from '../components/navbars/navbarNotFound';
-import Taken from '../images/undraw_Taken_if77.svg';
-import TiledBackground from '../images/tiledBackground.png';
+import Taken from '../assets/images/undraw_Taken_if77.svg';
+import TiledBackground from '../assets/images/tiledBackground.png';
 
 const StyledContainer = styled(Container)`
   padding: 0;
