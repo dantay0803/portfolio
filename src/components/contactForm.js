@@ -37,6 +37,10 @@ const Styles = styled.div`
     color: var(--text-primary);
     cursor: pointer;
   }
+
+  .hidden {
+    display: none;
+  }
 `;
 
 const ContactForm = () => {
@@ -53,13 +57,33 @@ const ContactForm = () => {
     });
   };
 
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encodeURI({ 'form-name': 'contact', ...formState }),
+    })
+      .then(() => {
+        console.log('form sent');
+        document.querySelector(`form[name='contact']`).reset();
+        setFormState({
+          name: '',
+          email: '',
+          message: '',
+        });
+      })
+      .catch(error => console.log(error));
+  };
+
   return (
     <Styles>
       <form
+        onSubmit={handleSubmit}
         name="contact"
         method="POST"
         netlify-honeypot="bot-field"
-        data-netlify-recaptcha="true"
         data-netlify="true"
       >
         <p className="hidden">
@@ -100,7 +124,6 @@ const ContactForm = () => {
             required
           />
         </label>
-        <div data-netlify-recaptcha="true"></div>
         <button type="submit">Send</button>
       </form>
     </Styles>
