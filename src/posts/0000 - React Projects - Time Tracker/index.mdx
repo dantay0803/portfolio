@@ -1,0 +1,35 @@
+---
+title: React Projects – Time Tracker
+slug: react-projects–time-tracker
+category:
+ - React
+ - JavaScript
+date: 2019-07-22
+id: 0000
+featuredImage: TimeTracker.png
+excerpt: A few weeks ago while browsing Reddit, I see the post below in the r/webdev subreddit, showing off a web...
+---
+
+A few weeks ago while browsing Reddit, I see the post below in the <a href="https://www.reddit.com/r/webdev/">r/webdev</a> subreddit, showing off a web app called <a href="https://www.log-time.com/login">Log Time</a>.
+
+After seeing it I thought the project and project idea was cool and thought it would be fun to have a go at trying to recreate it myself using <a href="https://reactjs.org/">React</a>. A side objective I had was to also try and recreate the CSS as much as I could without inspecting the elements on their page.
+
+For the most part, the project went a lot smoother than I had expected, with most of my time on it being taken up by the CSS and the calendar integration. I have worked on several personal react projects and one professional project before and think this did help make it easier than I initially thought.
+
+One of the first things I did for the project which was different from my usual working method, was setting out most of the properties in the projects state. I do think to be able to do this early on was helped by having a clear end goal.
+
+After around 5-6 hours work I had the application nearly complete. All it was missing was the calendar integration, which if I had left out or swapped to outputting a text file would have saved a bit of time. But I am glad I didn’t.
+
+My original plan was to use Google Calendar just like <a ref="https://www.log-time.com/login">Log Time</a> did, but I did hit a bit of a roadblock. The trouble with using Google Calendar was that I would need my application to be checked and authorized by Google before I could access a user’s data. As this was a personal project that will not be released and having no experience with how long that would take, I decided to leave it and check out my other options.
+
+I decided to checkout integrating the application with a users Outlook calendar, I decided to try this approach. After a bit of Google-fu, I found <a href="https://developer.microsoft.com/en-us/graph">Microsoft Graph</a>, that has a selection of APIs developers can use to access user data. Then once I played around with it and felt it fit my needs well, I found the video below showing you how to get completely set up and start using it in your project.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IghiKqly-HY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This <a href="https://github.com/microsoftgraph/msgraph-training-reactspa">GitHub repository</a> also has the source code for the video above and a lot of other useful code. Once I had the API calls in place and it was working with some static data, all I had to do was update the POST call with my actual data and spend some time on a nice Login page to ask the user for their account access.
+
+On my final day of working on the project, I decided to expand my idea just a little and add a button that would allow users to add new tasks. Thankfully I found this tutorial on <a href="https://dev.to/achowba/building-a-modal-in-react-15hg">creating a modal in react</a> from dev.to which helped when I got stuck with creating my own.
+
+Finally. You can see the working version of the application in the gif below and if you fancy a look at the source code you can find it on <a href="https://github.com/dantay0803/React_Projects/tree/master/timetracker">GitHub</a> (but beware it can still use some cleaning up). Overall I enjoyed working on the project and want to give another shoutout and thanks to the team at <a href="https://www.log-time.com/login">Log Time</a> for sharing this, and giving me an enjoyable side project to work on.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tINOwQ4hjLo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
