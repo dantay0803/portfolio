@@ -15,22 +15,27 @@ Recently I decided to create my first NPM package. I was inspired to do this aft
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lHAeK8t94as" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2>Forking The Repo</h2>
+
 The first thing I did was to fork Wes’ repo and add the additional sections and changes that I wanted for my projects. I also updated the package name, author and repo details in the package.json and package-lock.json files.
 
 <h2>Creating a Package</h2>
+
 Next up was to research how to publish packages to NPM. The first thing I did was to check YouTube to see if there were any good tutorials for this. I was lucky to find the video below from Gary Simon, that showed the full process from writing some code to publishing the package.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/4zzbNac6f6Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <h2>The NPM Process</h2>
+
 For the vast majority of the process from signing up to NPM and publishing my package, the process was very smooth and straight forward. The only issue I ran into was the package being denied because its name was triggering a spam error. In my original package name, I wanted to use my full <a href="https://github.com/dantay0803">GitHub</a> user name, but this would not work. So I changed the package name to something close to what I wanted but not quite as clean as I would have liked it to be.
 
 After this, I spent some time reading various posts online via Stack Overflow and other forums and found that the numbers at the end of the package could be the reason for the spam flag being triggered. So, in the off chance that this was what was causing the issue, I decided to drop the numbers and try to publish a new package with this new name. To my surprise this worked, it wasn’t exactly what I wanted the name to be but it was a lot better than the one I was currently using.
 
 <h2>Using the Package</h2>
+
 After getting to grips with publishing the package and fixing the name, it was time to install the package and test it. To test the package I created a folder on my desktop with a simple JavaScript file with errors.
 
 <h2>eslint-plugin-html Not Working</h2>
+
 The first issue I had with the package was errors with the eslint-plugin-HTML package not working. Thankfully after looking at some GitHub issues, I found that upgrading the package to version 6.0.0 would fix the problem and it did.
 
 <figure>
@@ -39,11 +44,13 @@ The first issue I had with the package was errors with the eslint-plugin-HTML pa
 </figure>
 
 <h2>React Version Detect Issue</h2>
+
 The next issue with the package I ran into was an error where the eslint-plugin-react package was not returning the react version. This issue caused me to scratch my head quite a few times trying to find the exact cause of the issue and get a fix for it.
 
 I spent a good bit of time searching online, reading docs and checking posts that might have something to do with this issue. But after looking everywhere I could think of I simply tried updating the package to the latest version and that fixed my issue.
 
 <h2>Final Thoughts</h2>
+
 Was it worth the time? Yes, I always enjoy learning and doing new things when it comes to coding. So creating an NPM package of my own after using an assortment of different packages to do various things in personal, educational and professional projects. It felt good to create one of my own.
 
 It also allows me to update my eslint and Prettier settings to suit my needs and gives me access to dive into the finer details of the tools I am using. As well as giving me the experience and knowledge to be able to create more packages in the future for things I find useful and want to easily share and reuse.
