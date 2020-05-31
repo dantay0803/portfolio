@@ -1,44 +1,39 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
-import '../styles/bootstrap-4.3.1.min.css';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 import Navbar from '../components/navbars/navbarNotFound';
 import Taken from '../assets/images/undraw_Taken_if77.svg';
 import TiledBackground from '../assets/images/tiledBackground.png';
 
-const StyledContainer = styled(Container)`
-  padding: 0;
-  margin: 0;
-  text-align: center;
+const Styles = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(${TiledBackground});
-  background-repeat: repeat;
-  background-size: 600px;
+  background: url(${TiledBackground}) repeat;
+  height: 90vh;
+  text-align: center;
 
-  object,
   h1,
   h3,
   p {
-    pointer-events: none;
-    background-color: rgba(20, 20, 20, 0.65);
+    background-color: rgba(20, 20, 20, 0.85);
     padding: 0;
     margin: 0;
     width: 300px;
   }
 
   a {
-    pointer-events: all;
-    font-weight: bold;
+    font-weight: bolder;
+    text-transform: uppercase;
+    background-color: rgba(20, 20, 20, 1);
   }
 
   object {
     height: 65vh;
+    width: auto;
   }
 
   @media (min-width: 576px) {
@@ -67,32 +62,23 @@ const StyledContainer = styled(Container)`
       width: 950px;
     }
   }
-
-  @media (min-width: 1200px) {
-    object,
-    h1,
-    h3,
-    p {
-      width: 1000px;
-    }
-  }
 `;
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not Found" />
     <Navbar />
-    <StyledContainer fluid>
+    <Styles>
       <h1>Uh-oh</h1>
-      <object type="image/svg+xml" data={Taken}>
-        Your browser does not support SVG
-      </object>
       <h3>404</h3>
       <p>It looks like the page you were looking for is gone.</p>
       <p>
         How about we try take a step{' '}
         <Link onClick={() => window.history.back()}>back.</Link>
       </p>
-    </StyledContainer>
+      <object type="image/svg+xml" data={Taken}>
+        Your browser does not support SVG
+      </object>
+    </Styles>
   </Layout>
 );
 
