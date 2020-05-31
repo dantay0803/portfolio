@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import ProjectDetails from '../../templates/projectDetails';
+import ProjectDetails from '../../templates/project-details';
 
 const IBDClasses = () => {
   const data = useStaticQuery(graphql`

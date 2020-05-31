@@ -1,7 +1,4 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable react/display-name */
 import React from 'react';
-import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import { Link } from 'gatsby-plugin-modal-routing';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -9,7 +6,7 @@ import { faWindowClose } from '@fortawesome/free-solid-svg-icons';
 import Layout from '../components/layout/layout';
 import SEO from '../components/seo';
 
-const StyledContainer = styled(Container)`
+const Styles = styled.div`
   margin: 0;
   padding: 0;
   padding-bottom: 2rem;
@@ -115,7 +112,7 @@ const StyledContainer = styled(Container)`
 
 export default ({ title, desc, path, children }) => (
   <Layout>
-    <StyledContainer fluid>
+    <Styles>
       <SEO title={title} description={desc} pathname={path} />
       <header>
         <h1>
@@ -131,6 +128,6 @@ export default ({ title, desc, path, children }) => (
         </Link>
       </header>
       {children}
-    </StyledContainer>
+    </Styles>
   </Layout>
 );

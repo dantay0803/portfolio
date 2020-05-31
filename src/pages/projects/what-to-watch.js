@@ -1,7 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
-import ProjectDetails from '../../templates/projectDetails';
+import ProjectDetails from '../../templates/project-details';
 
 const SecondPage = () => {
   const data = useStaticQuery(graphql`
@@ -30,7 +30,7 @@ const SecondPage = () => {
     >
       <div>
         <p>
-          What to Watch is a website I created in React, using the {''}
+          What to Watch is a website I created in React, using the
           <a
             href="https://developers.themoviedb.org/3/getting-started/introduction"
             target="_blank"
@@ -38,8 +38,8 @@ const SecondPage = () => {
           >
             MovieDB API
           </a>
-          {''} for the data of the site. The website includes several features
-          such as:
+          for the data of the site. The website includes several features such
+          as:
         </p>
         <div className="two-column-layout">
           <ul key="featureSetOne">
