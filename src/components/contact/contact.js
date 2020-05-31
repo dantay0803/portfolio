@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
 import ContactForm from './contactForm';
-import SocialLinks from './socialLinks';
+import SocialLinks from '../socialLinks';
 
 const Styles = styled.div`
   z-index: 1;

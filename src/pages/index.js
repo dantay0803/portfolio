@@ -11,7 +11,7 @@ import Projects from '../components/projects/projects';
 import About from '../components/about/about';
 import Resume from '../components/resume/resume';
 import BlogHighlight from '../components/blog/blogHighlight';
-import Contact from '../components/contact';
+import Contact from '../components/contact/contact';
 
 const StyledContainer = styled(Container)`
   padding: 0;

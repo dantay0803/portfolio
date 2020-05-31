@@ -43,7 +43,7 @@ const Styles = styled.div`
 
 const socialLinks = () => (
   <Styles>
-    <a
+    {/* <a
       href="mailto:daniel@danielt.co.uk"
       rel="noopener noreferrer"
       className="contact-link"
@@ -51,7 +51,7 @@ const socialLinks = () => (
       title="Link to send me an email"
     >
       <FiMail size={65} alt="Email Image" />
-    </a>
+    </a> */}
     <a
       href="https://github.com/dantay0803"
       target="_blank"
