@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-bootstrap';
-import sanitizeHtml from 'sanitize-html';
 import { StaticQuery, graphql } from 'gatsby';
 import BlogCard from './blogCard';
 
@@ -40,18 +39,23 @@ export default props => (
   <StaticQuery
     query={graphql`
       query {
-        wpgraphql {
-          posts {
-            edges {
-              node {
-                date
-                slug
-                featuredImage {
-                  altText
-                  sourceUrl
-                }
-                excerpt
+        allMdx(sort: { fields: [frontmatter___date], order: DESC }, limit: 3) {
+          edges {
+            node {
+              frontmatter {
                 title
+                slug
+                category
+                date(formatString: "MMMM DD, YYYY")
+                excerpt
+                featuredImage {
+                  childImageSharp {
+                    fluid(quality: 100) {
+                      src
+                    }
+                  }
+                }
+                featuredImageAlt
               }
             }
           }
@@ -63,7 +67,7 @@ export default props => (
 );
 
 const BlogHighlight = ({ data }) => {
-  const { posts } = data.wpgraphql;
+  const posts = data.allMdx.edges;
 
   return (
     <Styles>
@@ -71,26 +75,23 @@ const BlogHighlight = ({ data }) => {
         <h1>Blog</h1>
         <hr className="hrTitle" />
         <div className="blogGrid">
-          {posts.edges.slice(0, 3).map(post => (
+          {posts.map(post => (
             <BlogCard
-              key={post.node.slug}
+              key={post.node.frontmatter.slug}
               thumbnail={
-                post.node.featuredImage.sourceUrl ||
+                post.node.frontmatter.featuredImage.childImageSharp.fluid.src ||
                 `https://via.placeholder.com/185x278?text=Image+not+available`
               }
-              alt={post.node.featuredImage.altText}
-              postTitle={sanitizeHtml(post.node.title)}
-              postDate={new Date(post.node.date)
+              alt={post.node.frontmatter.featuredImage.altText}
+              postTitle={post.node.frontmatter.title}
+              postDate={new Date(post.node.frontmatter.date)
                 .toUTCString()
                 .split(' ')
                 .slice(0, 4)
                 .join(' ')}
-              postDescription={sanitizeHtml(
-                post.node.excerpt.length > 115
-                  ? post.node.excerpt.substring(0, 115).concat('...')
-                  : post.node.excerpt
-              )}
-              postPath={`/blog/${post.node.slug}/`}
+              postDescription={post.node.frontmatter.excerpt}
+              postPath={`/${post.node.frontmatter.slug}`}
+              categories={post.node.frontmatter.category}
             />
           ))}
         </div>
