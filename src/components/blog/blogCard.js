@@ -58,11 +58,11 @@ const StyledCard = styled(Card)`
     width: 100%;
     height: 50%;
     background-color: var(--text-primary);
-    object-fit: cover;
+    object-fit: fill;
   }
 
   .card-img-overlay {
-    background-color: var(--background-primary);
+    background-color: var(--background-secondary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -96,10 +96,18 @@ const StyledCard = styled(Card)`
     padding: 0px 20px;
   }
 
-  .postInfo .card-date {
+  .card-subtitle {
     color: var(--text-muted);
-    font-size: 0.9rem;
-    visibility: visible;
+    font-size: 1rem;
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-subtitleSeparator {
+    margin: 0 0.5em;
+    color: var(--highlight);
+    font-weight: 900;
   }
 
   @media (min-width: 576px) {
@@ -141,6 +149,7 @@ export default props => {
     postDate,
     postDescription,
     postPath,
+    categories,
   } = props;
 
   let excerpt = postDescription.replace('<p>', '');
@@ -156,7 +165,11 @@ export default props => {
               <h6>{postTitle}</h6>
               <hr />
             </Card.Title>
-            <Card.Text className="card-date">{postDate}</Card.Text>
+            <Card.Text className="">
+              <span className="card-subtitle">{postDate}</span>
+              <span className="card-subtitleSeparator">/</span>
+              <span className="card-subtitle">{categories.join(', ')}</span>
+            </Card.Text>
             <Card.Text>{excerpt}</Card.Text>
           </div>
         </Card.ImgOverlay>
