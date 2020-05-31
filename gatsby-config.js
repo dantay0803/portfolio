@@ -75,7 +75,9 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 590,
+              maxWidth: 1500,
+              linkImagesToOriginal: false,
+              withWebp: true,
             },
           },
           {
@@ -84,13 +86,13 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
-          // {
-          //   resolve: `gatsby-remark-prismjs`,
-          //   options: {
-          //     showLineNumbers: false,
-          //     noInlineHighlight: false,
-          //   },
-          // },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
+          },
         ],
       },
     },
