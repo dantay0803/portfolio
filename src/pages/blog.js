@@ -27,13 +27,38 @@ const Styles = styled.div`
     text-align: center;
   }
 
-  .blogGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(325px, 525px));
-    justify-content: center;
-    justify-items: center;
-    grid-gap: 2em;
-    padding: 1rem;
+  @media (min-width: 576px) {
+    .blogHeaderTitle {
+      font-size: 2.5rem;
+      padding: 10rem 0 0 1rem;
+      width: 30rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .blogHeaderTitle {
+      font-size: 3rem;
+      line-height: 4.75rem;
+      padding: 10rem 0 0 1rem;
+      width: 35rem;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .blogHeaderTitle {
+      font-size: 3.875rem;
+      padding: 10rem 0 0 1rem;
+      width: 50rem;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .blogHeaderTitle {
+      font-size: 3.875rem;
+      line-height: 4.75rem;
+      padding-top: 17.1875rem;
+      width: 53.75rem;
+    }
   }
 `;
 
