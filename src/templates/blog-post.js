@@ -13,6 +13,7 @@ const Article = styled.article`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  margin-top: 4.25em;
   padding-bottom: 3rem;
   color: var(--text-primary);
   background-color: var(--background-primary);
@@ -51,8 +52,8 @@ const Article = styled.article`
   }
 
   img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    max-height: 37.5em;
     object-fit: cover;
   }
 
