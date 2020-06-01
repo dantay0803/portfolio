@@ -2,17 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
 import { StaticQuery, graphql, Link } from 'gatsby';
+import { FiMenu, FiBook } from 'react-icons/fi';
 
 const StyledNavbar = styled(Navbar)`
-  z-index: 1;
-  position: relative;
-  text-align: left;
-  background-color: none;
+  background-color: var(--background-primary);
 
   .dropdown-menu {
-    padding: 0;
     background-color: var(--background-secondary);
-    border-color: var(--background-secondary);
     font-size: 1rem;
     width: 20rem;
     overflow: hidden;
@@ -31,6 +27,57 @@ const StyledNavbar = styled(Navbar)`
     color: var(--highlight);
     text-decoration: underline;
     background-color: var(--background-secondary);
+  }
+
+  .navbar-toggler {
+    background: transparent;
+    color: var(--text-primary);
+  }
+
+  .fill-width.dropdown.nav-item,
+  .fill-width.show.dropdown.nav-item,
+  .dropdown-toggle.nav-link {
+    font-size: 1rem;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .dropdown-toggle.nav-link :hover {
+    justify-content: start;
+    align-content: start;
+  }
+
+  .fill-width.dropdown.nav-item:hover,
+  .dropdown-toggle.nav-link:hover {
+    color: var(--highlight);
+  }
+
+  .nav-link {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    justify-self: center;
+    align-self: start;
+  }
+
+  .nav-link:hover {
+    cursor: pointer;
+  }
+
+  .nav-link:hover > span {
+    color: var(--highlight);
+  }
+
+  .nav-link > span {
+    margin-left: 0.5em;
+    font-size: 1rem;
+  }
+
+  @media (min-width: 992px) {
+    .nav-link > span,
+    .dropdown-toggle.nav-link {
+      font-size: 1.25rem;
+    }
   }
 `;
 
@@ -58,11 +105,15 @@ const BlogNavbar = ({ data }) => {
   const posts = data.allMdx.edges;
 
   return (
-    <StyledNavbar expand="lg" sticky="top">
+    <StyledNavbar expand="lg" fixed="top">
       <Link to="/" className="noUnderline">
         <Navbar.Brand>Daniel Taylor</Navbar.Brand>
       </Link>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Toggle aria-controls="basic-navbar-nav">
+        <span>
+          <FiMenu size={32} alt="LinkedIn Logo" />
+        </span>
+      </Navbar.Toggle>
       <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
         <Nav>
           <NavDropdown
@@ -84,7 +135,7 @@ const BlogNavbar = ({ data }) => {
             ))}
           </NavDropdown>
           <Link className="nav-link" to="/blog/">
-            All Posts
+            <FiBook size={24} alt="LinkedIn Logo" /> <span>All Posts</span>
           </Link>
         </Nav>
       </Navbar.Collapse>
