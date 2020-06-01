@@ -36,6 +36,10 @@ const PostFooter = styled.footer`
     align-items: start;
   }
 
+  .nav-link:hover {
+    text-decoration: underline;
+  }
+
   .postLinkDirectionText {
     color: var(--text-muted);
     font-size: 1rem;
