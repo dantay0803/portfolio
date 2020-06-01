@@ -9,6 +9,7 @@ module.exports = {
     titleTemplate: '%s - Daniel Taylor',
     image: '/assets/images/headerImage.jpg',
     twitterUsername: '@dantay0803',
+    description: config.siteDescription,
   },
   plugins: [
     `gatsby-transformer-sharp`,
