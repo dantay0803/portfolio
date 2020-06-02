@@ -1,12 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {
-  FiMail,
-  FiTwitter,
-  FiLinkedin,
-  FiGithub,
-  FiInstagram,
-} from 'react-icons/fi';
+import { FiTwitter, FiLinkedin, FiGithub, FiInstagram } from 'react-icons/fi';
 
 const Styles = styled.div`
   display: grid;
@@ -43,15 +37,6 @@ const Styles = styled.div`
 
 const socialLinks = () => (
   <Styles>
-    {/* <a
-      href="mailto:daniel@danielt.co.uk"
-      rel="noopener noreferrer"
-      className="contact-link"
-      key="contact-email"
-      title="Link to send me an email"
-    >
-      <FiMail size={65} alt="Email Image" />
-    </a> */}
     <a
       href="https://github.com/dantay0803"
       target="_blank"

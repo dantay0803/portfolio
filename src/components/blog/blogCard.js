@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 const StyledCard = styled(Card)`
   width: 325px;
-  height: 300px;
+  height: 450px;
   color: var(--text-primary);
   background-color: var(--background-primary);
   box-shadow: 0.375rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
@@ -79,10 +79,6 @@ const StyledCard = styled(Card)`
     padding: 10px;
   }
 
-  .postInfo p {
-    visibility: hidden;
-  }
-
   .card-title > h6 {
     font-weight: bold;
     font-size: 1.25rem;
@@ -112,7 +108,7 @@ const StyledCard = styled(Card)`
 
   @media (min-width: 576px) {
     width: 375px;
-    height: 350px;
+    height: 425px;
 
     .postInfo {
       height: 57.5%;
@@ -125,8 +121,8 @@ const StyledCard = styled(Card)`
   }
 
   @media (min-width: 768px) {
-    width: 425px;
-    height: 400px;
+    width: 450px;
+    height: 425px;
   }
 
   @media (min-width: 992px) {

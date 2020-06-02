@@ -21,7 +21,7 @@ const Article = styled.article`
   div,
   header,
   hr {
-    width: 50%;
+    width: 80vw;
   }
 
   header > p {
@@ -29,7 +29,7 @@ const Article = styled.article`
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 1.5rem;
     margin: 0;
   }
 
@@ -37,14 +37,7 @@ const Article = styled.article`
   h3 {
     text-decoration: underline;
     margin-top: 2em;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  h3 {
-    font-size: 1.25rem;
+    font-size: 1rem;
   }
 
   p {
@@ -86,7 +79,7 @@ const Article = styled.article`
 
   .headerSubtitle {
     color: var(--text-muted);
-    font-size: 1rem;
+    font-size: 0.75rem;
     margin: 0 0 0.5em 0;
     padding: 0;
     margin: 0;
@@ -99,10 +92,66 @@ const Article = styled.article`
   }
 
   #headerImage {
-    width: 70%;
+    width: 85vw;
     height: auto;
     object-fit: cover;
     margin-bottom: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    div,
+    header,
+    hr {
+      width: 70vw;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+
+    h3 {
+      font-size: 1rem;
+    }
+
+    .headerSubtitle {
+      font-size: 0.9rem;
+    }
+
+    #headerImage {
+      width: 80vw;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    div,
+    header,
+    hr {
+      width: 60vw;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    .headerSubtitle {
+      font-size: 1rem;
+    }
+
+    #headerImage {
+      width: 70vw;
+    }
   }
 `;
 

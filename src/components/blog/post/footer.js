@@ -12,12 +12,16 @@ const PostFooter = styled.footer`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  padding: 15em 0;
+  padding: 15em 0 5em 0;
 
   div {
-    width: 50%;
+    width: 50vw;
     text-align: left;
     margin-top: 1em;
+  }
+
+  a {
+    padding: 0;
   }
 
   #readMore {
@@ -43,29 +47,27 @@ const PostFooter = styled.footer`
   .postLinkDirectionText {
     color: var(--text-muted);
     font-size: 1rem;
-    padding: 0.5rem 1rem;
+    padding: 0.5em 0;
     margin: 0;
   }
 
-  @media (min-width: 992px) {
-    padding: 5em 0;
+  @media (min-width: 576px) {
+    padding: 10em 0 5em 0;
+  }
 
+  @media (min-width: 992px) {
     #readMore {
       font-size: 1.5rem;
       flex-direction: row;
       justify-content: start;
     }
 
-    .postLink:nth-last-child(1) {
-      justify-self: end;
+    .postLink:nth-child(2) {
+      align-items: end;
     }
 
     .postLinkDirectionText {
-      color: var(--text-muted);
       font-size: 1rem;
-      margin: 0 0 0.5em 0;
-      padding: 0.5rem 1rem;
-      margin: 0;
     }
   }
 `;
