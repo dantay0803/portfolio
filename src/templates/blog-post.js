@@ -13,7 +13,7 @@ const Article = styled.article`
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
-  margin-top: 4.25em;
+  margin-top: 4em;
   padding-bottom: 3rem;
   color: var(--text-primary);
   background-color: var(--background-primary);
@@ -130,7 +130,7 @@ const Article = styled.article`
     div,
     header,
     hr {
-      width: 60vw;
+      width: 50vw;
     }
 
     h1 {
@@ -150,7 +150,7 @@ const Article = styled.article`
     }
 
     #headerImage {
-      width: 70vw;
+      width: 60vw;
     }
   }
 `;
