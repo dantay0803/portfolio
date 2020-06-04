@@ -1,15 +1,17 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import PropTypes from 'prop-types';
+import { GiSeahorse } from 'react-icons/gi';
 import config from '../../data/siteConfig.js';
 
-const SEO = ({ title, description, image, pathname, article }) => {
+const SEO = ({ title, description, image, path, date }) => {
   const seo = {
     lang: config.lang,
-    title: title || config.siteTitle,
-    description: description || config.siteDescription,
-    image: `${config.siteUrl}${image || config.image}`,
-    url: `${config.siteUrl}${pathname || config.pathPrefix}`,
+    locale: config.locale,
+    title: title || config.title,
+    description: description || config.description,
+    image: `${config.url}${image || config.image}`,
+    url: `${config.url}${path || config.pathPrefix}`,
   };
 
   return (
@@ -21,26 +23,29 @@ const SEO = ({ title, description, image, pathname, article }) => {
         title={seo.title}
         titleTemplate={config.titleTemplate}
       >
-        <meta name="description" content={seo.description} />
-        <meta name="image" content={seo.image} />
-        {seo.url && <meta property="og:url" content={seo.url} />}
-        {(article ? true : null) && (
-          <meta property="og:type" content="article" />
-        )}
-        {seo.title && <meta property="og:title" content={seo.title} />}
-        {seo.description && (
-          <meta property="og:description" content={seo.description} />
-        )}
-        {seo.image && <meta property="og:image" content={seo.image} />}
+        <link rel="canonical" href={seo.url} />
+        <meta name="generator" content="Daniel Taylor with Gatsby!" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={seo.title} />
+        <meta property="og:url" content={seo.url} />
+        <meta property="og:description" content={seo.description} />
+        {date ? (
+          <meta
+            property="article:published_time"
+            content={new Date(date).toISOString()}
+          />
+        ) : null}
+        {seo.image ? <meta property="og:image" content={seo.image} /> : null}
+        {seo.image ? <meta property="og:image:width" content="1200" /> : null}
+        {seo.image ? <meta property="og:image:height" content="630" /> : null}
+        <meta property="og:locale" content={seo.locale} />
         <meta name="twitter:card" content="summary_large_image" />
-        {config.twitterUsername && (
-          <meta name="twitter:creator" content={config.twitterUsername} />
-        )}
-        {seo.title && <meta name="twitter:title" content={seo.title} />}
-        {seo.description && (
-          <meta name="twitter:description" content={seo.description} />
-        )}
-        {seo.image && <meta name="twitter:image" content={seo.image} />}
+        <meta name="twitter:site" content={config.twitterUsername} />
+        <meta name="twitter:creator" content={config.twitterUsername} />
+        <meta name="twitter:url" content={seo.url} />
+        <meta name="twitter:title" content={seo.title} />
+        <meta name="twitter:description" content={seo.description} />
+        {seo.image ? <meta name="twitter:image" content={seo.image} /> : null}
       </Helmet>
     </>
   );
@@ -52,14 +57,14 @@ SEO.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   image: PropTypes.string,
-  pathname: PropTypes.string,
-  article: PropTypes.bool,
+  path: PropTypes.string,
+  date: PropTypes.string,
 };
 
 SEO.defaultProps = {
   title: null,
   description: null,
   image: null,
-  pathname: null,
-  article: false,
+  path: null,
+  date: null,
 };

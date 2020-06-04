@@ -3,13 +3,13 @@ const config = require('./data/siteConfig');
 module.exports = {
   pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
   siteMetadata: {
-    title: config.siteTitle,
-    siteUrl: `${config.siteUrl}${config.pathPrefix}`,
+    title: config.title,
+    siteUrl: `${config.url}${config.pathPrefix}`,
     lang: config.lang,
     titleTemplate: '%s - Daniel Taylor',
     image: '/assets/images/headerImage.jpg',
-    twitterUsername: '@dantay0803',
-    description: config.siteDescription,
+    twitterUsername: config.twitterUsername,
+    description: config.description,
   },
   plugins: [
     `gatsby-transformer-sharp`,

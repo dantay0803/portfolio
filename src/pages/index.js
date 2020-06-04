@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { Container } from 'react-bootstrap';
 import styled from 'styled-components';
 import '../styles/bootstrap-4.3.1.min.css';
@@ -12,6 +11,7 @@ import About from '../components/about/about';
 import Resume from '../components/resume/resume';
 import BlogHighlight from '../components/blog/blogHighlight';
 import Contact from '../components/contact/contact';
+import Thumbnail from '../assets/images/thumbnails/thumbnail_homepage.jpg';
 
 const StyledContainer = styled(Container)`
   padding: 0;
@@ -24,13 +24,7 @@ const StyledContainer = styled(Container)`
 
 const IndexPage = () => (
   <Layout>
-    <Helmet>
-      <meta
-        httpEquiv="Content-security-Policy"
-        content="upgrade-insecure-requests"
-      />
-    </Helmet>
-    <SEO title="Home" />
+    <SEO title="Home" image={Thumbnail} />
     <Navbar />
     <Header />
     <StyledContainer fluid>

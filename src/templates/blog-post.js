@@ -157,18 +157,13 @@ const Article = styled.article`
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     mdx(fields: { slug: { eq: $slug } }) {
       body
       frontmatter {
         title
         category
         date(formatString: "MMMM DD, YYYY")
-        id
+        slug
         excerpt
         featuredImage {
           childImageSharp {
@@ -189,7 +184,6 @@ const blogPost = ({ data, pageContext }) => {
     category,
     date,
     excerpt,
-    id,
     title,
     slug,
     featuredImage,
@@ -201,8 +195,10 @@ const blogPost = ({ data, pageContext }) => {
     <Layout>
       <SEO
         title={title}
-        description={`A blog post covering ${title}`}
-        pathname={`/blog/${slug}`}
+        description={excerpt}
+        image={featuredImage.childImageSharp.fluid.src}
+        path={`/${slug}`}
+        date={date}
       />
       <Navbar />
       <Article>

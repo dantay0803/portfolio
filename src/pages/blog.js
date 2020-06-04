@@ -6,6 +6,7 @@ import SEO from '../components/seo';
 import BlogHeader from '../components/blog/blogHeader';
 import BlogCard from '../components/blog/blogCard';
 import Navbar from '../components/blog/blogNavbar';
+import Thumbnail from '../assets/images/thumbnails/thumbnail_blog.png.jpg';
 
 const Styles = styled.div`
   margin: 0;
@@ -69,8 +70,9 @@ const BlogHome = ({ data }) => {
     <Layout>
       <SEO
         title="Blog"
-        description="The personal bog of Daniel Taylor software engineer that covers various software development, career and personal topics"
-        pathname="/blog/"
+        description="The personal blog for Daniel Taylor, a software developer based in Scotland, United Kingdom. This blog covers both technical and non-technical issues faced during the software development process, as well as personal and career issues and topics faced during his time as a software developer."
+        path="/blog/"
+        image={Thumbnail}
       />
       <Styles>
         <Navbar />
