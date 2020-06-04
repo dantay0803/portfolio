@@ -170,6 +170,11 @@ export const pageQuery = graphql`
             fluid(quality: 100) {
               src
             }
+            resize(width: 1200) {
+              src
+              height
+              width
+            }
           }
         }
         featuredImageAlt
@@ -191,12 +196,16 @@ const blogPost = ({ data, pageContext }) => {
   } = post.frontmatter;
   const { previous, next } = pageContext;
 
+  console.log(featuredImage);
+
   return (
     <Layout>
       <SEO
         title={title}
         description={excerpt}
-        image={featuredImage.childImageSharp.fluid.src}
+        imageSRC={featuredImage.childImageSharp.resize.src}
+        imageHeight={featuredImage.childImageSharp.resize.height}
+        imageWidth={featuredImage.childImageSharp.resize.width}
         path={`/${slug}`}
         date={date}
       />

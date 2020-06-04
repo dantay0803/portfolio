@@ -4,13 +4,23 @@ import PropTypes from 'prop-types';
 import { GiSeahorse } from 'react-icons/gi';
 import config from '../../data/siteConfig.js';
 
-const SEO = ({ title, description, image, path, date }) => {
+const SEO = ({
+  title,
+  description,
+  imageSRC,
+  imageHeight,
+  imageWidth,
+  path,
+  date,
+}) => {
   const seo = {
     lang: config.lang,
     locale: config.locale,
     title: title || config.title,
     description: description || config.description,
-    image: `${config.url}${image || config.image}`,
+    imageSRC,
+    imageHeight,
+    imageWidth,
     url: `${config.url}${path || config.pathPrefix}`,
   };
 
@@ -35,9 +45,15 @@ const SEO = ({ title, description, image, path, date }) => {
             content={new Date(date).toISOString()}
           />
         ) : null}
-        {seo.image ? <meta property="og:image" content={seo.image} /> : null}
-        {seo.image ? <meta property="og:image:width" content="1200" /> : null}
-        {seo.image ? <meta property="og:image:height" content="630" /> : null}
+        {seo.imageSRC ? (
+          <meta property="og:image" content={seo.imageSRC} />
+        ) : null}
+        {seo.imageSRC ? (
+          <meta property="og:image:width" content={seo.imageWidth || '1200'} />
+        ) : null}
+        {seo.imageSRC ? (
+          <meta property="og:image:height" content={seo.imageHeight || '630'} />
+        ) : null}
         <meta property="og:locale" content={seo.locale} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content={config.twitterUsername} />
@@ -45,7 +61,9 @@ const SEO = ({ title, description, image, path, date }) => {
         <meta name="twitter:url" content={seo.url} />
         <meta name="twitter:title" content={seo.title} />
         <meta name="twitter:description" content={seo.description} />
-        {seo.image ? <meta name="twitter:image" content={seo.image} /> : null}
+        {seo.imageSRC ? (
+          <meta name="twitter:image" content={seo.imageSRC} />
+        ) : null}
       </Helmet>
     </>
   );
