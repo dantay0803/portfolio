@@ -72,7 +72,7 @@ const BlogHome = ({ data }) => {
         title="Blog"
         description="The personal blog for Daniel Taylor, a software developer based in Scotland, United Kingdom. This blog covers both technical and non-technical issues faced during the software development process, as well as personal and career issues and topics faced during his time as a software developer."
         path="/blog/"
-        image={Thumbnail}
+        imageSRC={Thumbnail}
       />
       <Styles>
         <Navbar />

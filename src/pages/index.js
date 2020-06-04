@@ -24,7 +24,7 @@ const StyledContainer = styled(Container)`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" image={Thumbnail} />
+    <SEO title="Home" imageSRC={Thumbnail} />
     <Navbar />
     <Header />
     <StyledContainer fluid>
