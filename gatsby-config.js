@@ -17,6 +17,7 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-feed-mdx`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-styled-components`,
     },
