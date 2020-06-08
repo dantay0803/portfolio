@@ -1,0 +1,98 @@
+---
+title: danielt.co.uk – Now running on Gatsby!
+slug: danielt-co-uk–now-running-on-gatsby
+category:
+ - Gatsby
+date: 2020-01-31
+id: 0003
+featuredImage: Gatsby_Logo.png
+featuredImageAlt: Gatsby Logo
+excerpt: A couple of weeks ago after listening to a couple of podcasts and watching some videos of people speaking...
+---
+
+<h2>The What</h2>
+
+A couple of weeks ago after listening to a couple of podcasts and watching some videos of people speaking about <a href="https://www.gatsbyjs.org/">Gatsby</a> and the benefits, it can bring to static websites. Then hearing about <a href="https://github.com/wp-graphql/wp-graphql">WPGraphQL</a>, a plugin for WordPress that allows access to GraphQL queries of your data, I decided that I would have a go at moving my portfolio over to running as a Gatsby website.
+
+When I first created my portfolio, my only experience with web development was a couple of projects I had created at university. Also, the code for the site had not been touched in a meaningful way in around two years. So a bit of time before I really got into web development.
+
+<h2>The Why</h2>
+
+My portfolio was originally created in vanilla HTML, CSS and JavaScript, with bootstrap coming in to help with the layout and some components. As I previously mentioned when I first created the site, my web development skills were still very basic. Which ended up with me copying and pasting a bit of code and implementing some really hacky CSS.
+
+So, I thought doing this would allow me to learn Gatsby and GraphQL. Whilst also allowing me to keep practicing my React and hopefully give me an improved and cleaner portfolio.
+
+<h2>The How</h2>
+
+<h3>Investigation and Inspiration</h3>
+
+As mentioned above my original intention was to simply take the website I already had and just reproduce that in Gatsby and be done with it. But as you may have guessed from that line or just because you are also a developer, when the opportunity presented itself. I took it to do a bit of a redesign to the site as well.
+
+For the most part, the layout is relatively the same. With the main changes for the site being the components used to display my information. I decided to again go with Bootstrap as my component library, only this time using <a href="https://react-bootstrap.github.io/">React-Bootstrap</a>. The other biggest change was the colour scheme of the site. I decided to stick with a blue highlight/accent colour, but this time opted to make it brighter. I also ditched the interchanging grey and white background colours for each section and opted for a solid white background for a cleaner and more accessible look. Broken up with a <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hr">horizontal rule</a>.
+
+<h3>Gatsby</h3>
+
+Coming into Gatsby with experience of React, made the whole process smooth and simple. Especially mixing this with using their starting template, good documentation and using these tutorials as a reference.
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=DH7I1xRrbxs&t=3304s">Gatsby + WordPress with WPGraphQL</a></li>
+<li><a href="https://www.youtube.com/watch?v=wTQtTjovDa0&t=992s">In-Depth gatsby-image Tutorial</a></li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8t0vNu2fCCM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+The structure of a Gatsby project was really easy and intuitive to follow, from creating pages, creating templates for your blog posts and creating themes you can easily reuse.
+
+<h3>WPGraphQL</h3>
+
+This project was also my first time using GraphQL for carrying out queries. Only for me and my needs, I went with WPGraphQL, the reason for doing this was so I could keep using WordPress as an easy way to create blog posts such as this one. As well as having the ability to create custom pages and content using <a href="https://wordpress.org/support/article/custom-fields/">WordPress Custom Fields</a>.
+
+Getting up and running with WpGraphQL does require some plugin installs and a bit of setting up before you can use it. But as soon as that is done you are off and running. I would suggest you check out the WPGraphQL tutorial linked above to get yourself set up, as it should cover all your needs.
+
+As for <a href="https://graphql.org/">GraphQL</a>, it’s self, I enjoyed using it as a query language. The layout and formatting of it, is intuitive and the tools for it make crafting queries very quick and simple and the fact you only pull down the data you want makes handling the data a nice smooth process.
+
+<h3>Sanitizing Markdown</h3>
+
+As this is the first time working with inserting markdown content into a React component I did some investigation. I found that using dangerouslySetInnerHTML would allow me to insert my post content into a React component. I also noticed a lot of people saying if you do use this it is recommended to Sanitize the content being inserted.
+
+So I did. After some investigation, I decided to go with <a href="https://github.com/cure53/DOMPurify">DOMPurify</a>. From what I had read online and in their documentation, I felt DOMPurify would do exactly what I needed and it looked straight forward to set up. The initial set up and the implementation of DOMPurify was simple, straight forward and looked to delivery everything I needed. However, I ran into an issue at compile time, where my project would not compile with DOMPurify. I spent some time online looking to see if anyone had a fix, but all I found were other people having a similar issue with no solution. So I decided that instead of spending time getting Webpack and DOMPurify to work together. My time would be better spent finding a replacement library so I could focus on other aspects of the site.
+
+I came across <a href="https://github.com/apostrophecms/sanitize-html#readme">sanitize-HTML</a> and just like DOMPurify, It did everything I needed it and again was easy to set up. After using both libraries, I don’t have a preference on which is better. They were both easy to set up and use and delivered exactly what I needed, but I would suggest sticking with sanitize-HTML for your project as I know that it works. At least at the time of writing this post.
+
+<h3>Optimizing the Site</h3>
+
+After running my last site through <a href="https://developers.google.com/speed/pagespeed/insights/">Googles Page Speed Insights</a>, the results weren’t very good. The desktop was OK as it had a score of 70, but mobile was around the 30-40 mark. So I wanted to take the effort to try and optimize as much of my site as possible.
+
+Taking the time to optimize the site did pay off. Now when I test my site my mobile rating is at 97 and the desktop is at 100 and I feel that my site does provide a smoother and more responsive experience.
+
+<figure>
+  <img src="GatsbyUpdateSpeedTest-1024x500.png" alt="danielt.co.uk – New Speed Test Results" />
+  <figcaption>danielt.co.uk – New Speed Test Results</figcaption>
+</figure>
+
+<h3>Lazy Loading Images</h3>
+
+Since I was taking the time to update and refresh my portfolio, I thought this would be a good time to finally look into lazy loading images. But I ended up not needing to do much work myself as Gatsby provided a React component called <a href="https://www.gatsbyjs.org/packages/gatsby-image/">gatsby-image</a> that helps to optimize the loading of your images.
+
+As it’s a pre-made component it was really easy to add to the project and I would suggest using it too. It was also cool seeing how much of a difference it did make and has made me want to look into this more, for use on other non-Gatsby projects.
+
+<h3>Using webp Images</h3>
+
+During this project, I also came across the <a href="https://developers.google.com/speed/webp">webp</a> image format, recommended by Google to improve the size of some images on my site. They state that you can save 26% compared to PNGs and around 25-34% on comparable JPEG images. I can’t personally speak for the percentage saved, but I did notice a reduction in size across all images on my site.
+
+<h3>Compressing Files</h3>
+
+The final area of optimization I looked at for my site was compressing files. I had never compressed files on my website before even though I had seen that you could do it using the <a href="https://varvy.com/pagespeed/enable-compression.html#:~:targetText=Gzip%20is%20a%20method%20of,compression%20is%20a%20standard%20practice.">Gzip</a> method of compression for example. But this time I had set my mind on compressing my files and nothing was going to stop me.
+
+So I spent some time looking online on how to compress my files and looked at using a couple of different Gatsby plugins. However, I didn’t find a way to compress my files. That was until I was messing around with the cPanel of my site and seen under the Software heading on the main page. There was an option called Optimize Website, which was where I could enable the compression of files on my site.
+
+<figure>
+  <img src="GatsbyUpdateOptimizeSite-1024x127.png" alt="The optimize website option found in cPanel " />
+  <figcaption>The optimize website option found in cPanel </figcaption>
+</figure>
+
+<h2>Final Thoughts</h2>
+
+I enjoyed working on this project. Even after spending all day coding at work, I always looked forward to coming home and working on this site. It was also enjoyable getting to work with Gatsby and GraphQL after hearing so many good things about them and the fact it was for something that I would be using for a while. Just made the experience and process even more enjoyable.
+
+If you have experience with React or not I would suggest having a look into using Gatsby if you need to create a static website. As I mentioned already, they have a couple of starter projects that you can download and play around with. Without the need for you to invest a lot of time into a project.

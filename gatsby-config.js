@@ -3,35 +3,38 @@ const config = require('./data/siteConfig');
 module.exports = {
   pathPrefix: config.pathPrefix === '' ? '/' : config.pathPrefix,
   siteMetadata: {
-    siteUrl: `${config.siteUrl}${config.pathPrefix}`,
+    title: config.title,
+    siteUrl: `${config.url}${config.pathPrefix}`,
     lang: config.lang,
     titleTemplate: '%s - Daniel Taylor',
-    image: '/images/headerImage.jpg',
-    twitterUsername: '@dantay0803',
+    image: '/assets/images/headerImage.jpg',
+    twitterUsername: config.twitterUsername,
+    description: config.description,
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-graphql',
-      options: {
-        typeName: 'WordPress',
-        fieldName: 'wpgraphql',
-        url: 'https://danielt.co.uk/wp/graphql',
-        refetchInterval: 60,
-      },
-    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-feed-mdx`,
+    `gatsby-plugin-robots-txt`,
     {
       resolve: `gatsby-plugin-styled-components`,
     },
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/src/posts`,
+        name: `post`,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -41,12 +44,11 @@ module.exports = {
         background_color: `#141414`,
         theme_color: `#FF0000`,
         display: `minimal-ui`,
-        icon: `src/images/icon-512x512.png`, // This path is relative to the root of the site.
+        icon: `src/assets/images/icon-512x512.png`, // This path is relative to the root of the site.
       },
     },
-    'gatsby-plugin-sitemap',
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-plugin-manifest`,
       options: {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
@@ -54,12 +56,44 @@ module.exports = {
         start_url: config.pathPrefix,
         background_color: config.backgroundColor,
         theme_color: config.themeColor,
-        display: 'minimal-ui',
+        display: `minimal-ui`,
         icons: [
           {
-            src: '/logos/logo-512.png',
-            sizes: '512x512',
-            type: 'image/png',
+            src: `/logos/logo-512.png`,
+            sizes: `512x512`,
+            type: `image/png`,
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        gatsbyRemarkPlugins: [
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+          `gatsby-remark-prismjs`,
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1500,
+              linkImagesToOriginal: false,
+              withWebp: true,
+            },
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              showLineNumbers: false,
+              noInlineHighlight: false,
+            },
           },
         ],
       },

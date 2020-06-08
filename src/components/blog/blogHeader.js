@@ -1,24 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Container, Jumbotron } from 'react-bootstrap';
-import headerImage from '../../images/headerImage.jpg';
-import Navbar from './navbarBlog';
+import headerImage from '../../assets/images/headerImage.jpg';
 
 const StyledJumbotron = styled(Jumbotron)`
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 82%);
   background-image: url('${headerImage}');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 40vh;
+  height: 60vh;
   padding: 0;
-  margin: 0;
   text-align: center;
 
   .container {
     background-color: rgba(20, 20, 20, 0.75);
     min-width: 100%;
-    height: 40vh;
-    padding: 10rem 0 0 0;
+    height: 60vh;
+    padding: 15em 0 0 0;
     top: 0;
     position: absolute;
   }
@@ -29,14 +28,12 @@ const StyledJumbotron = styled(Jumbotron)`
   }
 `;
 
-export default function HeaderBlog(props) {
-  const { posts } = props;
-  return (
-    <StyledJumbotron fluid>
-      <Navbar posts={posts} />
-      <Container>
-        <h1>DANIEL TAYLOR | BLOG</h1>
-      </Container>
-    </StyledJumbotron>
-  );
-}
+const blogHeader = () => (
+  <StyledJumbotron fluid>
+    <Container>
+      <h1>DANIEL TAYLOR | BLOG</h1>
+    </Container>
+  </StyledJumbotron>
+);
+
+export default blogHeader;

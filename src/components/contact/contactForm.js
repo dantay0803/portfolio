@@ -37,6 +37,10 @@ const Styles = styled.div`
     color: var(--text-primary);
     cursor: pointer;
   }
+
+  .hidden {
+    display: none;
+  }
 `;
 
 const ContactForm = () => {
@@ -53,9 +57,45 @@ const ContactForm = () => {
     });
   };
 
+  const encode = data =>
+    Object.keys(data)
+      .map(key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`)
+      .join('&');
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'contact', ...formState }),
+    })
+      .then(() => {
+        console.log('form submitted');
+        setFormState({
+          name: '',
+          email: '',
+          message: '',
+        });
+        document.querySelector(`form[name='contact']`).reset();
+      })
+      .catch(error => console.log(error));
+  };
+
   return (
     <Styles>
-      <form name="contact" action="contact-form.php" method="POST">
+      <form
+        onSubmit={handleSubmit}
+        name="contact"
+        method="POST"
+        netlify-honeypot="bot-field"
+        data-netlify="true"
+      >
+        <p className="hidden">
+          <label htmlFor="bot-field">
+            Don’t fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
         <label htmlFor="name">
           Your name
           <input

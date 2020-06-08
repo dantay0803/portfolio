@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css?family=Montserrat|Muli:900&display=swap");
-@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Muli:900&display=swap');
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 html {
   height: 100%;
@@ -15,7 +15,7 @@ body {
   margin: 0;
   padding: 0;
   font-size: 16px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   color: var(--text-primary);
   background-color: var(--background-primary);
 }
@@ -23,7 +23,7 @@ body {
 h1 {
   margin: 1em 0 0 1em;
   font-size: 2rem;
-  font-family: "Segoe UI", sans-serif;
+  font-family: 'Segoe UI', sans-serif;
   text-transform: uppercase;
   font-style: bold;
   line-height: (100 / 1000) * 1em;
@@ -43,7 +43,7 @@ ul {
 
 li::before {
   color: var(--highlight);
-  content: "►";
+  content: '►';
   margin-right: 5px;
   font-weight: bold;
   padding: 3px 8px 3px 0;
@@ -56,30 +56,6 @@ li {
 a,
 a:hover {
   color: var(--highlight);
-}
-
-.headerTitle,
-.blogHeaderTitle {
-  font-size: 1.85rem;
-  font-weight: bold;
-  text-transform: none;
-  font-family: "Montserrat", sans-serif;
-  line-height: 3rem;
-  margin: 0;
-  padding: 2rem 0 0 1rem;
-  width: 22rem;
-}
-
-.headerSubtitle {
-  font-size: 1.35rem;
-  color: var(--text-muted);
-  margin: 0;
-  padding: 0.75rem 0 0 1rem;
-}
-
-.blogHeaderTitle {
-  padding: 0;
-  text-align: center;
 }
 
 .hrTitle {
@@ -103,10 +79,6 @@ a:hover {
 
 .underline {
   text-decoration: underline;
-}
-
-#about {
-  overflow: hidden;
 }
 
 .navbar-light .navbar-brand,
@@ -155,6 +127,10 @@ a:hover {
   padding: 1rem;
 }
 
+#about {
+  overflow: hidden;
+}
+
 @media (min-width: 576px) {
   h1 {
     margin: 1em 0 0 1em;
@@ -165,18 +141,6 @@ a:hover {
     font-size: 1rem;
     line-height: (30 / 1000) * 1em;
     letter-spacing: (5 / 1000) * 1em;
-  }
-
-  .headerTitle,
-  .blogHeaderTitle {
-    font-size: 2.5rem;
-    padding: 10rem 0 0 1rem;
-    width: 30rem;
-  }
-
-  .headerSubtitle {
-    font-size: 1.75rem;
-    padding: 1rem 0 0 1rem;
   }
 }
 
@@ -190,18 +154,6 @@ a:hover {
     font-size: 1.25rem;
   }
 
-  .headerTitle,
-  .blogHeaderTitle {
-    font-size: 3rem;
-    line-height: 4.75rem;
-    padding: 10rem 0 0 1rem;
-    width: 35rem;
-  }
-
-  .headerSubtitle {
-    font-size: 2.125rem;
-  }
-
   .hrTitle {
     margin: 0 0 2em 2.5em;
   }
@@ -211,34 +163,5 @@ a:hover {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
-  }
-}
-
-@media (min-width: 992px) {
-  .headerTitle,
-  .blogHeaderTitle {
-    font-size: 3.875rem;
-    padding: 10rem 0 0 1rem;
-    width: 50rem;
-  }
-
-  .headerSubtitle {
-    font-size: 3.125rem;
-    padding: 1.25rem 0 0 1rem;
-  }
-}
-
-@media (min-width: 1200px) {
-  .headerTitle,
-  .blogHeaderTitle {
-    font-size: 3.875rem;
-    line-height: 4.75rem;
-    padding-top: 17.1875rem;
-    width: 53.75rem;
-  }
-
-  .headerSubtitle {
-    font-size: 3.125rem;
-    padding-top: 1.25rem;
   }
 }

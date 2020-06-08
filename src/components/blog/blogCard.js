@@ -5,7 +5,7 @@ import { Link } from 'gatsby';
 
 const StyledCard = styled(Card)`
   width: 325px;
-  height: 300px;
+  height: 450px;
   color: var(--text-primary);
   background-color: var(--background-primary);
   box-shadow: 0.375rem 0.625rem 0.375rem rgba(0, 0, 0, 1);
@@ -58,11 +58,11 @@ const StyledCard = styled(Card)`
     width: 100%;
     height: 50%;
     background-color: var(--text-primary);
-    object-fit: cover;
+    object-fit: fill;
   }
 
   .card-img-overlay {
-    background-color: var(--background-primary);
+    background-color: var(--background-secondary);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,10 +79,6 @@ const StyledCard = styled(Card)`
     padding: 10px;
   }
 
-  .postInfo p {
-    visibility: hidden;
-  }
-
   .card-title > h6 {
     font-weight: bold;
     font-size: 1.25rem;
@@ -96,15 +92,23 @@ const StyledCard = styled(Card)`
     padding: 0px 20px;
   }
 
-  .postInfo .card-date {
+  .card-subtitle {
     color: var(--text-muted);
-    font-size: 0.9rem;
-    visibility: visible;
+    font-size: 1rem;
+    margin: 0 0 0.5em 0;
+    padding: 0;
+    margin: 0;
+  }
+
+  .card-subtitleSeparator {
+    margin: 0 0.5em;
+    color: var(--highlight);
+    font-weight: 900;
   }
 
   @media (min-width: 576px) {
     width: 375px;
-    height: 350px;
+    height: 425px;
 
     .postInfo {
       height: 57.5%;
@@ -117,8 +121,8 @@ const StyledCard = styled(Card)`
   }
 
   @media (min-width: 768px) {
-    width: 425px;
-    height: 400px;
+    width: 450px;
+    height: 425px;
   }
 
   @media (min-width: 992px) {
@@ -141,6 +145,7 @@ export default props => {
     postDate,
     postDescription,
     postPath,
+    categories,
   } = props;
 
   let excerpt = postDescription.replace('<p>', '');
@@ -156,7 +161,11 @@ export default props => {
               <h6>{postTitle}</h6>
               <hr />
             </Card.Title>
-            <Card.Text className="card-date">{postDate}</Card.Text>
+            <Card.Text className="">
+              <span className="card-subtitle">{postDate}</span>
+              <span className="card-subtitleSeparator">/</span>
+              <span className="card-subtitle">{categories.join(', ')}</span>
+            </Card.Text>
             <Card.Text>{excerpt}</Card.Text>
           </div>
         </Card.ImgOverlay>
