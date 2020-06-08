@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "daniel-taylor-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "The personal portfolio website for Daniel Taylor web and mobile software developer based in Scotland, United Kingdom.",
+  "version": "2.0.0",
+  "author": "Daniel Taylor <dantay0803@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.24",
     "@fortawesome/free-brands-svg-icons": "^5.11.1",

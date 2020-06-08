@@ -66,6 +66,7 @@ const Article = styled.article`
   figcaption {
     color: var(--text-muted);
     font-size: 0.75rem;
+    margin: 1em 0;
   }
 
   a {
