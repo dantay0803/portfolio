@@ -9,18 +9,18 @@ const Styles = styled.div`
   }
 
   p {
-    max-width: 300px;
+    max-width: 290px;
   }
 
   @media (min-width: 992px) {
     p {
-      max-width: 400px;
+      max-width: 390px;
     }
   }
 
   @media (min-width: 1200px) {
     p {
-      max-width: 560px;
+      max-width: 550px;
     }
   }
 `;
@@ -29,18 +29,18 @@ export default () => (
   <Styles>
     <div className="about-description">
       <p>
-        Hello, I’m Daniel Taylor a software developer based in Scotland. I enjoy
-        creating things for desktop, mobile and the web using technologies like
-        C#, JavaScript and React. I graduated from the University of the West of
-        Scotland a few years ago with a BSc. Honours in Computer Games
-        Development.
+        Hello, I'm Daniel Taylor. A software developer based in Glasgow,
+        Scotland. I enjoy creating digital experiences for desktop, mobile and
+        web. I have experience working with technologies like JavaScript, React,
+        C# and Unity.
       </p>
 
       <p>
-        Shortly after graduating from university, I started my professional
-        career working as a Unity developer for two years. Before switching
-        things up and working as a full-stack developer over the third year of
-        my career.
+        After graduating from university with a first-class BSc. Honours in
+        Computer Games Development. I spent the start of my career as the sole
+        developer on a children's mobile application. On the project, I
+        refreshed its design and added enhanced features. Which led to the
+        application's launch in Australia and America.
       </p>
 
       <p>Some technologies I've been working with recently:</p>

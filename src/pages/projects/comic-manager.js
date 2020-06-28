@@ -29,10 +29,10 @@ const ComicManager = () => {
       path="/projects/comic-manager"
     >
       <p>
-        This is a mobile application that I have been creating in my spare time
-        to help me keep track of which storage box my various comic books are
-        located in. The application is created using Apache Cordova, jQuery and
-        several Apache Cordova plugins.
+        Comic Manager is a mobile application. I created using Apache Cordova,
+        jQuery and several Apache Cordova plugins. I created the application in
+        my spare time, to keep track of which storage boxes contain my various
+        comics.
       </p>
       <p className="center">
         <a
@@ -64,12 +64,10 @@ const ComicManager = () => {
         ))}
       </div>
       <p>
-        The application allows the user to scan the barcode of their selected
-        comic, performs several searches against the Google Books API and lists
-        the results for the user to select their match. Once a comic has been
-        selected they are taken to a form where they can update the title,
-        publisher, description of the comic and set the box number where they
-        can find the comic.
+        Users scan the barcode of their selected comic. With the Google Books
+        API using the barcode to find matching comics. Once a user has selected
+        a comic. They can update the title, publisher, description and set where
+        they can find the comic.
       </p>
       <div className="appImages">
         {data.images.nodes.slice(2, 4).map((image, i) => (
@@ -92,13 +90,13 @@ const ComicManager = () => {
         ))}
       </div>
       <p>
-        All of the comics saved by the user are added to a list view and saved
-        in a database. The list view items allow the user to select them to show
-        a pop up with all of the information saved for the comic. As well as a
-        button to remove the list item and the comic from the database. I also
-        added the feature to export and import the list of comics as a JSON file
-        so the user can remove the app or change their device without the need
-        to rescan all of their comics.
+        All the comics saved by the user get added to a list view and are saved
+        in a local database. The list of items allows the user to select an
+        item, to show a pop up with all the comics information. And a button to
+        remove the comic from their database. I also added an export and import
+        feature. To import and export the user's database as a JSON file. So the
+        user can remove the app or change their device without the need to
+        re-scan all their comics.
       </p>
       <div className="appImages">
         {data.images.nodes.slice(4, 6).map((image, i) => (

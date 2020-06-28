@@ -29,14 +29,14 @@ const IBDClasses = () => {
       path="/projects/ibd-classes"
     >
       <p>
-        The IBD Classes app was developed on behalf of the Catherine McEwan
-        Foundation to assist clinicians in diagnosis paediatric inflammatory
-        bowel disease. The app will ask between 6 - 23 questions and based on
-        the answers from the patient will present a potential diagnosis based on
+        Developed on behalf of the Catherine McEwan Foundation. The IBD Classes
+        application assists clinicians with diagnosing paediatric inflammatory
+        bowel disease. To achieve this, clinicians will ask patients between 6 -
+        23 questions. With the results, supplying a potential diagnosis based on
         the patient's symptoms.
       </p>
       <p>
-        The app can be freely downloaded on the{' '}
+        The application can be downloaded on the{' '}
         <a
           href="https://play.google.com/store/apps/details?id=uk.co.solus.health.PIBDCalc&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1"
           target="_blank"
@@ -75,15 +75,15 @@ const IBDClasses = () => {
         ))}
       </div>
       <div>
-        <p>My role on the development team was to:</p>
+        <p>My role included:</p>
         <ul>
           <li key="resp-1">
-            Design the user interface and experience of the app
+            Designing the user interface and experience of the application.
           </li>
           <li key="resp-2">
-            Implement the supplied medical diagnosis algorithm
+            Implementing the supplied medical diagnosis algorithm.
           </li>
-          <li key="resp-3">Implement other all application features</li>
+          <li key="resp-3">Implementing all other application features.</li>
         </ul>
       </div>
       <div className="appImages">

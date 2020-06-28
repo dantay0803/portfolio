@@ -15,18 +15,24 @@ export default function experience() {
               <GiSpartanHelmet size={32} /> Spartan Solutions Ltd
             </h3>
           </a>
-          <p className="resumeDate">October 2018 - Present</p>
+          <p className="resumeDate">October 2018 - July 2020</p>
           <p className="underline">Software Engineer</p>
         </div>
         <div className="resumeDetails">
           <p>
-            In my role, I am responsible for many tasks including development,
-            testing and support. Some of my main duties include creating,
-            implementing and improving features in PHALANX Spartans flagship
-            operations application. As well as creating requested custom
-            features and updating existing features based on our customer's
-            needs. I have also had the opportunity to work on an unreleased
-            project primarily using C#, ReactJS and Redux.
+            In my role, I was responsible for several duties with my main tasks
+            including designing, implementing and updating features for Spartans
+            flagship operations application, PHALANX. During my time at the
+            company, I also interacted with various clients working in a support
+            role and updating custom requested features to better meet their
+            business requirements.
+          </p>
+          <p>
+            My knowledge of working with the React framework on personal
+            projects allowed me to work on their new predictive maintenance
+            software, PROPHES. My role in this project saw me work alongside the
+            software architect and lead developer, implementing new features and
+            helping set up data for potential client showcases.
           </p>
         </div>
       </div>
@@ -56,11 +62,11 @@ export default function experience() {
             experience to libraries and their patrons.
           </p>
           <p>
-            In my time there, I worked on improving the organization and
+            In my time there, I worked on improving the organisation and
             development process between different departments. I was also
             involved in taking part in regular development meetings with our
-            reseller based in the US, as well as interacting with customers
-            during the pilot phase of the application's launch in the US.
+            reseller based in the US and interacting with customers during the
+            pilot phase of the application's launch in the US.
           </p>
         </div>
       </div>

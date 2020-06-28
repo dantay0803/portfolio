@@ -19,8 +19,8 @@ export default function skills() {
         </ul>
         <ul>
           <li>HTML/CSS</li>
+          <li>Gatsby</li>
           <li>Bootstrap</li>
-          <li>React Native</li>
           <li>Unity</li>
         </ul>
       </div>

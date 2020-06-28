@@ -58,19 +58,16 @@ const Phalanx = () => {
       </div>
       <div>
         <p>
-          Whilst working on this project I have used various programming
-          languages such as C#, JavaScript and SQL. Along with side frameworks
-          such as REACT, JQuery and ASP.Net.
+          Whilst working on PHALANX, I worked with several programming languages
+          and frameworks. Including C#, JavaScript, React, jQuery and ASP.Net.
         </p>
         <p>I have also been responsible for:</p>
         <ul>
-          <li key="Resp-1">Designing and implementing new features</li>
-          <li key="Resp-2">
-            Updating and improving previously implemented features
-          </li>
-          <li key="Resp-3">Bug fixing</li>
-          <li key="Resp-4">Optimise areas of our mobile client</li>
-          <li key="Resp-5">Provided code reviews</li>
+          <li key="Resp-1">Designing and implementing new features.</li>
+          <li key="Resp-2">Updating and improving features.</li>
+          <li key="Resp-3">Optimise areas of our mobile and web clients.</li>
+          <li key="Resp-4">Provide user support and fix bugs.</li>
+          <li key="Resp-5">Provide code reviews.</li>
         </ul>
       </div>
       <div className="appImages">

@@ -29,9 +29,9 @@ const ClandestineOps = () => {
       path="/projects/clandestine-ops"
     >
       <p>
-        A First Person Shooter that I developed as an example violent video game
-        for participants of my research to play to ensure they were being
-        exposed to a game with violent content.
+        Clandestine Ops is a First-Person Shooter developed to be an example of
+        a violent video game. Participants of my research were then asked to
+        play it to examine the effects of violent video games.
       </p>
       <iframe
         title="Clandestine Ops YouTube Video"
@@ -43,13 +43,10 @@ const ClandestineOps = () => {
         allowFullScreen
       />
       <p>
-        This was the second game that I have developed using the Unity game
-        engine and my first time creating a First Person Shooter as well as a 3D
-        game. As the game was created for my honours project I worked alone on
-        it and was responsible for creating all of the code for the game. To
-        help me develop the game I made use of some teaching books for Unity as
-        well as referencing the Unity API for more details, especially since I
-        had such a short development window.
+        This was the second game I had developed using the Unity game engine.
+        With it being my first time creating a First-Person Shooter and a 3D
+        style game. As I created the game for my honours class, I was the sole
+        developer on the project.
       </p>
       <iframe
         title="Clandestine Ops itch.io link"
@@ -63,18 +60,16 @@ const ClandestineOps = () => {
         </a>
       </iframe>
       <p>
-        While developing the game I wanted to use the same method that AAA games
-        such as Battlefield use for the shooting. For this reason all of the
-        shooting in the game is done with Raycasting. When the player shoots a
-        Raycast is created from the middle off the camera and is shot out
-        infinitely. Once that is done a RaycastHit is then shot out along the
-        Raycast and sends a “detectHit” message to any object it hits. When the
-        “detectHit” message is read by the enemy’s damage is applied to them by
-        reducing its health. Once the message is sent to the hit objects a
-        particle script is run to play particle effects. If the tag of the hit
-        object equals “enemy” a blood splatter effect is then played and if the
-        object is tagged with “MetalObject” and metal spark particle effect is
-        played on the position of the object hit.
+        I wanted to use similar shooting mechanics used in AAA games, such as
+        Battlefield. For this reason, all the shooting in the game uses
+        Raycasting. When the player shoots they create a Raycast which is shot
+        outward from the centre of the camera. A RaycastHit is then generated
+        along the Raycast. Which sends a “detectHit” message to any colliding
+        objects. When the “detectHit” message gets read by the object. It checks
+        the tag on the object and if it were to equal “enemy”. Multiple scripts
+        are then triggered on the enemy object. One to apply the damage to the
+        enemy, scaling up or down based on area hit. With the second triggering
+        a blood splatter particle effect.
       </p>
       <div className="appImages">
         {data.images.nodes.slice(0, 2).map((image, i) => (
@@ -97,18 +92,17 @@ const ClandestineOps = () => {
         ))}
       </div>
       <p>
-        The enemies in the game also use Unity’s navigation system to path find
-        to predetermined locations. To do this a navigation mesh was created by
-        the engine by calculating the geometry of the map. Empty objects that
-        act as points for each of the enemies were then placed in the level and
-        placed into an array for each of the enemy’s navigation script to know
-        what waypoints to move to. The enemy movement code then moves to the
-        first waypoint in the array until it has reached it then selects the
-        next waypoint and keeps cycling through the array. The enemies are also
-        told to pause once they have reach each waypoint and will also stop
-        moving if the player is within range of them or if the player shoots at
-        them. The enemies will also shoot back at the player using the same
-        Recasting method that the player uses.
+        Enemies also make use of Unity’s navigation system to move between
+        various locations. To do this, the engine created a navigation mesh, by
+        calculating the geometry of the map. Then empty game objects were placed
+        around the map and added into an array for each of the enemy’s. This
+        allowed their navigation script to know what waypoints to move to. By
+        cycling between each point once the enemy object had reached it. To add
+        a patrolling like pattern to the enemy movement, I added a pause once
+        they reach the target location. Enemies will also shoot at the player
+        using the same Raycasting method that the player uses. This behaviour is
+        triggered when the player is in the enemy's view range or engages the
+        enemy in combat.
       </p>
       <div className="appImages">
         {data.images.nodes.slice(2, data.images.length).map((image, i) => (

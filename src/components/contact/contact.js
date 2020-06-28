@@ -35,7 +35,8 @@ const Contact = () => (
       <div className="contact-info">
         <p>
           Feel free to connect with me. I'm always open to discussing new
-          projects, creative ideas, or opportunities to be part of your visions.
+          projects, creative ideas, and the opportunity to be a part of your
+          vision.
         </p>
         <ContactForm />
         <SocialLinks />

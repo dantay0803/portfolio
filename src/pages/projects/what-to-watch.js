@@ -30,29 +30,29 @@ const SecondPage = () => {
     >
       <div>
         <p>
-          What to Watch is a website I created in React, using the
+          What to Watch is a website I created in React, using the{' '}
           <a
             href="https://developers.themoviedb.org/3/getting-started/introduction"
             target="_blank"
             rel="noopener noreferrer"
           >
             MovieDB API
-          </a>
+          </a>{' '}
           for the data of the site. The website includes several features such
           as:
         </p>
         <div className="two-column-layout">
           <ul key="featureSetOne">
             <li key="feature-1">
-              Netflix styled homepage with featured content
+              Netflix styled homepage with featured content.
             </li>
-            <li key="feature-2">Movie, TV and person searching</li>
-            <li key="feature-3">Details on movies, TV shows and people</li>
+            <li key="feature-2">Movie, TV and person searching.</li>
+            <li key="feature-3">Details on movies, TV shows and people.</li>
           </ul>
           <ul key="featureSetTwo">
-            <li key="feature-4">View collections of related products</li>
-            <li key="feature-5">View trailers using the YouTube Player API</li>
-            <li key="feature-6">View comments from MovieDB users</li>
+            <li key="feature-4">View collections of related products.</li>
+            <li key="feature-5">View trailers using the YouTube Player API.</li>
+            <li key="feature-6">View comments from MovieDB users.</li>
           </ul>
         </div>
         <p>
@@ -65,7 +65,7 @@ const SecondPage = () => {
           >
             GitHub Repository
           </a>{' '}
-          ,as well as view a{' '}
+          and a{' '}
           <a
             href="https://danielt.co.uk/whattowatch/"
             target="_blank"

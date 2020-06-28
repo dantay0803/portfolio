@@ -29,14 +29,17 @@ const PlanetLibraryPage = () => {
       path="/projects/planet-library"
     >
       <p>
-        Planet Library has been my main responsibility since working at Solus UK
-        Ltd. The application was developed as a child-specific version of the
-        Solus adult library application which integrates with library services.
-        The application allows users to search and reserve both physical and
-        electronic books, access a digital version of their library card as well
-        as other various features. Planet Library also includes a game hunt
-        feature that allows children to explore their local libraries and find
-        and collect different characters and creatures to unlock various games.
+        Planet Library was my main responsibility while working at Solus UK Ltd.
+        It was being developed as a child-focused version of Solus' flagship
+        library application. Features of the application include searching and
+        reserving physical and electronic content. Other library features
+        include a digital library card, view return dates and view upcoming
+        events.
+      </p>
+      <p>
+        To help drive regular foot traffic to the libraries. The application
+        features an augmented reality character hunt. Which allows users to
+        catch over 100 characters that gains them tokens to unlock games.
       </p>
       <div className="appImages">
         {data.images.nodes.slice(0, 4).map((image, i) => (
@@ -59,14 +62,15 @@ const PlanetLibraryPage = () => {
         ))}
       </div>
       <div>
-        <p>My role on the development team was to:</p>
+        <p>My role included:</p>
         <ul>
-          <li key="resp-1">Design and implement features.</li>
-          <li key="resp-2">Design and create new games.</li>
-          <li key="resp-3">Update the visuals, code and gameplay of games.</li>
-          <li key="resp-4">Update code.</li>
-          <li key="resp-5">Bug fixes.</li>
-          <li key="resp-6">
+          <li key="resp-1">To design and code new features.</li>
+          <li key="resp-2">The design and creation of new games.</li>
+          <li key="resp-3">Manage the applications pilot phase in America.</li>
+          <li key="resp-4">
+            Updating the visuals, code and gameplay of existing games.
+          </li>
+          <li key="resp-5">
             Optimise assets to reduce the application’s size and improve
             performance.
           </li>
