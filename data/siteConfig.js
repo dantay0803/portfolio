@@ -11,7 +11,7 @@ const config = {
   backgroundColor: `#141414`,
   image: `/assets/images/headerImage.jpg`,
   titleTemplate: `%s - Daniel Taylor`,
-  twitterUsername: `@dantay0803`,
+  twitterUsername: `@DanielTaylorDev`,
   locale: `en_GB`,
 };
 

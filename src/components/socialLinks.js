@@ -58,7 +58,7 @@ const socialLinks = () => (
       <FiLinkedin size={65} alt="LinkedIn Logo" />
     </a>
     <a
-      href="https://twitter.com/dantay0803"
+      href="https://twitter.com/DanielTaylorDev"
       target="_blank"
       rel="noopener noreferrer"
       className="contact-link"
@@ -68,7 +68,7 @@ const socialLinks = () => (
       <FiTwitter size={65} alt="Twitter Logo" />
     </a>
     <a
-      href="https://www.instagram.com/dantay0803/"
+      href="https://www.instagram.com/danieltaylordev/"
       target="_blank"
       rel="noopener noreferrer"
       className="contact-link"

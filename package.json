@@ -2,7 +2,7 @@
   "name": "daniel-taylor-portfolio",
   "private": true,
   "description": "The personal portfolio website for Daniel Taylor web and mobile software developer based in Scotland, United Kingdom.",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Daniel Taylor <dantay0803@gmail.com>",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.24",

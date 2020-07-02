@@ -55,9 +55,7 @@ const ClandestineOps = () => {
         height="175"
         frameBorder="0"
       >
-        <a href="https://dantay0803.itch.io/clandestine-ops">
-          Clandestine Ops by DanTay0803
-        </a>
+        <a href="https://dantay0803.itch.io/clandestine-ops">Clandestine Ops</a>
       </iframe>
       <p>
         I wanted to use similar shooting mechanics used in AAA games, such as
