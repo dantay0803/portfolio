@@ -95,8 +95,52 @@ const Article = styled.article`
   #headerImage {
     width: 85vw;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     margin-bottom: 1rem;
+  }
+
+  /* PrismJS  */
+  .gatsby-highlight-code-line {
+    background-color: #feb;
+    display: block;
+    margin-right: -1em;
+    margin-left: -1em;
+    padding-right: 1em;
+    padding-left: 0.75em;
+    border-left: 0.25em solid #f99;
+  }
+
+  .gatsby-highlight {
+    border-radius: 0.3em;
+    margin: 0.5em 0;
+    padding: 1em;
+    overflow: auto;
+  }
+
+  .gatsby-highlight pre[class*='language-'] {
+    margin: 0;
+    padding: 0;
+    overflow: initial;
+    float: left; /* 1 */
+    min-width: 100%; /* 2 */
+  }
+
+  .gatsby-highlight pre[class*='language-'].line-numbers {
+    padding-left: 2.8em;
+  }
+
+  .gatsby-highlight {
+    background-color: var(--background-secondary);
+    border-radius: 0.3em;
+    margin: 0.5em 0;
+    padding: 1em;
+    overflow: auto;
+  }
+
+  .gatsby-highlight pre[class*='language-'].line-numbers {
+    padding: 0;
+    padding-left: 2.8em;
+    overflow: initial;
   }
 
   @media (min-width: 768px) {
@@ -196,8 +240,6 @@ const blogPost = ({ data, pageContext }) => {
     featuredImageAlt,
   } = post.frontmatter;
   const { previous, next } = pageContext;
-
-  console.log(featuredImage);
 
   return (
     <Layout>

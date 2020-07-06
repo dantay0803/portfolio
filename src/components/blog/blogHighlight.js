@@ -84,11 +84,7 @@ const BlogHighlight = ({ data }) => {
               }
               alt={post.node.frontmatter.featuredImage.altText}
               postTitle={post.node.frontmatter.title}
-              postDate={new Date(post.node.frontmatter.date)
-                .toUTCString()
-                .split(' ')
-                .slice(0, 4)
-                .join(' ')}
+              postDate={post.node.frontmatter.date}
               postDescription={post.node.frontmatter.excerpt}
               postPath={`/${post.node.frontmatter.slug}`}
               categories={post.node.frontmatter.category}

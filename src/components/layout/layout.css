@@ -58,6 +58,28 @@ a:hover {
   color: var(--highlight);
 }
 
+table {
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 1rem;
+  line-height: (30 / 1000) * 1em;
+  letter-spacing: (5 / 1000) * 1em;
+}
+
+th {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  background-color: var(--background-secondary);
+  font-size: 1rem;
+}
+
+td,
+th {
+  border: 1px solid var(--text-muted);
+  padding: 0.15rem;
+}
+
 .hrTitle {
   margin: 0 0 2em 2em;
   border-color: var(--highlight);
@@ -137,10 +159,23 @@ a:hover {
     line-height: (100 / 1000) * 1em;
   }
 
-  p {
+  p,
+  table {
     font-size: 1rem;
     line-height: (30 / 1000) * 1em;
     letter-spacing: (5 / 1000) * 1em;
+  }
+
+  th {
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.25rem;
+  }
+
+  td,
+  th {
+    padding: 0.5rem;
   }
 }
 
@@ -150,8 +185,18 @@ a:hover {
     font-size: 4.6875rem;
   }
 
-  p {
+  p,
+  table {
     font-size: 1.25rem;
+  }
+
+  th {
+    font-size: 1.5rem;
+  }
+
+  td,
+  th {
+    padding: 0.5rem;
   }
 
   .hrTitle {
