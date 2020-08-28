@@ -46,7 +46,7 @@ const Article = styled.article`
 
   img {
     width: auto;
-    max-height: 37.5em;
+    max-height: 45em;
     object-fit: cover;
   }
 
