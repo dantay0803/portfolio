@@ -1,9 +1,30 @@
 import React from 'react';
-import { GiSpartanHelmet, GiRingedPlanet } from 'react-icons/gi';
+import {
+  GiSevenPointedStar,
+  GiSpartanHelmet,
+  GiRingedPlanet,
+} from 'react-icons/gi';
 
 export default function experience() {
   return (
     <div>
+      <div id="addjam" className="two-column-layout">
+        <div className="resumeTitle">
+          <a
+            href="https://addjam.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <h3>
+              <GiSevenPointedStar size={32} /> Add Jam
+            </h3>
+          </a>
+          <p className="resumeDate">August 2020 - Present</p>
+          <p className="underline">Software Engineer</p>
+        </div>
+        <div className="resumeDetails"></div>
+      </div>
+
       <div id="spartan" className="two-column-layout">
         <div className="resumeTitle">
           <a
