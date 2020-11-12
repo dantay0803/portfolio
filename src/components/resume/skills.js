@@ -15,10 +15,12 @@ export default function skills() {
           <li>C#</li>
           <li>JavaScript</li>
           <li>React</li>
+          <li>React Native</li>
           <li>Redux</li>
         </ul>
         <ul>
-          <li>HTML/CSS</li>
+          <li>HTML</li>
+          <li>CSS</li>
           <li>Gatsby</li>
           <li>Bootstrap</li>
           <li>Unity</li>
