@@ -63,18 +63,8 @@ const SecondPage = () => {
             rel="noopener noreferrer"
             title="What to Watch GitHub Repository"
           >
-            GitHub Repository
-          </a>{' '}
-          and a{' '}
-          <a
-            href="https://danielt.co.uk/whattowatch/"
-            target="_blank"
-            rel="noopener noreferrer"
-            title="What to Watch Demo"
-          >
-            live demo
-          </a>{' '}
-          by following the link.
+            GitHub Repository.
+          </a>
         </p>
       </div>
       <div className="appImages">
