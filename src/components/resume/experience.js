@@ -22,7 +22,25 @@ export default function experience() {
           <p className="resumeDate">August 2020 - Present</p>
           <p className="underline">Software Engineer</p>
         </div>
-        <div className="resumeDetails"></div>
+        <div className="resumeDetails">
+          <p>
+            My responsibilities whilst working at Add Jam see's me creating
+            cross-platform mobile applications for iOS and Android using React
+            Native. During my time here, I have worked on mobile applications
+            owned by the company, and on projects for third party clients. By
+            working on these projects, I have worked with in-house and client
+            APIs, video playback, integration with Firebase and AWS and
+            integrating Google and Apple maps.
+          </p>
+
+          <p>
+            Alongside working on mobile applications, I have contributed to our
+            internal tooling to help with speeding up and streamlining our
+            development process. I have also been part of client meetings. Taken
+            part in code reviews to help other development companies improve
+            their projects and development processes.
+          </p>
+        </div>
       </div>
 
       <div id="spartan" className="two-column-layout">
