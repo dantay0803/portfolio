@@ -67,16 +67,6 @@ const socialLinks = () => (
     >
       <FiTwitter size={65} alt="Twitter Logo" />
     </a>
-    <a
-      href="https://www.instagram.com/danieltaylordev/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="contact-link"
-      key="contact-instagram"
-      title="Link to my personal Instagram"
-    >
-      <FiInstagram size={65} alt="Instagram Logo" />
-    </a>
   </Styles>
 );
 
