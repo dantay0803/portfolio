@@ -24,21 +24,20 @@ export default function experience() {
         </div>
         <div className="resumeDetails">
           <p>
-            My responsibilities whilst working at Add Jam see's me creating
-            cross-platform mobile applications for iOS and Android using React
-            Native. During my time here, I have worked on mobile applications
-            owned by the company, and on projects for third party clients. By
-            working on these projects, I have worked with in-house and client
-            APIs, video playback, integration with Firebase and AWS and
-            integrating Google and Apple maps.
+            In my role at AddJam, I am responsible for developing a diverse
+            range of cross-platform mobile and web-based projects. These
+            projects consist of both AddJam owned properties and third-party
+            owned properties. In a number of the project's, I have been
+            responsible for not only contributing code and designs for the
+            products. But I have also taken the lead on various projects. Both
+            in their development and interacting with clients.
           </p>
 
           <p>
-            Alongside working on mobile applications, I have contributed to our
-            internal tooling to help with speeding up and streamlining our
-            development process. I have also been part of client meetings. Taken
-            part in code reviews to help other development companies improve
-            their projects and development processes.
+            Alongside expanding my knowledge of various technologies such as
+            React, React Native and Redux. I have also gained experience with
+            new end to end testing tools and contributed to AddJam's internal
+            tooling. Which is used to help speed up development time.
           </p>
         </div>
       </div>
