@@ -15,7 +15,7 @@ const BlogCard = ({title, date, category, image}: BlogCardProps) => {
       <div className='w-full h-full flex flex-col justify-end gap-y-2 text-white'>
         <div className='flex flex-row justify-between items-center italic text-xs'>
           <p>{date}</p>
-          <p className='text-accent-dark rounded-lg px-2 py-1'>{category}</p>
+          <p className='text-white-300 rounded-lg px-2 py-1'>{category}</p>
         </div>
         <p className='font-poppins text-lg font-semibold line-clamp-2'>{title}</p>
       </div>

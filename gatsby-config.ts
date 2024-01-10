@@ -3,7 +3,7 @@ import type { GatsbyConfig } from "gatsby";
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `portfolio`,
-    siteUrl: `https://www.yourdomain.tld`
+    siteUrl: `https://www.danielt.co.uk/`
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -12,20 +12,19 @@ const config: GatsbyConfig = {
   plugins: ["gatsby-plugin-postcss", "gatsby-plugin-image", "gatsby-plugin-sitemap", {
     resolve: 'gatsby-plugin-manifest',
     options: {
-      "icon": "src/images/icon.png"
+      "icon": "./src/assets/images/icon.png",
     }
   }, "gatsby-plugin-mdx", "gatsby-plugin-sharp", "gatsby-transformer-sharp", {
     resolve: 'gatsby-source-filesystem',
     options: {
-      "name": "images",
-      "path": "./src/images/"
+      name: "images",
+      path: `${__dirname}/src/assets/images/`
     },
-    __key: "images"
   }, {
     resolve: 'gatsby-source-filesystem',
     options: {
-      "name": "pages",
-      "path": "./src/pages/"
+      name: "pages",
+      path: `${__dirname}/src/pages/`
     },
     __key: "pages"
   }]

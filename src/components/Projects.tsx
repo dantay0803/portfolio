@@ -7,25 +7,25 @@ const PROJECTS = [
     title: 'Phalanx',
     tools: ['JavaScript', 'Cordova', 'C#', 'ASP.NET', 'SQL'],
     description: 'PHALANX is an integrated operations software application that combines RFID/barcode technology, operational mobility with the use of smartphones and tablets and integration with back-office systems on a single software platform.',
-    image: <StaticImage className='w-full h-64 object-cover' src={'../images/thumbnail_phalanx.jpg'} alt="Phalanx project thumbnail" />
+    image: <StaticImage className='w-full h-64 object-cover' src={'../assets/images/thumbnails/thumbnail_phalanx.jpg'} alt="Phalanx project thumbnail" />
   },
   {
     title: 'Planet Library',
     tools: ['C#', 'Unity'],
     description: 'Planet Library transforms your Library into a fun and engaging digital space for children.',
-    image: <StaticImage className='w-full h-64 object-cover' src={'../images/thumbnail_pl.jpg'} alt="Planet Library project thumbnail" />
+    image: <StaticImage className='w-full h-64 object-cover' src={'../assets/images/thumbnails/thumbnail_pl.jpg'} alt="Planet Library project thumbnail" />
   },
   {
     title: 'What to Watch',
     tools: ['React', 'React Router', 'Javascript', 'Bootstrap', 'Styled Components'],
     description: 'A TV show and movie searching website created with React and powered by the MovieDB API.',
-    image: <StaticImage className='w-full h-64 object-cover' src={'../images/thumbnail_whatToWatch.jpg'} alt="Planet Library project thumbnail" />
+    image: <StaticImage className='w-full h-64 object-cover' src={'../assets/images/thumbnails/thumbnail_whatToWatch.jpg'} alt="Planet Library project thumbnail" />
   },
   {
     title: 'Clandestine Ops',
     tools: ['C#', 'Unity'],
     description: 'A First Person Shooter demo created to aid with research into the effect of violent video game exposure to users.',
-    image: <StaticImage className='w-full h-64 object-cover' src={'../images/thumbnail_co.jpg'} alt="Planet Library project thumbnail" />
+    image: <StaticImage className='w-full h-64 object-cover' src={'../assets/images/thumbnails/thumbnail_co.jpg'} alt="Planet Library project thumbnail" />
   },
 ]
 

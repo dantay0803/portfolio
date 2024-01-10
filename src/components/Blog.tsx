@@ -8,21 +8,21 @@ const BLOGS = [
     date: '2021-05-01',
     category: 'JavaScript',
     excerpt: 'PHALANX is an integrated operations software application that combines RFID/barcode technology, operational mobility with the use of smartphones and tablets and integration with back-office systems on a single software platform.',
-    image: <StaticImage className='absolute inset-0 -z-10 h-full w-full object-cover' src={'../images/thumbnail_phalanx.jpg'} alt="Phalanx project thumbnail" />
+    image: <StaticImage className='absolute inset-0 -z-10 h-full w-full object-cover' src={'../assets/images/thumbnails/thumbnail_phalanx.jpg'} alt="Phalanx project thumbnail" />
   },
   {
     title: 'Phalanx',
     date: '2021-05-01',
     category: 'JavaScript',
     excerpt: 'PHALANX is an integrated operations software application that combines RFID/barcode technology, operational mobility with the use of smartphones and tablets and integration with back-office systems on a single software platform.',
-    image: <StaticImage className='absolute inset-0 -z-10 h-full w-full object-cover' src={'../images/thumbnail_phalanx.jpg'} alt="Phalanx project thumbnail" />
+    image: <StaticImage className='absolute inset-0 -z-10 h-full w-full object-cover' src={'../assets/images/thumbnails/thumbnail_phalanx.jpg'} alt="Phalanx project thumbnail" />
   },
   {
     title: 'Phalanx',
     date: '2021-05-01',
     category: 'JavaScript',
     excerpt: 'PHALANX is an integrated operations software application that combines RFID/barcode technology, operational mobility with the use of smartphones and tablets and integration with back-office systems on a single software platform.',
-    image: <StaticImage className='absolute inset-0 -z-10 h-full w-full object-cover' src={'../images/thumbnail_phalanx.jpg'} alt="Phalanx project thumbnail" />
+    image: <StaticImage className='absolute inset-0 -z-10 h-full w-full object-cover' src={'../assets/images/thumbnails/thumbnail_phalanx.jpg'} alt="Phalanx project thumbnail" />
   },
 ]
 
