@@ -1,6 +1,6 @@
 ---
 title: PowerShell Run NPM Script
-slug: powershell-run-npm-script
+slug: blog/powershell-run-npm-script
 category:
   - PowerShell
   - NPM
@@ -16,12 +16,13 @@ TLDR; You can find the full code for the script at the end of this post.
 Recently I followed along with a tutorial from <a href='https://twitter.com/kentcdodds'>Kent C. Dodds</a>. In which he creates a <a href='https://www.youtube.com/watch?v=HL6paXyx6hM'>URL shortener with Netlify</a>. After following along with the tutorial. I decided that I wanted to create a PowerShell script to run the NPM command from my terminal. And I thought it may be useful for some people for me to share how I accomplished this.
 
 <iframe
-  width='560'
-  height='315'
-  src='https://www.youtube.com/embed/0huv3WbNO_s'
-  frameborder='0'
-  allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-  allowfullscreen></iframe>
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/0huv3WbNO_s"
+  frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
 To write the script, I used the Windows PowerShell ISE as you can run your script in the terminal below it. But you can write this with any text editor. The first thing I did was break down what I needed the script to do.
 
@@ -39,8 +40,8 @@ I started the script off by pasting the contents of the repositories .readme int
 
 <figure>
   <img
-    src='url_shortner_powershell_script1.jpg'
-    alt='The PowerShell Script with the comment and Github Repo Variable added'
+    src="url_shortner_powershell_script1.jpg"
+    alt="The PowerShell Script with the comment and Github Repo Variable added"
   />
   <figcaption>
     The PowerShell Script with the comment and Github Repo Variable added.
@@ -53,7 +54,7 @@ To get my current working directory path, that I will navigate back to. I make u
 
 <figure>
   <img
-    src='url_shortner_powershell_script2.jpg'
+    src="url_shortner_powershell_script2.jpg"
     alt="The PowerShell Script updated to get and set user's location"
   />
   <figcaption>
@@ -69,8 +70,8 @@ Next Up I created two new variables one for the URL we want to redirect to and o
 
 <figure>
   <img
-    src='url_shortner_powershell_script3.jpg'
-    alt='The PowerShell Script updated to get and check for user input'
+    src="url_shortner_powershell_script3.jpg"
+    alt="The PowerShell Script updated to get and check for user input"
   />
   <figcaption>
     The PowerShell Script updated to get and check for user input.
@@ -91,8 +92,8 @@ Before calling our NPM script I wanted to ensure that the user has supplied a re
 
 <figure>
   <img
-    src='url_shortner_powershell_script4.jpg'
-    alt='The PowerShell Script updated to run the NPM command'
+    src="url_shortner_powershell_script4.jpg"
+    alt="The PowerShell Script updated to run the NPM command"
   />
   <figcaption>The PowerShell Script updated to run the NPM command.</figcaption>
 </figure>
@@ -103,8 +104,8 @@ Finally, to run our NPM Script. Again I added an if-else statement to check if o
 
 <figure>
   <img
-    src='url_shortner_powershell_script5.jpg'
-    alt='Running out PowerShell script in the new Windows terminal'
+    src="url_shortner_powershell_script5.jpg"
+    alt="Running out PowerShell script in the new Windows terminal"
   />
   <figcaption>
     Running out PowerShell script in the new Windows terminal.

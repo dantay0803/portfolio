@@ -12,7 +12,9 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-postcss",
     "gatsby-plugin-image",
-    "gatsby-plugin-sitemap", {
+    "gatsby-plugin-sitemap",
+    `gatsby-plugin-anchor-links`,
+    {
       resolve: 'gatsby-plugin-manifest',
       options: {
         "icon": "./src/assets/images/icon.png",

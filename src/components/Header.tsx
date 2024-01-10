@@ -1,10 +1,11 @@
 import { Dialog, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/20/solid'
+import { AnchorLink } from 'gatsby-plugin-anchor-links'
 import React, { Fragment, useState } from 'react'
 
 const LINKS = [
   {
-    text: 'project',
+    text: 'projects',
     url: '#projects',
   },
   {
@@ -61,7 +62,7 @@ const Header = () => {
               </Dialog.Title>
               <div className='flex flex-col gap-y-4 px-4 py-6'>
                 {LINKS.map(link => (
-                  <a className='capitalize text-black hover:text-accent hover:underline underline-offset-8' href={link.url}>{link.text}</a>
+                  <AnchorLink className='capitalize text-black hover:text-accent hover:underline underline-offset-8' to={link.url}>{link.text}</AnchorLink>
                 ))}
               </div>
             </Dialog.Panel>

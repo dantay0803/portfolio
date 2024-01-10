@@ -39,7 +39,7 @@ const WORK = [
 
 const Resume = () => {
   return (
-    <div className='w-full'>
+    <div id="resume" className='w-full'>
       <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-5 lg:pb-10'>
         <div className='mx-auto max-w-2xl flex-shrink-0 md:mx-0 pb-5 pt-5 lg:pt-10'>
           <p className='text-accent-dark text-lg underline'>My professional, educational background and achievements</p>
