@@ -14,7 +14,8 @@ const Blog = ({data}: any) => {
           </div>
           <div className='mx-auto grid max-w-2xl auto-rows-fr grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3 justify-between'>
             {posts.map((blog: any) => (
-                <BlogCard key={blog.id} 
+                <BlogCard key={blog.id}
+                  slug={blog.frontmatter.slug} 
                   title={blog.frontmatter.title} 
                   date={blog.frontmatter.date} 
                   category={blog.frontmatter.category[0]} 
@@ -36,6 +37,7 @@ export default (props: any) => (
       allMdx(sort: { frontmatter: { date: DESC }}, limit: 3) {
         nodes {
           frontmatter {
+            slug
             date(formatString: "MMMM D, YYYY")
             title
             category
