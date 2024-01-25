@@ -26,23 +26,19 @@ Recently I followed along with a tutorial from <a href='https://twitter.com/kent
 
 To write the script, I used the Windows PowerShell ISE as you can run your script in the terminal below it. But you can write this with any text editor. The first thing I did was break down what I needed the script to do.
 
-<ul>
-  <li>Get URL to redirect to</li>
-  <li>Get user-submitted short URL - optional</li>
-  <li>Change directory to our GitHub Repo</li>
-  <li>Run the NPM command passing in our argument(s)</li>
-  <li>Change back to our original working directory</li>
-</ul>
+1. Get URL to redirect to
+2. Get user-submitted short URL - optional
+3. Change directory to our GitHub Repo
+4. Run the NPM command passing in our argument(s)
+5. Change back to our original working directory
 
 ## Step 1 - Set Project Path
 
 I started the script off by pasting the contents of the repositories .readme into a comment. This is to remind me of how the project works in case I ever forget. Then by using the dollar symbol I defined a variable that points to the path of my GitHub repo that has the command.
 
 <figure>
-  <img
-    src="url_shortner_powershell_script1.jpg"
-    alt="The PowerShell Script with the comment and Github Repo Variable added"
-  />
+  ![The PowerShell Script with the comment and Github Repo Variable
+  added.](./url_shortner_powershell_script1.jpg)
   <figcaption>
     The PowerShell Script with the comment and Github Repo Variable added.
   </figcaption>
@@ -53,10 +49,8 @@ I started the script off by pasting the contents of the repositories .readme int
 To get my current working directory path, that I will navigate back to. I make use of the PowerShell Get-Location command. That as you imagine, gets the current directory the terminal is accessing.
 
 <figure>
-  <img
-    src="url_shortner_powershell_script2.jpg"
-    alt="The PowerShell Script updated to get and set user's location"
-  />
+  ![The PowerShell Script updated to get and set user's
+  location.](./url_shortner_powershell_script2.jpg)
   <figcaption>
     The PowerShell Script updated to get and set user's location.
   </figcaption>
@@ -69,10 +63,8 @@ To set the working directory of the terminal. I use the Set-Location command and
 Next Up I created two new variables one for the URL we want to redirect to and one optional one that allows us to set a shortened URL. The second argument is optional as the <a href='https://www.npmjs.com/package/netlify-shortener'> netlify-shortener package </a> we are using can auto-generate a short URL.
 
 <figure>
-  <img
-    src="url_shortner_powershell_script3.jpg"
-    alt="The PowerShell Script updated to get and check for user input"
-  />
+  ![The PowerShell Script updated to get and check for user
+  input.](./url_shortner_powershell_script3.jpg)
   <figcaption>
     The PowerShell Script updated to get and check for user input.
   </figcaption>
@@ -91,10 +83,8 @@ We can access the URL at $args[0] and access googly at $args[1].
 Before calling our NPM script I wanted to ensure that the user has supplied a redirect-to URL otherwise there is no need to run the NPM Command. This is done using your typical if-else statement. As you can see in the image below. The if statement checks if the string we have assigned to our redirect_to variable is not null or empty. If the redirect URL is not empty, we will run the first block of code. And if the redirect URL is empty, we use the Write-Host command to print a message to let the user know this is required.
 
 <figure>
-  <img
-    src="url_shortner_powershell_script4.jpg"
-    alt="The PowerShell Script updated to run the NPM command"
-  />
+  ![The PowerShell Script updated to run the NPM
+  command.](./url_shortner_powershell_script4.jpg)
   <figcaption>The PowerShell Script updated to run the NPM command.</figcaption>
 </figure>
 
@@ -103,10 +93,8 @@ Before calling our NPM script I wanted to ensure that the user has supplied a re
 Finally, to run our NPM Script. Again I added an if-else statement to check if our optional short URL is passed or not. Then I run the NPM script as if you were typing it into the terminal passing in the URLs provided by the user in step 3.
 
 <figure>
-  <img
-    src="url_shortner_powershell_script5.jpg"
-    alt="Running out PowerShell script in the new Windows terminal"
-  />
+  ![Running out PowerShell script in the new Windows
+  terminal.](./url_shortner_powershell_script5.jpg)
   <figcaption>
     Running out PowerShell script in the new Windows terminal.
   </figcaption>

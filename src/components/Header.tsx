@@ -36,7 +36,7 @@ const Header = () => {
         <Link className="uppercase text-white font-poppins" to='/'>Daniel Taylor</Link>
         <div className='hidden lg:flex flex-row lg:gap-x-6'>
         {LINKS.map(link => (
-          <a className='capitalize text-white hover:text-accent hover:underline underline-offset-8' href={link.url}>{link.text}</a>
+          <a key={`div-${link.url}`} className='capitalize text-white hover:text-accent hover:underline underline-offset-8' href={link.url}>{link.text}</a>
         ))}
         </div>
         <button type='button' className='lg:hidden' onClick={() => setIsOpen(true)}>
@@ -63,7 +63,7 @@ const Header = () => {
               </Dialog.Title>
               <div className='flex flex-col gap-y-4 px-4 py-6'>
                 {LINKS.map(link => (
-                  <AnchorLink className='capitalize text-black hover:text-accent hover:underline underline-offset-8' to={link.url}>{link.text}</AnchorLink>
+                  <AnchorLink key={`anchor-${link.url}`} className='capitalize text-black hover:text-accent hover:underline underline-offset-8' to={link.url}>{link.text}</AnchorLink>
                 ))}
               </div>
             </Dialog.Panel>

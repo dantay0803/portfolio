@@ -1,0 +1,22 @@
+figure > figcaption {
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+figure > figcaption > p {
+  font-size: 0.75rem !important;
+  line-height: 1rem !important;
+  text-align: center !important;
+  font-style: italic !important;
+}
+
+figure > p > figcaption {
+  font-size: 0.75rem !important;
+  line-height: 1rem !important;
+  text-align: center !important;
+  font-style: italic !important;
+}
+
+iframe { 
+  margin-bottom: 16px;
+}
