@@ -11,6 +11,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           id
           frontmatter {
             slug
+            title
           }
           internal {
             contentFilePath
@@ -28,7 +29,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allMdx.nodes
 
   // you'll call `createPage` for each result
-  posts.forEach(node => {
+  posts.forEach((node, index) => {
+    const previous = index === 0 ? null : posts[index - 1];
+    const next = index === posts.length - 1 ? null : posts[index + 1];
+
     createPage({
       // As mentioned above you could also query something else like frontmatter.title above and use a helper function
       // like slugify to create a slug
@@ -37,7 +41,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       component: `${postTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       // You can use the values in this context in
       // our page layout component
-      context: { id: node.id },
+      context: { id: node.id, previous, next},
     })
   })
 }

@@ -2,6 +2,7 @@ import { MDXProvider } from "@mdx-js/react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
+import Footer from "../components/blog/Footer";
 import Header from "../components/blog/Header";
 import * as styles from "./blog.module.css";
 
@@ -44,11 +45,12 @@ const components = {
   li: listItem,
 };
 
-export default function PageTemplate({ data, children }: any) {
+export default function PageTemplate({ data, children, pageContext }: any) {
   const { title, date, categories, featuredImage, featuredImageAlt } =
     data.mdx.frontmatter;
   let featuredImg = getImage(featuredImage?.childImageSharp?.gatsbyImageData);
-
+  const { previous, next } = pageContext;
+  
   return (
     <div className="w-full h-full">
       <Header />
@@ -62,7 +64,7 @@ export default function PageTemplate({ data, children }: any) {
             />
           )}
           <div className="px-4 sm:px-6 lg:px-8 mt-2 md:mt-4">
-            <h1 className="text-secondary text-xl md:text-4xl font-bold md:font-extrabold mb-1 mb:mb-2">
+            <h1 className="text-white text-xl md:text-4xl font-bold md:font-extrabold mb-1 mb:mb-2">
               {title}
             </h1>
             <div className="flex flex-row gap-x-2 md:gap-x-4 items-start text-white-900 text-xs md:text-sm lg:text-base italic">
@@ -76,6 +78,7 @@ export default function PageTemplate({ data, children }: any) {
           <MDXProvider components={components}>{children}</MDXProvider>
         </div>
       </article>
+      <Footer previous={previous} next={next} />
     </div>
   );
 }
