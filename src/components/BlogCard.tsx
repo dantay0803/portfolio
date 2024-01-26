@@ -16,7 +16,7 @@ const BlogCard = ({slug, title, date, category, image, imageAlt}: BlogCardProps)
 
   return (
     <Link to={slug}>
-      <article className='relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-6 pb-8 pt-80 sm:pt-48 lg:pt-80 h-[440px]'>
+      <article className='relative isolate flex flex-col justify-end overflow-hidden rounded-2xl bg-gray-900 px-6 pb-8 pt-80 sm:pt-48 lg:pt-80 h-[440px] hover:scale-105 transform transition duration-500'>
         {featuredImg && <GatsbyImage image={featuredImg} alt={imageAlt} className='absolute inset-0 -z-10 h-full w-full object-cover' />}
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
         <div className='w-full h-full flex flex-col justify-end gap-y-2 text-white'>
