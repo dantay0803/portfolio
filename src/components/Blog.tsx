@@ -18,7 +18,7 @@ const Blog = ({data}: any) => {
                   slug={blog.frontmatter.slug} 
                   title={blog.frontmatter.title} 
                   date={blog.frontmatter.date} 
-                  category={blog.frontmatter.category[0]} 
+                  categories={blog.frontmatter.categories[0]} 
                   image={blog.frontmatter.featuredImage?.childImageSharp?.gatsbyImageData} 
                   imageAlt={blog.frontmatter.featuredImage.altText} 
                 />
@@ -40,7 +40,7 @@ export default (props: any) => (
             slug
             date(formatString: "MMMM D, YYYY")
             title
-            category
+            categories
             featuredImage {
               childImageSharp {
                 gatsbyImageData(width: 800)

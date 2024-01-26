@@ -6,12 +6,12 @@ type BlogCardProps = {
   slug: string
   title: string
   date: string
-  category?: string
+  categories?: string
   image: ImageDataLike
   imageAlt: string
 }
 
-const BlogCard = ({slug, title, date, category, image, imageAlt}: BlogCardProps) => {
+const BlogCard = ({slug, title, date, categories, image, imageAlt}: BlogCardProps) => {
   let featuredImg = getImage(image)
 
   return (
@@ -22,7 +22,7 @@ const BlogCard = ({slug, title, date, category, image, imageAlt}: BlogCardProps)
         <div className='w-full h-full flex flex-col justify-end gap-y-2 text-white'>
           <div className='flex flex-row justify-between items-center italic text-xs'>
             <p>{date}</p>
-            <p className='text-white-300 rounded-lg px-2 py-1'>{category}</p>
+            <p className='text-white-300 rounded-lg px-2 py-1'>{categories}</p>
           </div>
           <p className='font-poppins text-lg font-semibold line-clamp-2'>{title}</p>
         </div>

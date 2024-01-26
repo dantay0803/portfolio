@@ -45,7 +45,7 @@ const components = {
 };
 
 export default function PageTemplate({ data, children }: any) {
-  const { title, date, category, featuredImage, featuredImageAlt } =
+  const { title, date, categories, featuredImage, featuredImageAlt } =
     data.mdx.frontmatter;
   let featuredImg = getImage(featuredImage?.childImageSharp?.gatsbyImageData);
 
@@ -68,7 +68,7 @@ export default function PageTemplate({ data, children }: any) {
             <div className="flex flex-row gap-x-2 md:gap-x-4 items-start text-white-900 text-xs md:text-sm lg:text-base italic">
               <p>{date}</p>
               <p className="text-accent">|</p>
-              <p>{category.join(", ")}</p>
+              <p>{categories.join(", ")}</p>
             </div>
           </div>
         </div>
@@ -87,7 +87,7 @@ export const query = graphql`
         slug
         date(formatString: "MMMM D, YYYY")
         title
-        category
+        categories
         featuredImage {
           childImageSharp {
             gatsbyImageData(width: 1920)
