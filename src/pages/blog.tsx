@@ -11,8 +11,8 @@ const IndexPage: React.FC<PageProps> = ({data}: any) => {
   return (
     <div className="relative">
     <Header />
+    <ScrollToTop />
     <main className="flex-auto">
-      <ScrollToTop />
       <Hero />
       <div className='w-full bg-secondary'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 lg:py-16'>
