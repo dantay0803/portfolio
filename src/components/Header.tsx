@@ -33,7 +33,7 @@ const Header = () => {
   return (
     <header className='absolute w-full px-4 sm:px-6 lg:px-8 pt-6'>
       <nav className='flex flex-row justify-between items-end'>
-        <Link className="uppercase text-white font-poppins" to='/'>Daniel Taylor</Link>
+        <Link className="uppercase text-white" to='/'>Daniel Taylor</Link>
         <div className='hidden lg:flex flex-row lg:gap-x-6'>
         {LINKS.map(link => (
           <a key={`div-${link.url}`} className='capitalize text-white hover:text-accent hover:underline underline-offset-8' href={link.url}>{link.text}</a>
@@ -56,7 +56,7 @@ const Header = () => {
             open={isOpen} onClose={() => setIsOpen(false)}>
             <div className="bg-white h-screen">
             <Dialog.Panel>
-              <Dialog.Title className='text-2xl font-poppins font-bold text-black px-4 py-6'>
+              <Dialog.Title className='text-2xl font-bold text-black px-4 py-6'>
                 <button type='button' className='float-right' onClick={() => setIsOpen(false)}>
                   <XMarkIcon className='h-6 w-6 text-black'/>
                 </button>

@@ -24,7 +24,7 @@ const BlogCard = ({slug, title, date, categories, image, imageAlt}: BlogCardProp
             <p>{date}</p>
             <p className='text-white-300 rounded-lg px-2 py-1'>{categories}</p>
           </div>
-          <p className='font-poppins text-lg font-semibold line-clamp-2'>{title}</p>
+          <p className='text-lg font-semibold line-clamp-2'>{title}</p>
         </div>
       </article>
     </Link>

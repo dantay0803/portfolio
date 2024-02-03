@@ -12,7 +12,7 @@ const WorkExperience = ({company, link, date, role, description}: WorkExperience
   return (
     <div className='w-full flex flex-row justify-between items-start'>
       <div className='w-2/5 flex flex-col gap-y-1 pr-2 md:pr-0'>
-        <a href={link} className='text-lg md:text-xl text-black underline decoration-accent font-medium font-poppins hover:cursor-pointer hover:no-underline hover:text-accent'>{company}</a>
+        <a href={link} className='text-lg md:text-xl text-black underline decoration-accent font-medium hover:cursor-pointer hover:no-underline hover:text-accent'>{company}</a>
         <p className='italic text-sm text-accent-dark'>{date}</p>
         <p className='italic text-sm text-accent-dark'>{role}</p>
       </div>

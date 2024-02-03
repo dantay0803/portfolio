@@ -4,7 +4,7 @@ import React from 'react'
 const Contact = () => {
   return (
     <div id="contact" className='w-full bg-secondary'>
-      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-5 lg:pb-10'>
+      <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-20 xl:pb-10'>
         <div className='mx-auto max-w-2xl flex-shrink-0 md:mx-0 pb-5 pt-5 lg:pt-10'>
           <p className='text-accent-dark text-lg underline'>Let's have a chat</p>
           <h2 className='uppercase text-black text-6xl mb-8 font-semibold'>Contact</h2>
