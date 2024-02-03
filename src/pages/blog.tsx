@@ -3,14 +3,16 @@ import * as React from "react"
 import Header from "../components/blog/Header"
 import Hero from "../components/blog/Hero"
 import BlogCard from "../components/BlogCard"
+import ScrollToTop from "../components/ScrollToTop"
 
 const IndexPage: React.FC<PageProps> = ({data}: any) => {
   const posts = data.allMdx.nodes;
 
   return (
-    <>
+    <div className="relative">
     <Header />
     <main className="flex-auto">
+      <ScrollToTop />
       <Hero />
       <div className='w-full bg-secondary'>
         <div className='mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 lg:py-16'>
@@ -30,7 +32,7 @@ const IndexPage: React.FC<PageProps> = ({data}: any) => {
         </div>
       </div>
     </main>
-    </>
+    </div>
   )
 }
 
