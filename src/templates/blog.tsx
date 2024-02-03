@@ -2,9 +2,9 @@ import { MDXProvider } from "@mdx-js/react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
+import ScrollToTop from "../components/ScrollToTop";
 import Footer from "../components/blog/Footer";
 import Header from "../components/blog/Header";
-import * as styles from "./blog.module.css";
 
 const headingTwo = (props: any) => (
   <h2
@@ -36,6 +36,10 @@ const listItem = (props: any) => (
   <li className="text-sm md:text-base mb-1 md:mb-2" {...props} />
 );
 
+const link = (props: any) => (
+  <a className="text-sm md:text-base mb-6 md:mb-8 text-black underline decoration-accent hover:cursor-pointer hover:no-underline hover:text-accent" {...props} />
+)
+
 const components = {
   h2: headingTwo,
   h3: headingThree,
@@ -43,6 +47,7 @@ const components = {
   ul: unorderedList,
   ol: orderedList,
   li: listItem,
+  a: link,
 };
 
 export default function PageTemplate({ data, children, pageContext }: any) {
@@ -52,7 +57,8 @@ export default function PageTemplate({ data, children, pageContext }: any) {
   const { previous, next } = pageContext;
   
   return (
-    <div className="w-full h-full">
+    <div className="w-full h-full relative">
+      <ScrollToTop />
       <Header />
       <article className="flex-auto mx-auto pb-5 lg:pb-10">
         <div className="bg-primary w-full pt-20 pb-4 mb-4">
@@ -74,7 +80,7 @@ export default function PageTemplate({ data, children, pageContext }: any) {
             </div>
           </div>
         </div>
-        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-6" style={styles}>
+        <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-6">
           <MDXProvider components={components}>{children}</MDXProvider>
         </div>
       </article>
