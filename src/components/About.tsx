@@ -48,12 +48,14 @@ const About = () => {
                 <li>React</li>
                 <li>Next.js</li>
                 <li>C#</li>
+                <li>Unity</li>
               </ul>
               <ul className="list-disc marker:text-accent">
                 <li>HTML & CSS</li>
                 <li>React Native</li>
                 <li>Gatsby</li>
                 <li>Ruby on Rails</li>
+                <li>Godot</li>
               </ul>
             </div>
           </div>
@@ -72,11 +74,11 @@ const About = () => {
               <div className="mr-auto w-44 flex-none space-y-8 sm:mr-0 sm:pt-52 lg:pt-36">
                 <div className="relative">
                   <StaticImage
-                    className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                    className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-contain shadow-lg"
                     src={
-                      "../assets/images/about/studentemploymentadvicepresentation.jpg"
+                      "../assets/images/projects/whattowatch/001-WhatToWatch_Home.jpg"
                     }
-                    alt="Daniel Taylor giving a student employment presentation"
+                    alt="What to Watch project home screen"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
@@ -91,18 +93,22 @@ const About = () => {
               </div>
               <div className="hidden md:block w-44 flex-none space-y-8 pt-32 sm:pt-0">
                 <div className="relative">
-                  <img
-                    src="https://images.unsplash.com/photo-1670272504528-790c24957dda?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=left&w=400&h=528&q=80"
-                    alt=""
+                  <StaticImage
                     className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                    src={
+                      "../assets/images/about/studentemploymentadvicepresentation.jpg"
+                    }
+                    alt="Daniel Taylor giving a student employment presentation"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
                 <div className="relative">
-                  <img
-                    src="https://images.unsplash.com/photo-1670272505284-8faba1c31f7d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&h=528&q=80"
-                    alt=""
+                <StaticImage
                     className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
+                    src={
+                      "../assets/images/about/fallingtogether.jpg"
+                    }
+                    alt="Screenshot of my Unity game for the Rainbow Jam 2020"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
