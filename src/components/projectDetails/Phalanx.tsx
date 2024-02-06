@@ -2,12 +2,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Modal from "../Modal"
 
-type PhalanxProps = {
-  isOpen: boolean
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
-
-const Phalanx = ({ isOpen, setIsOpen }: PhalanxProps) => {
+const Phalanx = ({ isOpen, setIsOpen }: Modal) => {
   return (
     <Modal title="Phalanx" isOpen={isOpen} setIsOpen={setIsOpen}>
       <div className="w-full flex flex-row justify-start items-center gap-x-2 text-sm mb-4">

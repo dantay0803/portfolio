@@ -1,12 +1,12 @@
 import { StaticImage } from "gatsby-plugin-image"
-import React, { useState } from "react"
+import React from "react"
 import Project from "./Project"
 import ClandestineOps from "./projectDetails/ClandestineOps"
 import Phalanx from "./projectDetails/Phalanx"
+import PlanetLibrary from "./projectDetails/PlanetLibrary"
+import WhatToWatch from "./projectDetails/WhatToWatch"
 
 const Projects = () => {
-  const [isPhalanxModalOpen, setIsPhalanxModalOpen] = useState(false)
-  const [isClandestineOpsModalOpen, setIsClandestineOpsModalOpen] = useState(false)
 
   const PROJECTS = [
     {
@@ -21,7 +21,7 @@ const Projects = () => {
           alt="Phalanx project thumbnail"
         />
       ),
-      onClick: () => setIsPhalanxModalOpen(true),
+      projectDetails: Phalanx
     },
     {
       title: "Planet Library",
@@ -35,6 +35,7 @@ const Projects = () => {
           alt="Planet Library project thumbnail"
         />
       ),
+      projectDetails: PlanetLibrary
     },
     {
       title: "What to Watch",
@@ -54,6 +55,7 @@ const Projects = () => {
           alt="Planet Library project thumbnail"
         />
       ),
+      projectDetails: WhatToWatch,
     },
     {
       title: "Clandestine Ops",
@@ -67,7 +69,7 @@ const Projects = () => {
           alt="Planet Library project thumbnail"
         />
       ),
-      onClick: () => setIsClandestineOpsModalOpen(true),
+      projectDetails: ClandestineOps
     },
   ]
 
@@ -91,13 +93,11 @@ const Projects = () => {
               description={project.description}
               image={project.image}
               reverse={index % 2 !== 0}
-              onClick={project.onClick}
+              ProjectDetails={project.projectDetails}
             />
           ))}
         </div>
       </div>
-      <Phalanx isOpen={isPhalanxModalOpen} setIsOpen={setIsPhalanxModalOpen} />
-      <ClandestineOps isOpen={isClandestineOpsModalOpen} setIsOpen={setIsClandestineOpsModalOpen} />
     </div>
   )
 }

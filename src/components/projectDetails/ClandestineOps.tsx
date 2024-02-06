@@ -2,12 +2,7 @@ import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import Modal from "../Modal"
 
-type ClandestineOpsProps = {
-  isOpen: boolean
-  setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
-
-const ClandestineOps = ({ isOpen, setIsOpen }: ClandestineOpsProps) => {
+const ClandestineOps = ({ isOpen, setIsOpen }: Modal) => {
   return (
     <Modal title="Clandestine Ops" isOpen={isOpen} setIsOpen={setIsOpen}>
       <div className="w-full flex flex-row justify-start items-center gap-x-2 text-sm mb-4">
