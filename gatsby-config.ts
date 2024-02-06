@@ -1,9 +1,9 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `portfolio`,
-    siteUrl: `https://www.danielt.co.uk/`
+    siteUrl: `https://www.danielt.co.uk/`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -15,11 +15,11 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sitemap",
     `gatsby-plugin-anchor-links`,
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: "gatsby-plugin-manifest",
       options: {
-        "icon": "./src/assets/images/icon.png",
-      }
-    }, 
+        icon: "./src/assets/images/icon.png",
+      },
+    },
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -49,18 +49,26 @@ const config: GatsbyConfig = {
       },
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         name: "images",
-        path: `${__dirname}/src/assets/images/`
+        path: `${__dirname}/src/assets/images/`,
       },
-    }, {
-      resolve: 'gatsby-source-filesystem',
+    },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "images",
+        path: `${__dirname}/src/assets/files/`,
+      },
+    },
+    {
+      resolve: "gatsby-source-filesystem",
       options: {
         name: "pages",
-        path: `${__dirname}/src/pages/`
+        path: `${__dirname}/src/pages/`,
       },
-      __key: "pages"
+      __key: "pages",
     },
     {
       resolve: `gatsby-source-filesystem`,
@@ -69,7 +77,7 @@ const config: GatsbyConfig = {
         path: `${__dirname}/blog/`,
       },
     },
-  ]
-};
+  ],
+}
 
-export default config;
+export default config
