@@ -1,5 +1,5 @@
-import { Dialog } from '@headlessui/react'
-import React from 'react'
+import { Dialog } from "@headlessui/react"
+import React from "react"
 
 type ModalProps = {
   title: string
@@ -8,7 +8,7 @@ type ModalProps = {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
-const Modal = ({title, children, isOpen, setIsOpen}: ModalProps) => {
+const Modal = ({ title, children, isOpen, setIsOpen }: ModalProps) => {
   return (
     <Dialog
       open={isOpen}
@@ -22,8 +22,19 @@ const Modal = ({title, children, isOpen, setIsOpen}: ModalProps) => {
         {/* Container to center the panel */}
         <div className="flex min-h-full items-center justify-center p-4">
           {/* The actual dialog panel  */}
-          <Dialog.Panel className="mx-auto w-full max-w-screen-lg rounded bg-white p-7">
-            <Dialog.Title className="text-xl text-black underline decoration-accent font-medium mb-4">{title}</Dialog.Title>
+          <Dialog.Panel className="mx-auto w-full max-w-screen-lg rounded bg-white p-4 md:p-7">
+            <div className="relative flex flex-row justify-between items-start">
+              <Dialog.Title className="text-xl text-black underline decoration-accent font-medium mb-4">
+                {title}
+              </Dialog.Title>
+              <button
+                className="font-bold text-xl absolute -top-2 md:-top-4 right-0"
+                onClick={() => setIsOpen(false)}
+                aria-label="Close modal"
+              >
+                X
+              </button>
+            </div>
             {children}
           </Dialog.Panel>
         </div>
