@@ -24,7 +24,7 @@ const Modal = ({ title, children, isOpen, setIsOpen }: ModalProps) => {
           {/* The actual dialog panel  */}
           <Dialog.Panel className="mx-auto w-full max-w-screen-lg rounded bg-white p-4 md:p-7">
             <div className="relative flex flex-row justify-between items-start">
-              <Dialog.Title className="text-xl text-black underline decoration-accent font-medium mb-4">
+              <Dialog.Title className="text-xl text-black underline decoration-accent font-semibold mb-4">
                 {title}
               </Dialog.Title>
               <button

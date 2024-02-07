@@ -40,16 +40,13 @@ const WORK = [
 const Resume = () => {
   const data = useStaticQuery(graphql`
     {
-      allFile(filter: { extension: { eq: "pdf" } }) {
-        edges {
-          node {
-            publicURL
-            name
-          }
-        }
+      file(name: { eq: "DanielTaylor_Resume" }) {
+        publicURL
       }
     }
   `)
+
+  console.log(data)
 
   return (
     <div id="resume" className="w-full">
@@ -63,20 +60,13 @@ const Resume = () => {
           </h2>
         </div>
         <div className="flex flex-col justify-start items-start mx-auto lg:mx-0">
-        {data.allFile.edges.map(
-            (file: { node: { publicURL: string | undefined } }, index: any) => {
-              return (
-                <a
-                  key={`pdf-${index}`}
-                  href={file.node.publicURL}
-                  download
-                  className="px-4 py-2 border-accent border-2 rounded-md mb-10 hover:bg-accent hover:text-white transition duration-300 ease-in-out"
-                >
-                  Download
-                </a>
-              )
-            }
-          )}
+          <a
+            href={data.file.publicURL}
+            download
+            className="px-4 py-2 border-accent border-2 rounded-md mb-10 hover:bg-accent hover:text-white transition duration-300 ease-in-out"
+          >
+            Download
+          </a>
           {WORK.map((work) => (
             <WorkExperience
               key={`${work.company}-experience`}
