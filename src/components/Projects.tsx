@@ -1,12 +1,13 @@
 import { StaticImage } from "gatsby-plugin-image";
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import Project from "./Project";
 import SectionContainer from "./common/SectionContainer";
 import SectionHeader from "./common/SectionHeader";
-import ClandestineOps from "./projectDetails/ClandestineOps";
-import Phalanx from "./projectDetails/Phalanx";
-import PlanetLibrary from "./projectDetails/PlanetLibrary";
-import WhatToWatch from "./projectDetails/WhatToWatch";
+
+const ClandestineOps = lazy(() => import("./projectDetails/ClandestineOps"));
+const Phalanx = lazy(() => import("./projectDetails/Phalanx"));
+const PlanetLibrary = lazy(() => import("./projectDetails/PlanetLibrary"));
+const WhatToWatch = lazy(() => import("./projectDetails/WhatToWatch"));
 
 const Projects = () => {
   const PROJECTS = [
@@ -82,15 +83,16 @@ const Projects = () => {
       />
       <div className="w-full flex flex-col gap-y-10">
         {PROJECTS.map((project, index) => (
-          <Project
-            key={project.title}
-            title={project.title}
-            tools={project.tools}
-            description={project.description}
-            image={project.image}
-            reverse={index % 2 !== 0}
-            ProjectDetails={project.projectDetails}
-          />
+          <Suspense key={project.title} fallback={<div />}>
+            <Project
+              title={project.title}
+              tools={project.tools}
+              description={project.description}
+              image={project.image}
+              reverse={index % 2 !== 0}
+              ProjectDetails={project.projectDetails}
+            />
+          </Suspense>
         ))}
       </div>
     </SectionContainer>

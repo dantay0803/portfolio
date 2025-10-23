@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import ExternalLink from "./common/ExternalLink";
 
 type WorkExperienceProps = {
@@ -38,4 +38,4 @@ const WorkExperience = ({
   );
 };
 
-export default WorkExperience;
+export default memo(WorkExperience);

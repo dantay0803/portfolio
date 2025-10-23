@@ -146,7 +146,12 @@ export const query = graphql`
         categories
         featuredImage {
           childImageSharp {
-            gatsbyImageData(width: 1920)
+            gatsbyImageData(
+              width: 1920
+              placeholder: BLURRED
+              formats: [AUTO, WEBP, AVIF]
+              quality: 90
+            )
           }
         }
         featuredImageAlt

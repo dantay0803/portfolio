@@ -17,7 +17,12 @@ const Blog = () => {
             categories
             featuredImage {
               childImageSharp {
-                gatsbyImageData(width: 800)
+                gatsbyImageData(
+                  width: 800
+                  placeholder: BLURRED
+                  formats: [AUTO, WEBP, AVIF]
+                  quality: 90
+                )
               }
             }
             featuredImageAlt
