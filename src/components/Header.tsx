@@ -38,13 +38,13 @@ const Header = () => {
         </Link>
         <div className="hidden lg:flex flex-row lg:gap-x-6">
           {LINKS.map((link) => (
-            <a
+            <AnchorLink
               key={`div-${link.url}`}
               className="capitalize text-white hover:text-accent hover:underline underline-offset-8"
-              href={link.url}
+              to={link.url}
             >
               {link.text}
-            </a>
+            </AnchorLink>
           ))}
         </div>
         <button
@@ -56,10 +56,10 @@ const Header = () => {
         </button>
         <Transition
           show={isOpen}
-          enter="transition-transform transform duration-200 ease-out"
+          enter="transition-transform transform duration-500 ease-out"
           enterFrom="translate-x-full"
           enterTo="translate-x-0"
-          leave="transition-transform transform duration-100 ease-in"
+          leave="transition-transform transform duration-300 ease-in"
           leaveFrom="translate-x-0"
           leaveTo="translate-x-full"
           as={Fragment}

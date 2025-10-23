@@ -1,5 +1,6 @@
 import React from "react";
 import Socials from "./Socials";
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 
 const Hero = () => {
   return (
@@ -13,12 +14,12 @@ const Hero = () => {
             </h1>
             <Socials />
           </div>
-          <a
+          <AnchorLink
             className="bg-accent hover:bg-secondary text-white hover:text-black px-4 py-2 rounded-sm shadow-lg"
-            href="#projects"
+            to="#projects"
           >
             View Projects
-          </a>
+          </AnchorLink>
         </div>
       </div>
     </div>
