@@ -1,15 +1,11 @@
 import React from "react";
 import Navigation from "../common/Navigation";
-
-const LINKS = [
-  {
-    text: "All Posts",
-    url: "/blog",
-  },
-];
+import { BLOG_NAV_LINKS, SITE_CONFIG } from "../../constants/navigation";
 
 const Header = () => {
-  return <Navigation links={LINKS} />;
+  return (
+    <Navigation links={BLOG_NAV_LINKS} logoUrl={SITE_CONFIG.blogLogoUrl} />
+  );
 };
 
 export default Header;

@@ -1,31 +1,9 @@
 import React from "react";
 import Navigation from "./common/Navigation";
-
-const LINKS = [
-  {
-    text: "projects",
-    url: "#projects",
-  },
-  {
-    text: "about",
-    url: "#about",
-  },
-  {
-    text: "blog",
-    url: "/blog",
-  },
-  {
-    text: "resume",
-    url: "#resume",
-  },
-  {
-    text: "contact",
-    url: "#contact",
-  },
-];
+import { MAIN_NAV_LINKS } from "../constants/navigation";
 
 const Header = () => {
-  return <Navigation links={LINKS} />;
+  return <Navigation links={MAIN_NAV_LINKS} />;
 };
 
 export default Header;
