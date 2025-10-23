@@ -33,7 +33,7 @@ const About = () => {
             >
               Add Jam
             </ExternalLink>{" "}
-            creating a verity of web and mobile projects for our clients across
+            creating a variety of web and mobile projects for our clients across
             various industries.
           </p>
           <p className="">Some technologies I've been working with recently:</p>
