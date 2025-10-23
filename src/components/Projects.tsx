@@ -1,6 +1,8 @@
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import Project from "./Project";
+import SectionContainer from "./common/SectionContainer";
+import SectionHeader from "./common/SectionHeader";
 import ClandestineOps from "./projectDetails/ClandestineOps";
 import Phalanx from "./projectDetails/Phalanx";
 import PlanetLibrary from "./projectDetails/PlanetLibrary";
@@ -73,31 +75,25 @@ const Projects = () => {
   ];
 
   return (
-    <div id="projects" className="w-full bg-secondary">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-5 lg:pb-10">
-        <div className="mx-auto max-w-2xl flex-shrink-0 md:mx-0 pb-5 pt-5 lg:pt-10">
-          <p className="text-accent-dark text-lg underline">
-            Things I've worked on solo and as part of a team
-          </p>
-          <h2 className="uppercase text-black text-6xl mb-8 font-semibold">
-            Projects
-          </h2>
-        </div>
-        <div className="w-full flex flex-col gap-y-10">
-          {PROJECTS.map((project, index) => (
-            <Project
-              key={project.title}
-              title={project.title}
-              tools={project.tools}
-              description={project.description}
-              image={project.image}
-              reverse={index % 2 !== 0}
-              ProjectDetails={project.projectDetails}
-            />
-          ))}
-        </div>
+    <SectionContainer id="projects" bgColor="secondary">
+      <SectionHeader
+        subtitle="Things I've worked on solo and as part of a team"
+        title="Projects"
+      />
+      <div className="w-full flex flex-col gap-y-10">
+        {PROJECTS.map((project, index) => (
+          <Project
+            key={project.title}
+            title={project.title}
+            tools={project.tools}
+            description={project.description}
+            image={project.image}
+            reverse={index % 2 !== 0}
+            ProjectDetails={project.projectDetails}
+          />
+        ))}
       </div>
-    </div>
+    </SectionContainer>
   );
 };
 

@@ -1,5 +1,8 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
+import SectionContainer from "./common/SectionContainer";
+import SectionHeader from "./common/SectionHeader";
+import Button from "./common/Button";
 import Skills from "./Skills";
 import Education from "./Education";
 import WorkExperience from "./WorkExperience";
@@ -47,39 +50,31 @@ const Resume = () => {
   `);
 
   return (
-    <div id="resume" className="w-full">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pb-5 lg:pb-10">
-        <div className="mx-auto max-w-2xl flex-shrink-0 md:mx-0 pb-5 pt-5 lg:pt-10">
-          <p className="text-accent-dark text-lg underline">
-            My professional, educational background and achievements
-          </p>
-          <h2 className="uppercase text-black text-6xl mb-8 font-semibold">
-            Resume
-          </h2>
-        </div>
-        <div className="flex flex-col justify-start items-start mx-auto lg:mx-0">
-          <a
-            href={data.file.publicURL}
-            download
-            className="px-4 py-2 border-accent border-2 rounded-md mb-10 hover:bg-accent hover:text-white transition duration-300 ease-in-out"
-          >
+    <SectionContainer id="resume" bgColor="white">
+      <SectionHeader
+        subtitle="My professional, educational background and achievements"
+        title="Resume"
+      />
+      <div className="flex flex-col justify-start items-start mx-auto lg:mx-0">
+        <a href={data.file.publicURL} download>
+          <Button variant="outline" className="mb-10">
             Download
-          </a>
-          {WORK.map((work) => (
-            <WorkExperience
-              key={`${work.company}-experience`}
-              company={work.company}
-              link={work.link}
-              date={work.date}
-              role={work.role}
-              description={work.description}
-            />
-          ))}
-          <Education />
-          <Skills />
-        </div>
+          </Button>
+        </a>
+        {WORK.map((work) => (
+          <WorkExperience
+            key={`${work.company}-experience`}
+            company={work.company}
+            link={work.link}
+            date={work.date}
+            role={work.role}
+            description={work.description}
+          />
+        ))}
+        <Education />
+        <Skills />
       </div>
-    </div>
+    </SectionContainer>
   );
 };
 
