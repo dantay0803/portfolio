@@ -35,6 +35,7 @@ const Header = () => {
           type="button"
           className="lg:hidden"
           onClick={() => setIsOpen(true)}
+          aria-label="Open menu"
         >
           <Bars3Icon className="h-6 w-6 text-white" />
         </button>
@@ -60,6 +61,7 @@ const Header = () => {
                     type="button"
                     className="float-right"
                     onClick={() => setIsOpen(false)}
+                    aria-label="Close menu"
                   >
                     <XMarkIcon className="h-6 w-6 text-black" />
                   </button>
