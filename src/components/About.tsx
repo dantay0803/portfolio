@@ -56,7 +56,7 @@ const About = () => {
               <ImageWithRing>
                 <StaticImage
                   className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                  src={"../assets/images/about/profileImage.jpg"}
+                  src={"../assets/images/about/winning.jpg"}
                   alt="Daniel Taylor head shot"
                 />
               </ImageWithRing>
@@ -74,7 +74,7 @@ const About = () => {
               <ImageWithRing>
                 <StaticImage
                   className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                  src={"../assets/images/about/hiking.jpg"}
+                  src={"../assets/images/about/running.jpg"}
                   alt="Daniel Taylor standing atop of Ben Lomond"
                 />
               </ImageWithRing>
