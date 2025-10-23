@@ -1,16 +1,20 @@
-import React from "react"
+import React from "react";
 
 type SocialsProps = {
-  large?: boolean
-  altColor?: boolean
-}
+  large?: boolean;
+  altColor?: boolean;
+};
+
+type IconProps = React.SVGProps<SVGSVGElement> & {
+  className?: string;
+};
 
 const Socials = ({ large = false, altColor = false }: SocialsProps) => {
   const data = [
     {
       name: "LinkedIn",
-      href: "#",
-      icon: (props: any) => (
+      href: "https://www.linkedin.com/in/danielt0803/",
+      icon: (props: IconProps) => (
         <svg
           fill="currentColor"
           {...props}
@@ -33,8 +37,8 @@ const Socials = ({ large = false, altColor = false }: SocialsProps) => {
     },
     {
       name: "GitHub",
-      href: "#",
-      icon: (props: any) => (
+      href: "https://github.com/dantay0803",
+      icon: (props: IconProps) => (
         <svg
           fill="currentColor"
           {...props}
@@ -66,12 +70,12 @@ const Socials = ({ large = false, altColor = false }: SocialsProps) => {
         </svg>
       ),
     },
-  ]
+  ];
 
-  const iconSize = large ? "h-12 w-12" : "h-6 w-6"
+  const iconSize = large ? "h-12 w-12" : "h-6 w-6";
   const color = altColor
     ? "text-accent hover:text-primary"
-    : "text-white hover:text-accent"
+    : "text-white hover:text-accent";
 
   return (
     <>
@@ -79,6 +83,8 @@ const Socials = ({ large = false, altColor = false }: SocialsProps) => {
         <a
           key={item.name}
           href={item.href}
+          target="_blank"
+          rel="noopener noreferrer"
           className={color}
         >
           <span className="sr-only">{item.name}</span>
@@ -86,7 +92,7 @@ const Socials = ({ large = false, altColor = false }: SocialsProps) => {
         </a>
       ))}
     </>
-  )
-}
+  );
+};
 
-export default Socials
+export default Socials;

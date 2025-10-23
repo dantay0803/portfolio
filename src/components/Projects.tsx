@@ -1,13 +1,12 @@
-import { StaticImage } from "gatsby-plugin-image"
-import React from "react"
-import Project from "./Project"
-import ClandestineOps from "./projectDetails/ClandestineOps"
-import Phalanx from "./projectDetails/Phalanx"
-import PlanetLibrary from "./projectDetails/PlanetLibrary"
-import WhatToWatch from "./projectDetails/WhatToWatch"
+import { StaticImage } from "gatsby-plugin-image";
+import React from "react";
+import Project from "./Project";
+import ClandestineOps from "./projectDetails/ClandestineOps";
+import Phalanx from "./projectDetails/Phalanx";
+import PlanetLibrary from "./projectDetails/PlanetLibrary";
+import WhatToWatch from "./projectDetails/WhatToWatch";
 
 const Projects = () => {
-
   const PROJECTS = [
     {
       title: "Phalanx",
@@ -21,7 +20,7 @@ const Projects = () => {
           alt="Phalanx project thumbnail"
         />
       ),
-      projectDetails: Phalanx
+      projectDetails: Phalanx,
     },
     {
       title: "Planet Library",
@@ -35,7 +34,7 @@ const Projects = () => {
           alt="Planet Library project thumbnail"
         />
       ),
-      projectDetails: PlanetLibrary
+      projectDetails: PlanetLibrary,
     },
     {
       title: "What to Watch",
@@ -69,9 +68,9 @@ const Projects = () => {
           alt="Planet Library project thumbnail"
         />
       ),
-      projectDetails: ClandestineOps
+      projectDetails: ClandestineOps,
     },
-  ]
+  ];
 
   return (
     <div id="projects" className="w-full bg-secondary">
@@ -99,7 +98,7 @@ const Projects = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

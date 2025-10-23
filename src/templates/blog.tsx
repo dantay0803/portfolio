@@ -1,44 +1,56 @@
 import { MDXProvider } from "@mdx-js/react";
-import { graphql } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import ScrollToTop from "../components/ScrollToTop";
 import Footer from "../components/blog/Footer";
 import Header from "../components/blog/Header";
+import { BlogTemplateData, BlogPageContext } from "../types/blog";
 
-const headingTwo = (props: any) => (
+type MDXComponentProps = {
+  children?: React.ReactNode;
+  [key: string]: any;
+};
+
+const headingTwo = (props: MDXComponentProps) => (
   <h2
     className="mb-1 text-base md:text-lg lg:text-xl underline font-medium md:font-semibold"
     {...props}
   />
 );
 
-const headingThree = (props: any) => (
+const headingThree = (props: MDXComponentProps) => (
   <h3
     className="mb-1 text-sm md:text-base lg:text-lg underline font-medium md:font-semibold"
     {...props}
   />
 );
 
-const paragraph = (props: any) => (
+const paragraph = (props: MDXComponentProps) => (
   <p className="text-sm md:text-base mb-6 md:mb-8" {...props} />
 );
 
-const unorderedList = (props: any) => (
+const unorderedList = (props: MDXComponentProps) => (
   <ul className="list-disc list-inside ml-2 md:ml-4 mb-6 md:mb-8" {...props} />
 );
 
-const orderedList = (props: any) => (
-  <ol className="list-decimal list-inside ml-2 md:ml-4 mb-6 md:mb-8" {...props} />
+const orderedList = (props: MDXComponentProps) => (
+  <ol
+    className="list-decimal list-inside ml-2 md:ml-4 mb-6 md:mb-8"
+    {...props}
+  />
 );
 
-const listItem = (props: any) => (
+const listItem = (props: MDXComponentProps) => (
   <li className="text-sm md:text-base mb-1 md:mb-2" {...props} />
 );
 
-const link = (props: any) => (
-  <a className="text-sm md:text-base mb-6 md:mb-8 text-black underline decoration-accent hover:cursor-pointer hover:no-underline hover:text-accent" {...props} />
-)
+const link = (props: MDXComponentProps) => (
+  <a
+    className="text-sm md:text-base mb-6 md:mb-8 text-black underline decoration-accent hover:cursor-pointer hover:no-underline hover:text-accent"
+    {...props}
+  />
+);
 
 const components = {
   h2: headingTwo,
@@ -50,12 +62,22 @@ const components = {
   a: link,
 };
 
-export default function PageTemplate({ data, children, pageContext }: any) {
+type BlogTemplateProps = PageProps<BlogTemplateData, BlogPageContext> & {
+  children: React.ReactNode;
+};
+
+export default function PageTemplate({
+  data,
+  children,
+  pageContext,
+}: BlogTemplateProps) {
   const { title, date, categories, featuredImage, featuredImageAlt } =
     data.mdx.frontmatter;
-  let featuredImg = getImage(featuredImage?.childImageSharp?.gatsbyImageData);
+  let featuredImg = getImage(
+    featuredImage?.childImageSharp?.gatsbyImageData || null
+  );
   const { previous, next } = pageContext;
-  
+
   return (
     <div className="w-full h-full relative">
       <ScrollToTop />
@@ -65,7 +87,7 @@ export default function PageTemplate({ data, children, pageContext }: any) {
           {featuredImg && (
             <GatsbyImage
               image={featuredImg}
-              alt={featuredImageAlt}
+              alt={featuredImageAlt || "Blog post featured image"}
               className="w-full h-48 md:h-64 lg:h-96 object-contain"
             />
           )}
@@ -73,7 +95,7 @@ export default function PageTemplate({ data, children, pageContext }: any) {
             <h1 className="text-white text-xl md:text-4xl font-bold md:font-extrabold mb-1 mb:mb-2">
               {title}
             </h1>
-            <div className="flex flex-row gap-x-2 md:gap-x-4 items-start text-white-900 text-xs md:text-sm lg:text-base italic">
+            <div className="flex flex-row gap-x-2 md:gap-x-4 items-start text-white-400 text-xs md:text-sm lg:text-base italic">
               <p>{date}</p>
               <p className="text-accent">|</p>
               <p>{categories.join(", ")}</p>
