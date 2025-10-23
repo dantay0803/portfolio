@@ -1,4 +1,5 @@
 import React from "react";
+import ExternalLink from "./common/ExternalLink";
 
 type SocialsProps = {
   large?: boolean;
@@ -80,16 +81,14 @@ const Socials = ({ large = false, altColor = false }: SocialsProps) => {
   return (
     <>
       {data.map((item) => (
-        <a
+        <ExternalLink
           key={item.name}
           href={item.href}
-          target="_blank"
-          rel="noopener noreferrer"
           className={color}
+          ariaLabel={`Visit ${item.name} profile`}
         >
-          <span className="sr-only">{item.name}</span>
           <item.icon className={`mb-1 ${iconSize}`} aria-hidden="true" />
-        </a>
+        </ExternalLink>
       ))}
     </>
   );

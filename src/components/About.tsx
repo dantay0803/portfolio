@@ -3,6 +3,7 @@ import React from "react";
 import SectionContainer from "./common/SectionContainer";
 import SectionHeader from "./common/SectionHeader";
 import ImageWithRing from "./common/ImageWithRing";
+import ExternalLink from "./common/ExternalLink";
 
 const About = () => {
   return (
@@ -26,14 +27,12 @@ const About = () => {
             its design and added enhanced features. Which led to the
             application's launch in Australia and America. Currently you can
             find me working at{" "}
-            <a
-              className="text-black hover:text-accent decoration-accent underline hover:no-underline font-semibold hover:cursor-pointer"
+            <ExternalLink
               href="https://addjam.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              className="text-black hover:text-accent decoration-accent underline hover:no-underline font-semibold hover:cursor-pointer"
             >
               Add Jam
-            </a>{" "}
+            </ExternalLink>{" "}
             creating a verity of web and mobile projects for our clients across
             various industries.
           </p>
