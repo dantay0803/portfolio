@@ -182,7 +182,7 @@ portfolio/
 
 ### Updating Projects
 
-Edit the `PROJECTS` array in `src/data/projects.ts` to add or modify projects:
+**Step 1:** Edit the `PROJECTS` array in `src/data/projects.ts` to add or modify projects:
 
 ```typescript
 export const PROJECTS: ProjectData[] = [
@@ -198,7 +198,25 @@ export const PROJECTS: ProjectData[] = [
 ];
 ```
 
-**Note:** After adding a project, create the corresponding detail component in `src/components/projectDetails/`.
+**Step 2:** Add the project image to `src/components/Projects.tsx` in the `imageMap`:
+
+```typescript
+const imageMap: Record<string, React.ReactNode> = {
+  "project-id": (
+    <StaticImage
+      className="w-full h-64 object-cover"
+      src="../assets/images/thumbnails/thumbnail.jpg"
+      alt="Image description"
+    />
+  ),
+};
+```
+
+**Note:**
+
+- The `id` in `projects.ts` must match the key in `imageMap`
+- `StaticImage` requires literal string paths (not variables) for build-time optimization
+- After adding a project, create the corresponding detail component in `src/components/projectDetails/`
 
 ### Updating Work Experience
 

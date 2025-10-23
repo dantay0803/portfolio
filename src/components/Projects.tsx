@@ -17,16 +17,41 @@ const componentMap: Record<string, React.ComponentType<Modal>> = {
   ClandestineOps,
 };
 
+const imageMap: Record<string, React.ReactNode> = {
+  phalanx: (
+    <StaticImage
+      className="w-full h-64 object-cover"
+      src="../assets/images/thumbnails/thumbnail_phalanx.jpg"
+      alt="Phalanx project thumbnail"
+    />
+  ),
+  "planet-library": (
+    <StaticImage
+      className="w-full h-64 object-cover"
+      src="../assets/images/thumbnails/thumbnail_pl.jpg"
+      alt="Planet Library project thumbnail"
+    />
+  ),
+  "what-to-watch": (
+    <StaticImage
+      className="w-full h-64 object-cover"
+      src="../assets/images/thumbnails/thumbnail_whatToWatch.jpg"
+      alt="What to Watch project thumbnail"
+    />
+  ),
+  "clandestine-ops": (
+    <StaticImage
+      className="w-full h-64 object-cover"
+      src="../assets/images/thumbnails/thumbnail_co.jpg"
+      alt="Clandestine Ops project thumbnail"
+    />
+  ),
+};
+
 const Projects = () => {
   const projectsWithComponents = PROJECTS.map((project) => ({
     ...project,
-    image: (
-      <StaticImage
-        className="w-full h-64 object-cover"
-        src={project.imagePath}
-        alt={project.imageAlt}
-      />
-    ),
+    image: imageMap[project.id],
     projectDetails: componentMap[project.detailsComponent],
   }));
 
