@@ -13,23 +13,30 @@ type NavigationProps = {
   links: NavigationLink[];
   logo?: string;
   logoUrl?: string;
+  variant?: "light" | "dark";
 };
 
 const Navigation = ({
   links,
   logo = "Daniel Taylor",
   logoUrl = "/",
+  variant = "dark",
 }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const textColor = variant === "dark" ? "text-white" : "text-black";
+  const hoverColor =
+    variant === "dark" ? "hover:text-accent" : "hover:text-accent";
+  const iconColor = variant === "dark" ? "text-white" : "text-black";
+
   return (
-    <header className="absolute w-full px-4 sm:px-6 lg:px-8 pt-6">
+    <header className="absolute w-full px-4 sm:px-6 lg:px-8 pt-6 z-40">
       <nav
         className="flex flex-row justify-between items-end"
         aria-label="Main navigation"
       >
         <Link
-          className="uppercase text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary"
+          className={`uppercase ${textColor} focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2`}
           to={logoUrl}
         >
           {logo}
@@ -38,7 +45,7 @@ const Navigation = ({
           {links.map((link) => (
             <AnchorLink
               key={`div-${link.url}`}
-              className="capitalize text-white hover:text-accent hover:underline underline-offset-8 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary"
+              className={`capitalize ${textColor} ${hoverColor} hover:underline underline-offset-8 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2`}
               to={link.url}
             >
               {link.text}
@@ -47,12 +54,12 @@ const Navigation = ({
         </div>
         <button
           type="button"
-          className="lg:hidden focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary"
+          className="lg:hidden focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2"
           onClick={() => setIsOpen(true)}
           aria-label="Open navigation menu"
           aria-expanded={isOpen}
         >
-          <Bars3Icon className="h-6 w-6 text-white" aria-hidden="true" />
+          <Bars3Icon className={`h-6 w-6 ${iconColor}`} aria-hidden="true" />
         </button>
         <Transition
           show={isOpen}
