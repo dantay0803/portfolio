@@ -1,14 +1,14 @@
-import { graphql, useStaticQuery } from "gatsby"
-import React from "react"
-import Awards from "./Awards"
-import Education from "./Education"
-import WorkExperience from "./WorkExperience"
+import { graphql, useStaticQuery } from "gatsby";
+import React from "react";
+import Skills from "./Skills";
+import Education from "./Education";
+import WorkExperience from "./WorkExperience";
 
 const WORK = [
   {
     company: "Add Jam",
     link: "https://addjam.com",
-    date: "August 2020 - Present",
+    date: "2020 - Present",
     role: "Software Engineer",
     description: [
       `My responsibilities whilst working at Add Jam see's me creating cross-platform mobile applications for iOS and Android using React Native. During my time here, I have worked on mobile applications owned by the company, and on projects for third party clients. By working on these projects, I have worked with in-house and client APIs, video playback, integration with Firebase and AWS and integrating Google and Apple maps.`,
@@ -35,7 +35,7 @@ const WORK = [
       `In my time there, I worked on improving the organisation and development process between different departments. I was also involved in taking part in regular development meetings with our reseller based in the US and interacting with customers during the pilot phase of the application's launch in the US.`,
     ],
   },
-]
+];
 
 const Resume = () => {
   const data = useStaticQuery(graphql`
@@ -44,9 +44,7 @@ const Resume = () => {
         publicURL
       }
     }
-  `)
-
-  console.log(data)
+  `);
 
   return (
     <div id="resume" className="w-full">
@@ -78,11 +76,11 @@ const Resume = () => {
             />
           ))}
           <Education />
-          <Awards />
+          <Skills />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Resume
+export default Resume;

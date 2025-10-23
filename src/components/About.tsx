@@ -1,5 +1,5 @@
-import { StaticImage } from "gatsby-plugin-image"
-import React from "react"
+import { StaticImage } from "gatsby-plugin-image";
+import React from "react";
 
 const About = () => {
   return (
@@ -44,18 +44,14 @@ const About = () => {
             </p>
             <div className="flex flex-row gap-x-8 md:gap-x-16 lg:gap-x-32 pl-4">
               <ul className="list-disc marker:text-accent">
-                <li>JavaScript</li>
+                <li>TypeScript</li>
                 <li>React</li>
                 <li>Next.js</li>
-                <li>C#</li>
-                <li>Unity</li>
               </ul>
               <ul className="list-disc marker:text-accent">
                 <li>HTML & CSS</li>
                 <li>React Native</li>
-                <li>Gatsby</li>
                 <li>Ruby on Rails</li>
-                <li>Godot</li>
               </ul>
             </div>
           </div>
@@ -103,11 +99,9 @@ const About = () => {
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
                 </div>
                 <div className="relative">
-                <StaticImage
+                  <StaticImage
                     className="aspect-[2/3] w-full rounded-xl bg-gray-900/5 object-cover shadow-lg"
-                    src={
-                      "../assets/images/about/fallingtogether.jpg"
-                    }
+                    src={"../assets/images/about/fallingtogether.jpg"}
                     alt="Screenshot of my Unity game for the Rainbow Jam 2020"
                   />
                   <div className="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-gray-900/10" />
@@ -118,7 +112,7 @@ const About = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
