@@ -32,15 +32,21 @@ const Header = () => {
 
   return (
     <header className="absolute w-full px-4 sm:px-6 lg:px-8 pt-6">
-      <nav className="flex flex-row justify-between items-end">
-        <Link className="uppercase text-white" to="/">
+      <nav
+        className="flex flex-row justify-between items-end"
+        aria-label="Main navigation"
+      >
+        <Link
+          className="uppercase text-white focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary"
+          to="/"
+        >
           Daniel Taylor
         </Link>
         <div className="hidden lg:flex flex-row lg:gap-x-6">
           {LINKS.map((link) => (
             <AnchorLink
               key={`div-${link.url}`}
-              className="capitalize text-white hover:text-accent hover:underline underline-offset-8"
+              className="capitalize text-white hover:text-accent hover:underline underline-offset-8 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary"
               to={link.url}
             >
               {link.text}
@@ -49,11 +55,12 @@ const Header = () => {
         </div>
         <button
           type="button"
-          className="lg:hidden"
+          className="lg:hidden focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-primary"
           onClick={() => setIsOpen(true)}
-          aria-label="Open menu"
+          aria-label="Open navigation menu"
+          aria-expanded={isOpen}
         >
-          <Bars3Icon className="h-6 w-6 text-white" />
+          <Bars3Icon className="h-6 w-6 text-white" aria-hidden="true" />
         </button>
         <Transition
           show={isOpen}
@@ -75,11 +82,14 @@ const Header = () => {
                 <Dialog.Title className="text-2xl font-bold text-black px-4 py-6">
                   <button
                     type="button"
-                    className="float-right"
+                    className="float-right focus:outline-none focus:ring-2 focus:ring-accent"
                     onClick={() => setIsOpen(false)}
-                    aria-label="Close menu"
+                    aria-label="Close navigation menu"
                   >
-                    <XMarkIcon className="h-6 w-6 text-black" />
+                    <XMarkIcon
+                      className="h-6 w-6 text-black"
+                      aria-hidden="true"
+                    />
                   </button>
                 </Dialog.Title>
                 <div className="flex flex-col gap-y-4 px-4 py-6">

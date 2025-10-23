@@ -4,6 +4,7 @@ import Header from "../components/blog/Header";
 import Hero from "../components/blog/Hero";
 import BlogCard from "../components/BlogCard";
 import ScrollToTop from "../components/ScrollToTop";
+import SkipToContent from "../components/SkipToContent";
 import { BlogPost } from "../types/blog";
 
 type BlogPageData = {
@@ -17,9 +18,10 @@ const IndexPage: React.FC<PageProps<BlogPageData>> = ({ data }) => {
 
   return (
     <div className="relative">
+      <SkipToContent />
       <Header />
       <ScrollToTop />
-      <main className="flex-auto">
+      <main id="main-content" className="flex-auto">
         <Hero />
         <div className="w-full bg-secondary">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 lg:py-16">

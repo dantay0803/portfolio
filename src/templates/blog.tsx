@@ -3,6 +3,7 @@ import { graphql, PageProps } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import ScrollToTop from "../components/ScrollToTop";
+import SkipToContent from "../components/SkipToContent";
 import Footer from "../components/blog/Footer";
 import Header from "../components/blog/Header";
 import { BlogTemplateData, BlogPageContext } from "../types/blog";
@@ -80,9 +81,10 @@ export default function PageTemplate({
 
   return (
     <div className="w-full h-full relative">
+      <SkipToContent />
       <ScrollToTop />
       <Header />
-      <article className="flex-auto mx-auto pb-5 lg:pb-10">
+      <article id="main-content" className="flex-auto mx-auto pb-5 lg:pb-10">
         <div className="bg-primary w-full pt-20 pb-4 mb-4">
           {featuredImg && (
             <GatsbyImage
