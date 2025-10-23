@@ -36,5 +36,5 @@ export const BLOG_NAV_LINKS: NavigationLink[] = [
 export const SITE_CONFIG = {
   siteName: "Daniel Taylor",
   logoUrl: "/",
-  blogLogoUrl: "/blog",
+  blogLogoUrl: "/",
 };
