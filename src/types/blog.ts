@@ -3,6 +3,7 @@ import { IGatsbyImageData } from "gatsby-plugin-image";
 export type BlogPostFrontmatter = {
   slug: string;
   date: string;
+  dateISO?: string;
   title: string;
   categories: string[];
   featuredImage?: {

@@ -15,7 +15,7 @@ const About = () => {
       <div className="flex flex-col lg:flex-row justify-start md:justify-between items-start gap-x-5 mx-auto lg:mx-0">
         <div className="w-full lg:w-1/2 flex flex-shrink-0 flex-col flex-wrap justify-center gap-y-5">
           <p className="">
-            Hello, I'm Daniel Taylor. A software developer based in Glasgow,
+            Hello, I'm Daniel Taylor. A Software Engineer based in Glasgow,
             Scotland. I enjoy creating digital experiences for desktop, mobile
             and web. I have experience working with technologies like
             JavaScript, React, C# and Unity.

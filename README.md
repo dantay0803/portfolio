@@ -1,6 +1,6 @@
 # Daniel Taylor - Portfolio
 
-A modern, responsive portfolio website showcasing my work as a Software Developer. Built with Gatsby, React, TypeScript, and Tailwind CSS.
+A modern, responsive portfolio website showcasing my work as a Software Engineer. Built with Gatsby, React, TypeScript, and Tailwind CSS.
 
 🔗 **Live Site**: [https://www.danielt.co.uk/](https://www.danielt.co.uk/)
 

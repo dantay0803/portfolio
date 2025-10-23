@@ -2,20 +2,21 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Daniel Taylor - Software Developer`,
+    title: `Daniel Taylor - Software Engineer`,
     titleShort: `Daniel Taylor`,
-    titleAlt: `Daniel Taylor - Glasgow Based Software Developer`,
-    logo: ``,
+    titleAlt: `Daniel Taylor - Glasgow Based Software Engineer`,
+    author: `Daniel Taylor`,
     siteUrl: `https://www.danielt.co.uk/`,
-    description: `Daniel Taylor is a software developer based in Glasgow, Scotland. He primarily creates digital experiences for mobile and web, with previous experience working with desktop applications and games.`,
+    description: `Daniel Taylor is a Software Engineer based in Glasgow, Scotland. He primarily creates digital experiences for mobile and web, with previous experience working with desktop applications and games.`,
     lang: `en`,
     themeColor: `#0B296F`,
     backgroundColor: `#FFFFFF`,
-    image: ``,
+    image: `/og-image.png`,
     locale: `en_GB`,
+    twitterUsername: ``,
     keywords: [
       `Daniel Taylor`,
-      `software developer`,
+      `Software Engineer`,
       `Glasgow`,
       `Scotland`,
       `mobile development`,
@@ -36,7 +37,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        name: `Daniel Taylor - Software Developer`,
+        name: `Daniel Taylor - Software Engineer`,
         short_name: `Daniel Taylor`,
         start_url: `/`,
         background_color: `#FFFFFF`,

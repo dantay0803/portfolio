@@ -1,5 +1,5 @@
 import { MDXProvider } from "@mdx-js/react";
-import { graphql, PageProps } from "gatsby";
+import { graphql, HeadFC, PageProps } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import React from "react";
 import ScrollToTop from "../components/ScrollToTop";
@@ -7,6 +7,7 @@ import SkipToContent from "../components/SkipToContent";
 import Footer from "../components/blog/Footer";
 import Header from "../components/blog/Header";
 import { BlogTemplateData, BlogPageContext } from "../types/blog";
+import { SEO } from "../components/SEO";
 
 type MDXComponentProps = {
   children?: React.ReactNode;
@@ -113,12 +114,34 @@ export default function PageTemplate({
   );
 }
 
+export const Head: HeadFC<BlogTemplateData, BlogPageContext> = ({
+  data,
+  pageContext,
+}) => {
+  const { title, slug, featuredImage, featuredImageAlt, dateISO } =
+    data.mdx.frontmatter;
+
+  const image =
+    featuredImage?.childImageSharp?.gatsbyImageData?.images?.fallback?.src;
+
+  return (
+    <SEO
+      title={`${title} - Daniel Taylor`}
+      pathname={`/blog/${slug}`}
+      image={image}
+      article={true}
+      publishedDate={dateISO}
+    />
+  );
+};
+
 export const query = graphql`
   query ($id: String!) {
     mdx(id: { eq: $id }) {
       frontmatter {
         slug
         date(formatString: "MMMM D, YYYY")
+        dateISO: date
         title
         categories
         featuredImage {

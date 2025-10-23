@@ -6,6 +6,7 @@ import BlogCard from "../components/BlogCard";
 import ScrollToTop from "../components/ScrollToTop";
 import SkipToContent from "../components/SkipToContent";
 import { BlogPost } from "../types/blog";
+import { SEO } from "../components/SEO";
 
 type BlogPageData = {
   allMdx: {
@@ -52,7 +53,13 @@ const IndexPage: React.FC<PageProps<BlogPageData>> = ({ data }) => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Daniel Taylor | Blog</title>;
+export const Head: HeadFC = () => (
+  <SEO
+    title="Blog - Daniel Taylor"
+    description="Read about software development, React, React Native, and web development from Daniel Taylor, a Software Engineer based in Glasgow, Scotland."
+    pathname="/blog"
+  />
+);
 
 export const query = graphql`
   query {

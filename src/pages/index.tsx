@@ -9,6 +9,7 @@ import Projects from "../components/Projects";
 import Resume from "../components/Resume";
 import ScrollToTop from "../components/ScrollToTop";
 import SkipToContent from "../components/SkipToContent";
+import { SEO } from "../components/SEO";
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
@@ -30,4 +31,4 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC = () => <title>Daniel Taylor | Portfolio</title>;
+export const Head: HeadFC = () => <SEO pathname="/" />;
