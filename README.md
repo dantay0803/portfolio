@@ -182,11 +182,56 @@ portfolio/
 
 ### Updating Projects
 
-Edit the `PROJECTS` array in `src/components/Projects.tsx` to add or modify projects.
+Edit the `PROJECTS` array in `src/data/projects.ts` to add or modify projects:
+
+```typescript
+export const PROJECTS: ProjectData[] = [
+  {
+    id: "project-id",
+    title: "Project Title",
+    tools: ["Tool1", "Tool2"],
+    description: "Project description",
+    imagePath: "../assets/images/thumbnails/thumbnail.jpg",
+    imageAlt: "Image description",
+    detailsComponent: "ComponentName",
+  },
+];
+```
+
+**Note:** After adding a project, create the corresponding detail component in `src/components/projectDetails/`.
 
 ### Updating Work Experience
 
-Edit the `WORK` array in `src/components/Resume.tsx` to update your professional experience.
+Edit the `WORK_EXPERIENCE` array in `src/data/workExperience.ts` to update your professional experience:
+
+```typescript
+export const WORK_EXPERIENCE: WorkExperienceData[] = [
+  {
+    id: "company-id",
+    company: "Company Name",
+    link: "https://company.com",
+    date: "2020 - Present",
+    role: "Your Role",
+    description: ["Description paragraph 1", "Description paragraph 2"],
+  },
+];
+```
+
+### Updating Navigation
+
+Edit navigation links in `src/constants/navigation.ts`:
+
+```typescript
+// Main navigation (homepage)
+export const MAIN_NAV_LINKS: NavigationLink[] = [
+  { text: "section name", url: "#section" },
+];
+
+// Blog navigation
+export const BLOG_NAV_LINKS: NavigationLink[] = [
+  { text: "All Posts", url: "/blog" },
+];
+```
 
 ## 🚀 Deployment
 
