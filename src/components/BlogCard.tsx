@@ -34,7 +34,7 @@ const BlogCard = ({
           />
         )}
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
-        <div className="w-full h-full flex flex-col justify-end gap-y-2 text-white px-6 pb-8 pt-80 sm:pt-48 lg:pt-80">
+        <div className="absolute inset-0 flex flex-col justify-end gap-y-2 text-white px-6 pb-8">
           <div className="flex flex-row justify-between items-center italic text-xs">
             <p>{date}</p>
             <p className="text-white-300 rounded-lg px-2 py-1">{categories}</p>
