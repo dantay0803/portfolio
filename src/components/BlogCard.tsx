@@ -30,7 +30,10 @@ const BlogCard = ({
             alt={imageAlt}
             className="absolute inset-0 -z-10 h-full w-full"
             imgClassName="h-full w-full object-cover"
+            imgStyle={{ objectFit: "cover", height: "100%", width: "100%" }}
+            style={{ height: "100%", width: "100%", maxWidth: "none" }}
             objectFit="cover"
+            objectPosition="center"
           />
         )}
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
