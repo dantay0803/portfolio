@@ -28,7 +28,9 @@ const BlogCard = ({
           <GatsbyImage
             image={featuredImg}
             alt={imageAlt}
-            className="absolute inset-0 -z-10 h-full w-full object-cover"
+            className="absolute inset-0 -z-10 h-full w-full"
+            imgClassName="h-full w-full object-cover"
+            objectFit="cover"
           />
         )}
         <div className="absolute inset-0 -z-10 bg-gradient-to-t from-gray-900 via-gray-900/40" />
