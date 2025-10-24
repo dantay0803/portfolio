@@ -22,6 +22,7 @@ const Blog = () => {
                   placeholder: BLURRED
                   formats: [AUTO, WEBP, AVIF]
                   quality: 90
+                  layout: FULL_WIDTH
                 )
               }
             }

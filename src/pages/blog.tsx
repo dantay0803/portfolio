@@ -77,6 +77,7 @@ export const query = graphql`
                 placeholder: BLURRED
                 formats: [AUTO, WEBP, AVIF]
                 quality: 90
+                layout: FULL_WIDTH
               )
             }
           }
