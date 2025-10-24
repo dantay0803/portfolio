@@ -28,7 +28,7 @@ const BlogCard = ({
           <GatsbyImage
             image={featuredImg}
             alt={imageAlt}
-            className="absolute inset-0 -z-10 h-full w-full"
+            className="blog-card-image absolute inset-0 -z-10 h-full w-full"
             objectFit="cover"
             objectPosition="center"
           />
